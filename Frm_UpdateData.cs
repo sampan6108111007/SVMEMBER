@@ -12,6 +12,8 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 
+using System.Globalization;
+
 
 namespace SVMember
 {
@@ -23,9 +25,56 @@ namespace SVMember
         char[] sp = { '|' };
         string[] MBno;
 
+        public string mB_Info;
+
+        RDNIDWRAPPER.RDNID mRDNIDWRAPPER = new RDNIDWRAPPER.RDNID();
+        string StartupPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+
+
+        Bitmap memoryImage;
+        public static string GetCurrentExecutingDirectory(System.Reflection.Assembly assembly)
+        {
+            string filePath = new Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath;
+            return Path.GetDirectoryName(filePath);
+        }
+
         public Frm_UpdateData()
         {
+           // InitializeComponent();
+
             InitializeComponent();
+            string fileName = StartupPath + "\\RDNIDLib.DLX";
+            if (System.IO.File.Exists(fileName) == false)
+            {
+                MessageBox.Show("RDNIDLib.DLX not found");
+            }
+
+            System.Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            // this.Text = String.Format("R&D NID Card VC# {0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+
+
+            byte[] _lic = String2Byte(fileName);
+
+            int nres = 0;
+            nres = RDNID.openNIDLibRD(_lic);
+            if (nres != 0)
+            {
+                String m;
+                m = String.Format(" error no {0} ", nres);
+                MessageBox.Show(m);
+            }
+
+            byte[] Licinfo = new byte[1024];
+
+            RDNID.getLicenseInfoRD(Licinfo);
+
+            //m_lblDLXInfo.Text = aByteToString(Licinfo);
+
+            byte[] Softinfo = new byte[1024];
+            RDNID.getSoftwareInfoRD(Softinfo);
+            //   m_lblSoftwareInfo.Text = aByteToString(Softinfo);
+
+            ListCardReader();
         }
 
         
@@ -87,6 +136,7 @@ namespace SVMember
         {
             ReadCard();
         }
+        
         protected int ReadCard()
         {
             String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
@@ -127,42 +177,51 @@ namespace SVMember
             }
             else
             {
-                //string[] fields = NIDData.Split('#');
+                string[] fields = NIDData.Split('#');
 
-                //m_txtID.Text = NIDNum;                             // or use m_txtID.Text = fields[(int)NID_FIELD.NID_Number];
+                m_txtID.Text = NIDNum;                             // or use m_txtID.Text = fields[(int)NID_FIELD.NID_Number];
+                            
+                String fullname = fields[(int)NID_FIELD.TITLE_T] + " " +
+                                    fields[(int)NID_FIELD.NAME_T] + " " +
+                                    fields[(int)NID_FIELD.MIDNAME_T] + " " +
+                                    fields[(int)NID_FIELD.SURNAME_T];
+                m_txtFullNameT.Text = fullname;
 
-                //String fullname = fields[(int)NID_FIELD.TITLE_T] + " " +
-                //                    fields[(int)NID_FIELD.NAME_T] + " " +
-                //                    fields[(int)NID_FIELD.MIDNAME_T] + " " +
-                //                    fields[(int)NID_FIELD.SURNAME_T];
-                //m_txtFullNameT.Text = fullname;
+                // เอส   ----------------------------------------------------------------------------------------------------------------
 
-                //// เอส   ----------------------------------------------------------------------------------------------------------------
+                lb_nameInBut.Text = fields[(int)NID_FIELD.NAME_T];
+                lb_surnameInBut.Text = fields[(int)NID_FIELD.SURNAME_T];
 
-                //lb_nameInBut.Text = fields[(int)NID_FIELD.NAME_T];
-                //lb_surnameInBut.Text = fields[(int)NID_FIELD.SURNAME_T];
-
-                ////----------------------------------------------------------------------------------------------------------------
+                //----------------------------------------------------------------------------------------------------------------
 
 
 
-                //fullname = fields[(int)NID_FIELD.TITLE_E] + " " +
-                //                    fields[(int)NID_FIELD.NAME_E] + " " +
-                //                    fields[(int)NID_FIELD.MIDNAME_E] + " " +
-                //                    fields[(int)NID_FIELD.SURNAME_E];
-                //m_txtFullNameE.Text = fullname;
+                fullname = fields[(int)NID_FIELD.TITLE_E] + " " +
+                                    fields[(int)NID_FIELD.NAME_E] + " " +
+                                    fields[(int)NID_FIELD.MIDNAME_E] + " " +
+                                    fields[(int)NID_FIELD.SURNAME_E];
+                m_txtFullNameE.Text = fullname;
 
-                ////     m_txtBrithDate.Text = _yyyymmdd_(fields[(int)NID_FIELD.BIRTH_DATE]);
+                m_txtBrithDate.Text = fields[(int)NID_FIELD.BIRTH_DATE];
+              
+                //m_txtBrithDate.Text = Fc.GetshotDate(fields[(int)NID_FIELD.BIRTH_DATE] ,17);
 
-                //m_txtAddress.Text = fields[(int)NID_FIELD.HOME_NO] + "   " +
-                //                        fields[(int)NID_FIELD.MOO] + "   " +
-                //                        fields[(int)NID_FIELD.TROK] + "   " +
-                //                        fields[(int)NID_FIELD.SOI] + "   " +
-                //                        fields[(int)NID_FIELD.ROAD] + "   " +
-                //                        fields[(int)NID_FIELD.TUMBON] + "   " +
-                //                        fields[(int)NID_FIELD.AMPHOE] + "   " +
-                //                        fields[(int)NID_FIELD.PROVINCE] + "   "
-                //                        ;
+                //string birthDate = fields[(int)NID_FIELD.BIRTH_DATE].ToString();
+                //string thaiFormattedDate = Fc.GetshotDate(birthDate, 17);
+                //m_txtBrithDate.Text = thaiFormattedDate;
+                //string thaiFormattedDate = Fc.GetshotDate(fields[(int)NID_FIELD.BIRTH_DATE], 17);
+                //m_txtBrithDate.Text = thaiFormattedDate;
+
+
+                m_txtAddress.Text = fields[(int)NID_FIELD.HOME_NO] + "   " +
+                                        fields[(int)NID_FIELD.MOO] + "   " +
+                                        fields[(int)NID_FIELD.TROK] + "   " +
+                                        fields[(int)NID_FIELD.SOI] + "   " +
+                                        fields[(int)NID_FIELD.ROAD] + "   " +
+                                        fields[(int)NID_FIELD.TUMBON] + "   " +
+                                        fields[(int)NID_FIELD.AMPHOE] + "   " +
+                                        fields[(int)NID_FIELD.PROVINCE] + "   "
+                                        ;
                 //if (fields[(int)NID_FIELD.GENDER] == "1")
                 //{
                 //    m_txtGender.Text = "ชาย";
@@ -301,6 +360,8 @@ namespace SVMember
 
         }
 
+        // Function to convert the date to Thai format
+        
 
     }
 }
