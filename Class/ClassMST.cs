@@ -286,7 +286,78 @@ namespace SVMember
 
         //}
 
+        public String GetDb()
+    {
+        string Strconn = "";
 
+        try
+        {
+            //  string str = "Data Source=scotdat;User Id=tch_lampang;Password=tch_lampang;Pooling=False;";
+
+            //string str = "Data Source=192.168.7.221/gcoop;Persist Security Info=True;User ID=iscolap;Password=iscolap;Unicode=True;";
+
+            Strconn = "Data Source=192.168.7.221/gcoop;Persist Security Info=True;User ID=iscotest11;Password=iscotest11;";
+
+            Ora_Connection = new OracleConnection(Strconn);
+            
+            Ora_Connection.Open();
+        }
+        catch (Exception ex)
+        {
+
+            //Form1.msg = "ผิดพลาด !! Connect ฐานข้อมูล Oracle  ไม่ได้";
+         //   MessageBox.Show("เกิดปัญหาแล้วพี่น้อง " + ex.ToString());
+           // return;
+        }
+
+        return Strconn;
+
+
+        //if (Session["Username"].ToString() == "")
+        //{
+       // //    Response.Redirect("");
+       //// if (db == null)
+       // {
+       //     db = "172.16.13.127";
+       // }
+
+        //switch (db.ToUpper())
+        //{
+        //    case "LOCAL":
+        //        //  Strconn = "server='comcenter13'; UID='sa';PWD='lphpdc'; Database='OlderPerson';timeout=120;pooling=false";
+        //        Strconn = "server='172.16.0.3'; UID='sa';PWD='lphpdc'; Database='OlderPerson';timeout=120;pooling=false";
+        //        break;
+        //    case "BLADE5":
+        //        Strconn = "Server='172.16.13.127';Database=SSBHospital;UID=sa;PWD=lphpdc";
+        //        break;
+        //    case "FRONT-OFFICE":
+        //        Strconn = "Server='172.16.13.84';Database=SSBHospital;UID=sa;PWD=lphpdc";
+        //        break;
+        //    case "PAYROLL":
+        //        Strconn = "Server='172.16.13.127';Database=SSBPayroll;UID=sa;PWD=lphpdc";
+        //        break;
+
+        //    default:
+        //        break;
+        //}
+
+    //string  Strconn = @"server='SCOSERVER_BACK\WEB_LPTCOOP'; UID='sa';PWD='lptcoop'; Database='Ecoop';timeout=120;pooling=false";
+
+    //    string Strconn = @"server='adminesso'; UID='sa';PWD='lptcoop'; Database='Ecoop';timeout=120;pooling=false";
+
+    //   // string Strconn = "server='192.168.2.200/lptcoop'; UID='sa';PWD='lptcoop'; Database='Ecoop';";
+    //try
+    //{
+    //    _conn = new SqlConnection(Strconn);
+    //    _conn.Open();
+    //}
+    //catch (Exception ex)
+    //{
+    //    _conn.Close();
+    //    Msgbox.Show(ex.ToString());
+    //}
+        //return Strconn;
+    }
 
 
 

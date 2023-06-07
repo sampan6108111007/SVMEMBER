@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_txtBrithDate = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_txtAddress = new System.Windows.Forms.TextBox();
+            this.m_txtFullNameE = new System.Windows.Forms.TextBox();
+            this.lb_surnameInBut = new System.Windows.Forms.Label();
+            this.lb_nameInBut = new System.Windows.Forms.Label();
+            this.m_txtFullNameT = new System.Windows.Forms.TextBox();
+            this.m_txtID = new System.Windows.Forms.MaskedTextBox();
             this.m_ListReaderCard = new System.Windows.Forms.ComboBox();
             this.lbMb_Add2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,19 +54,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lbCD_Add1 = new System.Windows.Forms.Label();
+            this.lbCD_name = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.m_txtID = new System.Windows.Forms.MaskedTextBox();
-            this.m_txtFullNameT = new System.Windows.Forms.TextBox();
-            this.lb_surnameInBut = new System.Windows.Forms.Label();
-            this.lb_nameInBut = new System.Windows.Forms.Label();
-            this.m_txtFullNameE = new System.Windows.Forms.TextBox();
-            this.m_txtAddress = new System.Windows.Forms.TextBox();
-            this.lbCD_name = new System.Windows.Forms.Label();
             this.lbCD_IDCard = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_txtBrithDate = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_picPhoto)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +72,11 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::SVMember.Properties.Resources.BG4;
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lbCD_IDCard);
             this.panel1.Controls.Add(this.m_txtBrithDate);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.m_txtAddress);
@@ -93,7 +102,6 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.lbCD_Add1);
-            this.panel1.Controls.Add(this.lbCD_IDCard);
             this.panel1.Controls.Add(this.lbCD_name);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label16);
@@ -101,6 +109,86 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(992, 616);
             this.panel1.TabIndex = 13;
+            // 
+            // m_txtBrithDate
+            // 
+            this.m_txtBrithDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_txtBrithDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.m_txtBrithDate.Location = new System.Drawing.Point(347, 281);
+            this.m_txtBrithDate.Name = "m_txtBrithDate";
+            this.m_txtBrithDate.Size = new System.Drawing.Size(235, 26);
+            this.m_txtBrithDate.TabIndex = 79;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Location = new System.Drawing.Point(109, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Name";
+            // 
+            // m_txtAddress
+            // 
+            this.m_txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.m_txtAddress.Location = new System.Drawing.Point(154, 218);
+            this.m_txtAddress.Multiline = true;
+            this.m_txtAddress.Name = "m_txtAddress";
+            this.m_txtAddress.Size = new System.Drawing.Size(300, 51);
+            this.m_txtAddress.TabIndex = 77;
+            // 
+            // m_txtFullNameE
+            // 
+            this.m_txtFullNameE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_txtFullNameE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.m_txtFullNameE.Location = new System.Drawing.Point(176, 186);
+            this.m_txtFullNameE.Name = "m_txtFullNameE";
+            this.m_txtFullNameE.Size = new System.Drawing.Size(278, 26);
+            this.m_txtFullNameE.TabIndex = 76;
+            // 
+            // lb_surnameInBut
+            // 
+            this.lb_surnameInBut.AutoSize = true;
+            this.lb_surnameInBut.Location = new System.Drawing.Point(47, 243);
+            this.lb_surnameInBut.Name = "lb_surnameInBut";
+            this.lb_surnameInBut.Size = new System.Drawing.Size(35, 13);
+            this.lb_surnameInBut.TabIndex = 75;
+            this.lb_surnameInBut.Text = "label7";
+            this.lb_surnameInBut.Visible = false;
+            // 
+            // lb_nameInBut
+            // 
+            this.lb_nameInBut.AutoSize = true;
+            this.lb_nameInBut.Location = new System.Drawing.Point(47, 218);
+            this.lb_nameInBut.Name = "lb_nameInBut";
+            this.lb_nameInBut.Size = new System.Drawing.Size(35, 13);
+            this.lb_nameInBut.TabIndex = 74;
+            this.lb_nameInBut.Text = "label6";
+            this.lb_nameInBut.Visible = false;
+            // 
+            // m_txtFullNameT
+            // 
+            this.m_txtFullNameT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.m_txtFullNameT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.m_txtFullNameT.Location = new System.Drawing.Point(176, 153);
+            this.m_txtFullNameT.Name = "m_txtFullNameT";
+            this.m_txtFullNameT.Size = new System.Drawing.Size(278, 26);
+            this.m_txtFullNameT.TabIndex = 73;
+            // 
+            // m_txtID
+            // 
+            this.m_txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.m_txtID.Location = new System.Drawing.Point(264, 114);
+            this.m_txtID.Mask = "#-####-#####-##-#";
+            this.m_txtID.Name = "m_txtID";
+            this.m_txtID.Size = new System.Drawing.Size(190, 27);
+            this.m_txtID.TabIndex = 72;
             // 
             // m_ListReaderCard
             // 
@@ -212,7 +300,7 @@
             // 
             this.lb_mbno.BackColor = System.Drawing.Color.White;
             this.lb_mbno.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_mbno.Location = new System.Drawing.Point(425, 386);
+            this.lb_mbno.Location = new System.Drawing.Point(216, 382);
             this.lb_mbno.Name = "lb_mbno";
             this.lb_mbno.Size = new System.Drawing.Size(148, 31);
             this.lb_mbno.TabIndex = 30;
@@ -280,6 +368,16 @@
             this.lbCD_Add1.TabIndex = 18;
             this.lbCD_Add1.Text = "ที่อยู่";
             // 
+            // lbCD_name
+            // 
+            this.lbCD_name.AutoSize = true;
+            this.lbCD_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lbCD_name.Location = new System.Drawing.Point(110, 154);
+            this.lbCD_name.Name = "lbCD_name";
+            this.lbCD_name.Size = new System.Drawing.Size(67, 25);
+            this.lbCD_name.TabIndex = 16;
+            this.lbCD_name.Text = "ชื่อ-สกุล";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -312,105 +410,50 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // m_txtID
-            // 
-            this.m_txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.m_txtID.Location = new System.Drawing.Point(264, 114);
-            this.m_txtID.Mask = "#-####-#####-##-#";
-            this.m_txtID.Name = "m_txtID";
-            this.m_txtID.Size = new System.Drawing.Size(190, 27);
-            this.m_txtID.TabIndex = 72;
-            // 
-            // m_txtFullNameT
-            // 
-            this.m_txtFullNameT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_txtFullNameT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.m_txtFullNameT.Location = new System.Drawing.Point(176, 153);
-            this.m_txtFullNameT.Name = "m_txtFullNameT";
-            this.m_txtFullNameT.Size = new System.Drawing.Size(278, 26);
-            this.m_txtFullNameT.TabIndex = 73;
-            // 
-            // lb_surnameInBut
-            // 
-            this.lb_surnameInBut.AutoSize = true;
-            this.lb_surnameInBut.Location = new System.Drawing.Point(47, 243);
-            this.lb_surnameInBut.Name = "lb_surnameInBut";
-            this.lb_surnameInBut.Size = new System.Drawing.Size(35, 13);
-            this.lb_surnameInBut.TabIndex = 75;
-            this.lb_surnameInBut.Text = "label7";
-            this.lb_surnameInBut.Visible = false;
-            // 
-            // lb_nameInBut
-            // 
-            this.lb_nameInBut.AutoSize = true;
-            this.lb_nameInBut.Location = new System.Drawing.Point(47, 218);
-            this.lb_nameInBut.Name = "lb_nameInBut";
-            this.lb_nameInBut.Size = new System.Drawing.Size(35, 13);
-            this.lb_nameInBut.TabIndex = 74;
-            this.lb_nameInBut.Text = "label6";
-            this.lb_nameInBut.Visible = false;
-            // 
-            // m_txtFullNameE
-            // 
-            this.m_txtFullNameE.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_txtFullNameE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.m_txtFullNameE.Location = new System.Drawing.Point(176, 186);
-            this.m_txtFullNameE.Name = "m_txtFullNameE";
-            this.m_txtFullNameE.Size = new System.Drawing.Size(278, 26);
-            this.m_txtFullNameE.TabIndex = 76;
-            // 
-            // m_txtAddress
-            // 
-            this.m_txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.m_txtAddress.Location = new System.Drawing.Point(154, 218);
-            this.m_txtAddress.Multiline = true;
-            this.m_txtAddress.Name = "m_txtAddress";
-            this.m_txtAddress.Size = new System.Drawing.Size(300, 51);
-            this.m_txtAddress.TabIndex = 77;
-            // 
-            // lbCD_name
-            // 
-            this.lbCD_name.AutoSize = true;
-            this.lbCD_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lbCD_name.Location = new System.Drawing.Point(110, 154);
-            this.lbCD_name.Name = "lbCD_name";
-            this.lbCD_name.Size = new System.Drawing.Size(67, 25);
-            this.lbCD_name.TabIndex = 16;
-            this.lbCD_name.Text = "ชื่อ-สกุล";
-            // 
             // lbCD_IDCard
             // 
             this.lbCD_IDCard.AutoSize = true;
             this.lbCD_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lbCD_IDCard.Location = new System.Drawing.Point(112, 118);
+            this.lbCD_IDCard.Location = new System.Drawing.Point(111, 116);
             this.lbCD_IDCard.Name = "lbCD_IDCard";
             this.lbCD_IDCard.Size = new System.Drawing.Size(149, 25);
-            this.lbCD_IDCard.TabIndex = 17;
+            this.lbCD_IDCard.TabIndex = 80;
             this.lbCD_IDCard.Text = "เลขที่บัตรประชาชน";
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(109, 185);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "Name";
+            this.textBox1.Location = new System.Drawing.Point(398, 435);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 81;
             // 
-            // m_txtBrithDate
+            // textBox2
             // 
-            this.m_txtBrithDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.m_txtBrithDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.m_txtBrithDate.Location = new System.Drawing.Point(347, 281);
-            this.m_txtBrithDate.Name = "m_txtBrithDate";
-            this.m_txtBrithDate.Size = new System.Drawing.Size(235, 26);
-            this.m_txtBrithDate.TabIndex = 79;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox2.Location = new System.Drawing.Point(398, 467);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(184, 88);
+            this.textBox2.TabIndex = 82;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.textBox3.Location = new System.Drawing.Point(398, 561);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(194, 26);
+            this.textBox3.TabIndex = 83;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(446, 394);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 84;
             // 
             // Frm_UpdateData
             // 
@@ -460,10 +503,14 @@
         private System.Windows.Forms.Label lb_nameInBut;
         private System.Windows.Forms.TextBox m_txtFullNameE;
         private System.Windows.Forms.TextBox m_txtAddress;
-        private System.Windows.Forms.Label lbCD_IDCard;
         private System.Windows.Forms.Label lbCD_name;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox m_txtBrithDate;
+        private System.Windows.Forms.Label lbCD_IDCard;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
 
     }
 }

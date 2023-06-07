@@ -13,17 +13,20 @@ using System.Drawing.Imaging;
 using System.IO;
 
 using System.Globalization;
+using Oracle.DataAccess.Client;
 
 
 namespace SVMember
 {
     public partial class Frm_UpdateData : Form
     {
+        
         ClassMST ClsMST = new ClassMST();
         allFunction Fc = new allFunction();
         string sql = "", msgERR = "";
         char[] sp = { '|' };
         string[] MBno;
+        string str;
 
         public string mB_Info;
 
@@ -80,52 +83,62 @@ namespace SVMember
         
         private void Frm_UpdateData_Load(object sender, EventArgs e)
         {
-            ClsMST.GetDB_Oracle(); // Oracle
-            ShowData();
-                      
+            //ClsMST.GetDB_Oracle(); // Oracle
+            //ShowData();
+
+
+
+            ClsMST.GetDb();       
         }
         
         void ShowData()
         {
-            sql = "select "+
-                             " mb.MEMBER_NO,   "+
-                             " mb.CARD_PERSON,    "+                           
-                             " mbucfprename.prename_desc || mb.MEMB_NAME || '     ' || mb.MEMB_SURNAME as Mbname,   "+                            
-                             " mb.MEMBGROUP_CODE,   "+
-                             " mbucfmembgroup.membgroup_desc,  "+
-                             " mb.resign_status,   "+
-                             " mb.MEMBER_DATE,   "+
-                             " mb.BIRTH_DATE,   "+
-                             " mb.MEMBER_STATUS,   "+
-                             " mb.RETRY_DATE,   "+
-                             " mb.RESIGN_DATE,   "+
-                             " mb.MATE_NAME,   "+
-                             " mb.addr_phone,     "+                            
-                             " mb.addr_mobilephone,  "+
-                             " mb.addr_no ||' ม.' ||mb.addr_moo || ' ซ.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถ.' ||mb.addr_ROAD Add1,"+  
-                             " mb.tambol_code,   "+
-                             " mb.amphur_CODE,   "+
-                             " mb.PROVINCE_CODE,   "+
-                             " mb.addr_POSTCODE,   "+
-                             " mb.Curraddr_no||   ' ม.' || mb.Curraddr_moo,' ซ.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถ.' || mb.Curraddr_ROAD Cur_Add1,"+    
-                             " mb.Currtambol_code,     "+
-                             " mb.Curramphur_CODE,     "+
-                             " mb.CurrPROVINCE_CODE,     "+
-                             " mb.Curraddr_POSTCODE  "+
-                             " From MBMEMBMASTER mb inner join mbucfprename on mb.prename_code = mbucfprename.prename_code  " +
-                             " inner join mbucfmembgroup on mb.MEMBGROUP_CODE = mbucfmembgroup.membgroup_code "+						  
-                             " where mb.Card_person='"+ lbCD_IDCard.Text +"'";
+            //sql = "select "+
+            //                 " mb.MEMBER_NO,   "+
+            //                 " mb.CARD_PERSON,    "+                           
+            //                 " mbucfprename.prename_desc || mb.MEMB_NAME || '     ' || mb.MEMB_SURNAME as Mbname,   "+                            
+            //                 " mb.MEMBGROUP_CODE,   "+
+            //                 " mbucfmembgroup.membgroup_desc,  "+
+            //                 " mb.resign_status,   "+
+            //                 " mb.MEMBER_DATE,   "+
+            //                 " mb.BIRTH_DATE,   "+
+            //                 " mb.MEMBER_STATUS,   "+
+            //                 " mb.RETRY_DATE,   "+
+            //                 " mb.RESIGN_DATE,   "+
+            //                 " mb.MATE_NAME,   "+
+            //                 " mb.addr_phone,     "+                            
+            //                 " mb.addr_mobilephone,  "+
+            //                 " mb.addr_no ||' ม.' ||mb.addr_moo || ' ซ.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถ.' ||mb.addr_ROAD Add1,"+  
+            //                 " mb.tambol_code,   "+
+            //                 " mb.amphur_CODE,   "+
+            //                 " mb.PROVINCE_CODE,   "+
+            //                 " mb.addr_POSTCODE,   "+
+            //                 " mb.Curraddr_no||   ' ม.' || mb.Curraddr_moo,' ซ.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถ.' || mb.Curraddr_ROAD Cur_Add1,"+    
+            //                 " mb.Currtambol_code,     "+
+            //                 " mb.Curramphur_CODE,     "+
+            //                 " mb.CurrPROVINCE_CODE,     "+
+            //                 " mb.Curraddr_POSTCODE  "+
+            //                 " From MBMEMBMASTER mb inner join mbucfprename on mb.prename_code = mbucfprename.prename_code  " +
+            //                 " inner join mbucfmembgroup on mb.MEMBGROUP_CODE = mbucfmembgroup.membgroup_code "+						  
+            //                 " where mb.Card_person='"+ lbCD_IDCard.Text +"'";
 
 
-            DataTable dt = ClsMST.SelectQuery_ORA(sql);
+            str = "SELECT * FROM  mbmembmaster WHERE card_person = '" + m_txtID.Text + "'";
+
+            DataTable dt = ClsMST.SelectQuery(str);
             if (dt.Rows.Count<=0)
             {
                 return;
             }
 
-            lbMb_name.Text = dt.Rows[0]["Mbname"].ToString();
-            lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
-            lbMb_Add.Text = dt.Rows[0]["add1"].ToString();
+
+           // lbMb_name.Text = dt.Rows[0]["memb_name"].ToString();
+            textBox1.Text = dt.Rows[0]["memb_name"].ToString();
+            textBox2.Text = dt.Rows[0]["addr_road"].ToString();
+            textBox3.Text = dt.Rows[0]["birth_date"].ToString();
+            textBox4.Text = dt.Rows[0]["coop_id"].ToString();
+           // lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
+           // lbMb_Add.Text = dt.Rows[0]["add1"].ToString();
             //lbMb_Add.Text = 
                 
 
@@ -202,15 +215,24 @@ namespace SVMember
                                     fields[(int)NID_FIELD.SURNAME_E];
                 m_txtFullNameE.Text = fullname;
 
-                m_txtBrithDate.Text = fields[(int)NID_FIELD.BIRTH_DATE];
-              
-                //m_txtBrithDate.Text = Fc.GetshotDate(fields[(int)NID_FIELD.BIRTH_DATE] ,17);
+               
 
-                //string birthDate = fields[(int)NID_FIELD.BIRTH_DATE].ToString();
-                //string thaiFormattedDate = Fc.GetshotDate(birthDate, 17);
-                //m_txtBrithDate.Text = thaiFormattedDate;
-                //string thaiFormattedDate = Fc.GetshotDate(fields[(int)NID_FIELD.BIRTH_DATE], 17);
-                //m_txtBrithDate.Text = thaiFormattedDate;
+                string birthday = fields[(int)NID_FIELD.BIRTH_DATE].ToString();
+                DateTime date;
+                CultureInfo thaiCulture = new CultureInfo("th-TH");
+                thaiCulture.DateTimeFormat.Calendar = new ThaiBuddhistCalendar();
+
+                if (DateTime.TryParseExact(birthday, "yyyyMMdd", CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
+                {
+                    int thaiYear = date.Year; // Convert to Thai year
+                    string thaiDate = date.ToString("dd MMMM", thaiCulture) + " " + thaiYear.ToString();
+                    m_txtBrithDate.Text = thaiDate;
+                }
+                else
+                {
+                    // Handle the case where the input is not in the expected format
+                    // Display an error message or provide a default value
+                }
 
 
                 m_txtAddress.Text = fields[(int)NID_FIELD.HOME_NO] + "   " +
@@ -235,6 +257,8 @@ namespace SVMember
                 //if ("99999999" == m_txtExpiryDate.Text)
                 //    m_txtExpiryDate.Text = "99999999 ตลอดชีพ";
                 //m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
+
+                ShowData();
             }
 
             byte[] NIDPicture = new byte[1024 * 5];
