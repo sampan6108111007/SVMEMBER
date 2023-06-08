@@ -86,57 +86,86 @@ namespace SVMember
             //ClsMST.GetDB_Oracle(); // Oracle
             //ShowData();
 
-
-
-            ClsMST.GetDb();       
+            ClsMST.GetDb();
+            
         }
-        
-        void ShowData()
+
+        void ShowData() //string id_card
         {
-            //sql = "select "+
-            //                 " mb.MEMBER_NO,   "+
-            //                 " mb.CARD_PERSON,    "+                           
-            //                 " mbucfprename.prename_desc || mb.MEMB_NAME || '     ' || mb.MEMB_SURNAME as Mbname,   "+                            
-            //                 " mb.MEMBGROUP_CODE,   "+
-            //                 " mbucfmembgroup.membgroup_desc,  "+
-            //                 " mb.resign_status,   "+
-            //                 " mb.MEMBER_DATE,   "+
-            //                 " mb.BIRTH_DATE,   "+
-            //                 " mb.MEMBER_STATUS,   "+
-            //                 " mb.RETRY_DATE,   "+
-            //                 " mb.RESIGN_DATE,   "+
-            //                 " mb.MATE_NAME,   "+
-            //                 " mb.addr_phone,     "+                            
-            //                 " mb.addr_mobilephone,  "+
-            //                 " mb.addr_no ||' ม.' ||mb.addr_moo || ' ซ.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถ.' ||mb.addr_ROAD Add1,"+  
-            //                 " mb.tambol_code,   "+
-            //                 " mb.amphur_CODE,   "+
-            //                 " mb.PROVINCE_CODE,   "+
-            //                 " mb.addr_POSTCODE,   "+
-            //                 " mb.Curraddr_no||   ' ม.' || mb.Curraddr_moo,' ซ.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถ.' || mb.Curraddr_ROAD Cur_Add1,"+    
-            //                 " mb.Currtambol_code,     "+
-            //                 " mb.Curramphur_CODE,     "+
-            //                 " mb.CurrPROVINCE_CODE,     "+
-            //                 " mb.Curraddr_POSTCODE  "+
-            //                 " From MBMEMBMASTER mb inner join mbucfprename on mb.prename_code = mbucfprename.prename_code  " +
-            //                 " inner join mbucfmembgroup on mb.MEMBGROUP_CODE = mbucfmembgroup.membgroup_code "+						  
-            //                 " where mb.Card_person='"+ lbCD_IDCard.Text +"'";
+            //string vWhere = "";
+
+            str = "select " +
+                             " mb.MEMBER_NO,   " +
+                             " mb.CARD_PERSON,    " +
+                             " mbucfprename.prename_desc || mb.MEMB_NAME || '     ' || mb.MEMB_SURNAME as Mbname,   " +
+                             " mb.MEMBGROUP_CODE,   " +
+                             " mbucfmembgroup.membgroup_desc,  " +
+                             " mb.resign_status,   " +
+                             " mb.MEMBER_DATE,   " +
+                             " mb.BIRTH_DATE,   " +
+                             " mb.MEMBER_STATUS,   " +
+                             " mb.RETRY_DATE,   " +
+                             " mb.RESIGN_DATE,   " +
+                             " mb.MATE_NAME,   " +
+                             " mb.addr_phone,     " +
+                             " mb.addr_mobilephone,  " +
+                             " mb.addr_no ||' ม.' ||mb.addr_moo || ' ซ.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถ.' ||mb.addr_ROAD Add1," +
+                             " mb.tambol_code,   " +
+                             " mb.amphur_CODE,   " +
+                             " mb.PROVINCE_CODE,   " +
+                             " mb.addr_POSTCODE,   " +
+                             " mbucftambol.tambol_desc, " +
+                             " mbucfdistrict.district_desc, " +
+                             " mbucfprovince.province_desc, " +
+                             " mb.Curraddr_no||   ' ม.' || mb.Curraddr_moo || ' ซ.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถ.' || mb.Curraddr_ROAD Cur_Add1," +
+                             " mb.Currtambol_code,     " +
+                             " mb.Curramphur_CODE,     " +
+                             " mb.CurrPROVINCE_CODE,     " +
+                             " mb.Curraddr_POSTCODE  " +
+                             " From MBMEMBMASTER mb inner join mbucfprename on mb.prename_code = mbucfprename.prename_code  " +
+                             " inner join mbucfmembgroup on mb.MEMBGROUP_CODE = mbucfmembgroup.membgroup_code " +
+                             " inner join mbucfprovince on mb.province_code = mbucfprovince.province_code " +
+                             " inner join mbucfdistrict on mb.amphur_code = mbucfdistrict.district_code " +
+                             " inner join mbucftambol on mb.tambol_code = mbucftambol.tambol_code " +
+                             " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "'";
+            
+            
+            
+
+          
+
+            //if (id_card != "")
+            //{
+            //    vWhere = "AND where mb.member_no ='" + id_card + "'";
+            //}
+
+            //str += vWhere;
 
 
-            str = "SELECT * FROM  mbmembmaster WHERE card_person = '" + m_txtID.Text + "'";
 
             DataTable dt = ClsMST.SelectQuery(str);
             if (dt.Rows.Count<=0)
             {
+                string message = "ข้อมูลบัตรประชาชน ไม่มีอยู่ในข้อมูลสมาชิกสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
+                string title = "error";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                if (result == DialogResult.Abort)
+                {
+                    this.Close();
+                }  
+
                 return;
             }
 
 
            // lbMb_name.Text = dt.Rows[0]["memb_name"].ToString();
-            textBox1.Text = dt.Rows[0]["memb_name"].ToString();
-            textBox2.Text = dt.Rows[0]["addr_road"].ToString();
-            textBox3.Text = dt.Rows[0]["birth_date"].ToString();
-            textBox4.Text = dt.Rows[0]["coop_id"].ToString();
+            lbMb_name.Text = dt.Rows[0]["Mbname"].ToString();
+            lbMb_Add.Text = dt.Rows[0]["Add1"].ToString();
+            lbMb_Add2.Text = dt.Rows[0]["Cur_Add1"].ToString();
+            label9.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString() , 15);
+            lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
+            label5.Text = dt.Rows[0]["addr_mobilephone"].ToString();
            // lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
            // lbMb_Add.Text = dt.Rows[0]["add1"].ToString();
             //lbMb_Add.Text = 
@@ -147,26 +176,29 @@ namespace SVMember
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
             ReadCard();
         }
         
         protected int ReadCard()
         {
+           
+           
             String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
-
             IntPtr obj = selectReader(strTerminal);
-
 
             Int32 nInsertCard = 0;
             nInsertCard = RDNID.connectCardRD(obj);
             if (nInsertCard != 0)
             {
+      
                 String m;
                 m = String.Format(" error no {0} ", nInsertCard);
                 MessageBox.Show(m);
 
                 RDNID.disconnectCardRD(obj);
                 RDNID.deselectReaderRD(obj);
+                
                 return nInsertCard;
             }
 
@@ -214,6 +246,7 @@ namespace SVMember
                                     fields[(int)NID_FIELD.MIDNAME_E] + " " +
                                     fields[(int)NID_FIELD.SURNAME_E];
                 m_txtFullNameE.Text = fullname;
+                label2.Text = fullname;
 
                
 
@@ -258,7 +291,12 @@ namespace SVMember
                 //    m_txtExpiryDate.Text = "99999999 ตลอดชีพ";
                 //m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
 
+                // Clear the values step by step
+                
+
                 ShowData();
+                
+               
             }
 
             byte[] NIDPicture = new byte[1024 * 5];
@@ -288,12 +326,32 @@ namespace SVMember
 
           //  Get_MBinfo(NIDNum);
 
-
             return 0;
 
-
-
         }
+
+        
+
+        private void ClearData()
+        {
+            // Clear the text boxes
+            m_txtID.Text = "";
+            m_txtFullNameT.Text = "";
+            m_txtFullNameE.Text = "";
+            m_txtBrithDate.Text = "";
+            m_txtAddress.Text = "";
+            // Clear the picture box
+            m_picPhoto.Image = null;
+            // Clear any other relevant fields
+            lb_nameInBut.Text = "";
+            lb_surnameInBut.Text = "";
+            label2.Text = "";
+
+            
+        }
+
+     
+
         public IntPtr selectReader(String reader)
         {
             IntPtr mCard = (IntPtr)0;
@@ -378,6 +436,8 @@ namespace SVMember
             ISSUE_NUM,  //12345678901234 //14-Char
             END
         };
+
+     
 
         private void m_ListReaderCard_SelectedIndexChanged(object sender, EventArgs e)
         {

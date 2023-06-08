@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbCD_IDCard = new System.Windows.Forms.Label();
             this.m_txtBrithDate = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_txtAddress = new System.Windows.Forms.TextBox();
@@ -58,11 +59,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbCD_IDCard = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_picPhoto)).BeginInit();
             this.SuspendLayout();
@@ -72,10 +70,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::SVMember.Properties.Resources.BG4;
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lbCD_IDCard);
             this.panel1.Controls.Add(this.m_txtBrithDate);
             this.panel1.Controls.Add(this.label1);
@@ -110,35 +106,47 @@
             this.panel1.Size = new System.Drawing.Size(992, 616);
             this.panel1.TabIndex = 13;
             // 
+            // lbCD_IDCard
+            // 
+            this.lbCD_IDCard.AutoSize = true;
+            this.lbCD_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lbCD_IDCard.Location = new System.Drawing.Point(111, 116);
+            this.lbCD_IDCard.Name = "lbCD_IDCard";
+            this.lbCD_IDCard.Size = new System.Drawing.Size(148, 20);
+            this.lbCD_IDCard.TabIndex = 80;
+            this.lbCD_IDCard.Text = "เลขที่บัตรประชาชน :";
+            // 
             // m_txtBrithDate
             // 
             this.m_txtBrithDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.m_txtBrithDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.m_txtBrithDate.Location = new System.Drawing.Point(347, 281);
+            this.m_txtBrithDate.Location = new System.Drawing.Point(176, 282);
             this.m_txtBrithDate.Name = "m_txtBrithDate";
+            this.m_txtBrithDate.ReadOnly = true;
             this.m_txtBrithDate.Size = new System.Drawing.Size(235, 26);
             this.m_txtBrithDate.TabIndex = 79;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(109, 185);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 78;
-            this.label1.Text = "Name";
+            this.label1.Text = "Name :";
             // 
             // m_txtAddress
             // 
             this.m_txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.m_txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.m_txtAddress.Location = new System.Drawing.Point(154, 218);
+            this.m_txtAddress.Location = new System.Drawing.Point(176, 218);
             this.m_txtAddress.Multiline = true;
             this.m_txtAddress.Name = "m_txtAddress";
-            this.m_txtAddress.Size = new System.Drawing.Size(300, 51);
+            this.m_txtAddress.ReadOnly = true;
+            this.m_txtAddress.Size = new System.Drawing.Size(278, 51);
             this.m_txtAddress.TabIndex = 77;
             // 
             // m_txtFullNameE
@@ -148,6 +156,7 @@
             this.m_txtFullNameE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.m_txtFullNameE.Location = new System.Drawing.Point(176, 186);
             this.m_txtFullNameE.Name = "m_txtFullNameE";
+            this.m_txtFullNameE.ReadOnly = true;
             this.m_txtFullNameE.Size = new System.Drawing.Size(278, 26);
             this.m_txtFullNameE.TabIndex = 76;
             // 
@@ -178,6 +187,7 @@
             this.m_txtFullNameT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.m_txtFullNameT.Location = new System.Drawing.Point(176, 153);
             this.m_txtFullNameT.Name = "m_txtFullNameT";
+            this.m_txtFullNameT.ReadOnly = true;
             this.m_txtFullNameT.Size = new System.Drawing.Size(278, 26);
             this.m_txtFullNameT.TabIndex = 73;
             // 
@@ -187,6 +197,7 @@
             this.m_txtID.Location = new System.Drawing.Point(264, 114);
             this.m_txtID.Mask = "#-####-#####-##-#";
             this.m_txtID.Name = "m_txtID";
+            this.m_txtID.ReadOnly = true;
             this.m_txtID.Size = new System.Drawing.Size(190, 27);
             this.m_txtID.TabIndex = 72;
             // 
@@ -226,12 +237,12 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label14.Location = new System.Drawing.Point(145, 525);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label14.Location = new System.Drawing.Point(137, 525);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 20);
+            this.label14.Size = new System.Drawing.Size(64, 20);
             this.label14.TabIndex = 44;
-            this.label14.Text = "วันเกืด";
+            this.label14.Text = "วันเกืด :";
             // 
             // label7
             // 
@@ -242,16 +253,17 @@
             this.label7.Size = new System.Drawing.Size(192, 25);
             this.label7.TabIndex = 43;
             this.label7.Text = "นาย สหกรณ์ออมทรัพย์คร";
+            this.label7.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label6.Location = new System.Drawing.Point(98, 287);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 42;
-            this.label6.Text = "วันเกิด";
+            this.label6.Text = "วันเกิด :";
             // 
             // label5
             // 
@@ -300,7 +312,7 @@
             // 
             this.lb_mbno.BackColor = System.Drawing.Color.White;
             this.lb_mbno.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_mbno.Location = new System.Drawing.Point(216, 382);
+            this.lb_mbno.Location = new System.Drawing.Point(434, 382);
             this.lb_mbno.Name = "lb_mbno";
             this.lb_mbno.Size = new System.Drawing.Size(148, 31);
             this.lb_mbno.TabIndex = 30;
@@ -310,18 +322,18 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label11.Location = new System.Drawing.Point(370, 392);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label11.Location = new System.Drawing.Point(362, 388);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 20);
+            this.label11.Size = new System.Drawing.Size(74, 20);
             this.label11.TabIndex = 29;
-            this.label11.Text = "ทะเบียน";
+            this.label11.Text = "ทะเบียน :";
             // 
             // m_picPhoto
             // 
-            this.m_picPhoto.Location = new System.Drawing.Point(621, 137);
+            this.m_picPhoto.Location = new System.Drawing.Point(457, 138);
             this.m_picPhoto.Name = "m_picPhoto";
-            this.m_picPhoto.Size = new System.Drawing.Size(331, 428);
+            this.m_picPhoto.Size = new System.Drawing.Size(133, 170);
             this.m_picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.m_picPhoto.TabIndex = 27;
             this.m_picPhoto.TabStop = false;
@@ -330,53 +342,53 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.Location = new System.Drawing.Point(93, 553);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label13.Location = new System.Drawing.Point(77, 553);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(102, 20);
+            this.label13.Size = new System.Drawing.Size(124, 20);
             this.label13.TabIndex = 25;
-            this.label13.Text = "เบอร์โทร/มือถือ";
+            this.label13.Text = "เบอร์โทร/มือถือ :";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label10.Location = new System.Drawing.Point(159, 467);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label10.Location = new System.Drawing.Point(154, 467);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 20);
+            this.label10.Size = new System.Drawing.Size(48, 20);
             this.label10.TabIndex = 21;
-            this.label10.Text = "ที่อยู่";
+            this.label10.Text = "ที่อยู่ :";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label12.Location = new System.Drawing.Point(139, 435);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label12.Location = new System.Drawing.Point(129, 435);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 20);
+            this.label12.Size = new System.Drawing.Size(72, 20);
             this.label12.TabIndex = 19;
-            this.label12.Text = "ชื่อ-สกุล";
+            this.label12.Text = "ชื่อ-สกุล :";
             // 
             // lbCD_Add1
             // 
-            this.lbCD_Add1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lbCD_Add1.Location = new System.Drawing.Point(111, 221);
+            this.lbCD_Add1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lbCD_Add1.Location = new System.Drawing.Point(102, 221);
             this.lbCD_Add1.Name = "lbCD_Add1";
-            this.lbCD_Add1.Size = new System.Drawing.Size(49, 32);
+            this.lbCD_Add1.Size = new System.Drawing.Size(53, 35);
             this.lbCD_Add1.TabIndex = 18;
-            this.lbCD_Add1.Text = "ที่อยู่";
+            this.lbCD_Add1.Text = "ที่อยู่ :";
             // 
             // lbCD_name
             // 
             this.lbCD_name.AutoSize = true;
-            this.lbCD_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lbCD_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lbCD_name.Location = new System.Drawing.Point(110, 154);
             this.lbCD_name.Name = "lbCD_name";
-            this.lbCD_name.Size = new System.Drawing.Size(67, 25);
+            this.lbCD_name.Size = new System.Drawing.Size(72, 20);
             this.lbCD_name.TabIndex = 16;
-            this.lbCD_name.Text = "ชื่อ-สกุล";
+            this.lbCD_name.Text = "ชื่อ-สกุล :";
             // 
             // label15
             // 
@@ -402,58 +414,32 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(818, 651);
+            this.button1.Location = new System.Drawing.Point(825, 651);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 43);
             this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
+            this.button1.Text = "อ่านบัตร";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lbCD_IDCard
+            // label2
             // 
-            this.lbCD_IDCard.AutoSize = true;
-            this.lbCD_IDCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lbCD_IDCard.Location = new System.Drawing.Point(111, 116);
-            this.lbCD_IDCard.Name = "lbCD_IDCard";
-            this.lbCD_IDCard.Size = new System.Drawing.Size(149, 25);
-            this.lbCD_IDCard.TabIndex = 80;
-            this.lbCD_IDCard.Text = "เลขที่บัตรประชาชน";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 271);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 85;
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(398, 435);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 81;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox2.Location = new System.Drawing.Point(398, 467);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 88);
-            this.textBox2.TabIndex = 82;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox3.Location = new System.Drawing.Point(398, 561);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 26);
-            this.textBox3.TabIndex = 83;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(446, 394);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 84;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Location = new System.Drawing.Point(106, 497);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 20);
+            this.label3.TabIndex = 86;
+            this.label3.Text = "ที่อยู่ปัจจุบัน :";
             // 
             // Frm_UpdateData
             // 
@@ -507,10 +493,8 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox m_txtBrithDate;
         private System.Windows.Forms.Label lbCD_IDCard;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
 
     }
 }
