@@ -73,6 +73,26 @@ namespace SVMember.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_green {
+            get {
+                object obj = ResourceManager.GetObject("bg_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_green2 {
+            get {
+                object obj = ResourceManager.GetObject("bg-green2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BG4 {
             get {
                 object obj = ResourceManager.GetObject("BG4", resourceCulture);
@@ -126,6 +146,46 @@ namespace SVMember.Properties {
         internal static System.Drawing.Bitmap SaveSU {
             get {
                 object obj = ResourceManager.GetObject("SaveSU", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก {
+            get {
+                object obj = ResourceManager.GetObject("โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก1 {
+            get {
+                object obj = ResourceManager.GetObject("โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก2 {
+            get {
+                object obj = ResourceManager.GetObject("โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก3 {
+            get {
+                object obj = ResourceManager.GetObject("โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

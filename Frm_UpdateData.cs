@@ -109,7 +109,7 @@ namespace SVMember
                              " mb.MATE_NAME,   " +
                              " mb.addr_phone,     " +
                              " mb.addr_mobilephone,  " +
-                             " mb.addr_no ||' ม.' ||mb.addr_moo || ' ซ.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถ.' ||mb.addr_ROAD Add1," +
+                             " mb.addr_no ||' ม.' ||mb.addr_moo || ' ซ.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถ.' ||mb.addr_ROAD || ' ต.' || mbucftambol.tambol_desc || ' อ.' || mbucfdistrict.district_desc || ' จ. ' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
                              " mb.tambol_code,   " +
                              " mb.amphur_CODE,   " +
                              " mb.PROVINCE_CODE,   " +
@@ -117,16 +117,23 @@ namespace SVMember
                              " mbucftambol.tambol_desc, " +
                              " mbucfdistrict.district_desc, " +
                              " mbucfprovince.province_desc, " +
-                             " mb.Curraddr_no||   ' ม.' || mb.Curraddr_moo || ' ซ.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถ.' || mb.Curraddr_ROAD Cur_Add1," +
+                             " mb.Curraddr_no ||' ม.' || mb.Curraddr_moo || ' ซ.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถ.' || mb.Curraddr_ROAD || ' ต.' || mbucftambol_curr.tambol_desc || ' อ.' || mbucfdistrict_curr.district_desc || ' จ. ' ||mbucfprovince_curr.province_desc || ' ' ||mb.addr_postcode Cur_Add1, " +
                              " mb.Currtambol_code,     " +
                              " mb.Curramphur_CODE,     " +
                              " mb.CurrPROVINCE_CODE,     " +
-                             " mb.Curraddr_POSTCODE  " +
+                             " mb.Curraddr_POSTCODE,  " +
+                             " mbucfprovince_curr.province_desc," +
+                             "mbucfdistrict_curr.district_desc, " +
+                             " mbucftambol_curr.tambol_desc, " +
+                             " mb.Curraddr_POSTCODE " +
                              " From MBMEMBMASTER mb inner join mbucfprename on mb.prename_code = mbucfprename.prename_code  " +
                              " inner join mbucfmembgroup on mb.MEMBGROUP_CODE = mbucfmembgroup.membgroup_code " +
                              " inner join mbucfprovince on mb.province_code = mbucfprovince.province_code " +
                              " inner join mbucfdistrict on mb.amphur_code = mbucfdistrict.district_code " +
                              " inner join mbucftambol on mb.tambol_code = mbucftambol.tambol_code " +
+                             " inner join mbucfprovince  mbucfprovince_curr on mb.currprovince_code = mbucfprovince_curr.province_code"+
+                             " inner join mbucfdistrict  mbucfdistrict_curr on mb.curramphur_code = mbucfdistrict_curr.district_code" +
+                             " inner join mbucftambol  mbucftambol_curr on mb.currtambol_code = mbucftambol_curr.tambol_code" +
                              " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "'";
             
             
@@ -177,7 +184,8 @@ namespace SVMember
         private void button1_Click(object sender, EventArgs e)
         {
           
-            ReadCard();
+          //  ReadCard();
+            ShowData();
         }
         
         protected int ReadCard()
@@ -294,7 +302,7 @@ namespace SVMember
                 // Clear the values step by step
                 
 
-                ShowData();
+               // ShowData();
                 
                
             }

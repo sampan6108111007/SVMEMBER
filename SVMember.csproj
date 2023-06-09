@@ -282,6 +282,24 @@
   <ItemGroup>
     <None Include="img\SaveSU.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\bg_green.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\bg-green2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
