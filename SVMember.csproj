@@ -67,6 +67,9 @@
     <Compile Include="Class\ClassMST.cs" />
     <Compile Include="Class\GlobalValiable.cs" />
     <Compile Include="Class\INIFile.cs" />
+    <Compile Include="controls\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +302,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cleaning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

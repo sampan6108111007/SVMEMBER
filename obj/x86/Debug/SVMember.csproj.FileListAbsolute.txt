@@ -22,6 +22,5 @@ D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_Se
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_SeminarState.resources
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_UpdateData.resources
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_UpdateDataByOne.resources
-D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.csprojResolveAssemblyReference.cache
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\Interop.AcroPDFLib.dll
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.csproj.ResolveComReference.cache

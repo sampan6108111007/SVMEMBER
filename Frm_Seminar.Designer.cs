@@ -161,7 +161,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(232, 254);
+            this.panel1.Location = new System.Drawing.Point(167, 293);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(553, 347);
             this.panel1.TabIndex = 195;
@@ -181,7 +181,6 @@
             // 
             // pictureBox1
             // 
-            //this.pictureBox1.Image = global::SVMember.Properties.Resources.image_processing;
             this.pictureBox1.Location = new System.Drawing.Point(8, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(534, 323);
@@ -323,7 +322,7 @@
             // 
             this.lb_SeqNo.BackColor = System.Drawing.Color.White;
             this.lb_SeqNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_SeqNo.Font = new System.Drawing.Font("TH SarabunPSK", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_SeqNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_SeqNo.Location = new System.Drawing.Point(342, 568);
             this.lb_SeqNo.Name = "lb_SeqNo";
             this.lb_SeqNo.Size = new System.Drawing.Size(296, 89);
@@ -334,7 +333,7 @@
             // 
             this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label15.Location = new System.Drawing.Point(342, 513);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(296, 55);
@@ -346,7 +345,7 @@
             // 
             this.lb_Regis.BackColor = System.Drawing.Color.White;
             this.lb_Regis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Regis.Font = new System.Drawing.Font("TH SarabunPSK", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_Regis.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_Regis.Location = new System.Drawing.Point(40, 568);
             this.lb_Regis.Name = "lb_Regis";
             this.lb_Regis.Size = new System.Drawing.Size(296, 89);
@@ -357,7 +356,7 @@
             // 
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label12.Location = new System.Drawing.Point(40, 513);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(296, 55);
@@ -379,7 +378,7 @@
             // 
             this.lb_group2.BackColor = System.Drawing.Color.White;
             this.lb_group2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_group2.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_group2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_group2.Location = new System.Drawing.Point(230, 461);
             this.lb_group2.Name = "lb_group2";
             this.lb_group2.Size = new System.Drawing.Size(418, 46);
@@ -391,10 +390,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label4.Location = new System.Drawing.Point(33, 319);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 46);
+            this.label4.Size = new System.Drawing.Size(262, 48);
             this.label4.TabIndex = 182;
             this.label4.Text = "เลขที่บัตร ปชช.";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -403,7 +402,7 @@
             // 
             this.lb_group.BackColor = System.Drawing.Color.White;
             this.lb_group.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_group.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_group.Location = new System.Drawing.Point(230, 414);
             this.lb_group.Name = "lb_group";
             this.lb_group.Size = new System.Drawing.Size(418, 46);
@@ -427,7 +426,7 @@
             // 
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label8.Location = new System.Drawing.Point(33, 461);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(193, 46);
@@ -439,7 +438,7 @@
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Location = new System.Drawing.Point(33, 366);
             this.label5.Name = "label5";
@@ -452,7 +451,7 @@
             // 
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label7.Location = new System.Drawing.Point(33, 414);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(193, 46);
@@ -464,7 +463,7 @@
             // 
             this.lb_Tname2.BackColor = System.Drawing.Color.White;
             this.lb_Tname2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Tname2.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_Tname2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_Tname2.Location = new System.Drawing.Point(230, 367);
             this.lb_Tname2.Name = "lb_Tname2";
             this.lb_Tname2.Size = new System.Drawing.Size(418, 46);
@@ -475,10 +474,10 @@
             // 
             this.lb_xYear.AutoSize = true;
             this.lb_xYear.BackColor = System.Drawing.Color.White;
-            this.lb_xYear.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_xYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_xYear.Location = new System.Drawing.Point(758, 98);
             this.lb_xYear.Name = "lb_xYear";
-            this.lb_xYear.Size = new System.Drawing.Size(105, 60);
+            this.lb_xYear.Size = new System.Drawing.Size(151, 63);
             this.lb_xYear.TabIndex = 181;
             this.lb_xYear.Text = "2563";
             this.lb_xYear.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -487,10 +486,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("TH SarabunPSK", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label3.Location = new System.Drawing.Point(300, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(523, 44);
+            this.label3.Size = new System.Drawing.Size(724, 46);
             this.label3.TabIndex = 180;
             this.label3.Text = "หอประชุมจันทน์ผา มหาวิทยาลัยราชภัฎลำปาง";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -498,7 +497,6 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-           // this.pictureBox2.Image = global::SVMember.Properties.Resources._6;
             this.pictureBox2.Location = new System.Drawing.Point(33, 30);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(182, 177);
@@ -510,10 +508,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.Location = new System.Drawing.Point(263, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(484, 60);
+            this.label2.Size = new System.Drawing.Size(665, 63);
             this.label2.TabIndex = 178;
             this.label2.Text = "การประชุมใหญ่สามัญ ประจำปี";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -521,7 +519,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Font = new System.Drawing.Font("TH SarabunPSK", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(395, 21);
             this.label1.Name = "label1";
@@ -534,7 +532,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-           // this.BackgroundImage = global::SVMember.Properties.Resources.vector_blue;
             this.ClientSize = new System.Drawing.Size(1123, 819);
             this.Controls.Add(this.panel2);
             this.Name = "Frm_Seminar";

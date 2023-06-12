@@ -16,6 +16,7 @@ using System.Globalization;
 using Oracle.DataAccess.Client;
 
 
+
 namespace SVMember
 {
     public partial class Frm_UpdateData : Form
@@ -27,6 +28,10 @@ namespace SVMember
         char[] sp = { '|' };
         string[] MBno;
         string str;
+
+        
+        IntPtr obj;
+        bool CardStateChange = false;
 
         public string mB_Info;
 
@@ -85,19 +90,21 @@ namespace SVMember
         {
             //ClsMST.GetDB_Oracle(); // Oracle
             //ShowData();
+            
 
             ClsMST.GetDb();
-            
+            bool CardStateChange = true;
+           
         }
 
         void ShowData() //string id_card
-        {
+         {
             //string vWhere = "";
 
             str = "select " +
                              " mb.MEMBER_NO,   " +
                              " mb.CARD_PERSON,    " +
-                             " mbucfprename.prename_desc || mb.MEMB_NAME || '     ' || mb.MEMB_SURNAME as Mbname,   " +
+                             " mbucfprename.prename_desc || mb.MEMB_NAME || '    ' || mb.MEMB_SURNAME as Mbname,   " +
                              " mb.MEMBGROUP_CODE,   " +
                              " mbucfmembgroup.membgroup_desc,  " +
                              " mb.resign_status,   " +
@@ -153,14 +160,14 @@ namespace SVMember
             DataTable dt = ClsMST.SelectQuery(str);
             if (dt.Rows.Count<=0)
             {
-                string message = "ข้อมูลบัตรประชาชน ไม่มีอยู่ในข้อมูลสมาชิกสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
-                string title = "error";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
-                if (result == DialogResult.Abort)
-                {
-                    this.Close();
-                }  
+                //string message = "ข้อมูลบัตรประชาชน ไม่มีอยู่ในข้อมูลสมาชิกสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
+                //string title = "error";
+                //MessageBoxButtons buttons = MessageBoxButtons.OK;
+                //DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+                //if (result == DialogResult.Abort)
+                //{
+                //    this.Close();
+                //}  
 
                 return;
             }
@@ -181,17 +188,41 @@ namespace SVMember
         
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        //private void button1_Click(object sender, EventArgs e)
+        //{
           
-          //  ReadCard();
-            ShowData();
+        //  //  ReadCard();
+        //    ShowData();
+        //}
+
+        private void timer_AutoRead_Tick(object sender, EventArgs e)
+        {
+           
+            Int32 nInsertCard = 0;
+            nInsertCard = RDNID.connectCardRD(obj);
+
+            //textBox1.Text  +=  nInsertCard.ToString() + " on  " ;
+
+            //nInsertCard = RDNID.disconnectCardRD(obj);
+
+            //textBox1.Text += nInsertCard.ToString() + " off | ";
+
+            if (nInsertCard != 0)
+            {
+                ReadCard();
+            }
+            else 
+            {
+                ClearData();
+            }
+
+            
         }
-        
+
+  
         protected int ReadCard()
         {
-           
-           
+      
             String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
             IntPtr obj = selectReader(strTerminal);
 
@@ -200,15 +231,20 @@ namespace SVMember
             if (nInsertCard != 0)
             {
       
-                String m;
-                m = String.Format(" error no {0} ", nInsertCard);
-                MessageBox.Show(m);
+                //String m;
+                //m = String.Format(" error no {0} ", nInsertCard);
+                //MessageBox.Show(m);
 
                 RDNID.disconnectCardRD(obj);
                 RDNID.deselectReaderRD(obj);
+
+                CardStateChange = false;
+                ClearData();
                 
                 return nInsertCard;
             }
+
+            CardStateChange = true;
 
             byte[] id = new byte[30];
             int res = RDNID.getNIDNumberRD(obj, id);
@@ -254,7 +290,7 @@ namespace SVMember
                                     fields[(int)NID_FIELD.MIDNAME_E] + " " +
                                     fields[(int)NID_FIELD.SURNAME_E];
                 m_txtFullNameE.Text = fullname;
-                label2.Text = fullname;
+                //label2.Text = fullname;
 
                
 
@@ -276,14 +312,14 @@ namespace SVMember
                 }
 
 
-                m_txtAddress.Text = fields[(int)NID_FIELD.HOME_NO] + "   " +
-                                        fields[(int)NID_FIELD.MOO] + "   " +
-                                        fields[(int)NID_FIELD.TROK] + "   " +
-                                        fields[(int)NID_FIELD.SOI] + "   " +
-                                        fields[(int)NID_FIELD.ROAD] + "   " +
-                                        fields[(int)NID_FIELD.TUMBON] + "   " +
-                                        fields[(int)NID_FIELD.AMPHOE] + "   " +
-                                        fields[(int)NID_FIELD.PROVINCE] + "   "
+                m_txtAddress.Text = fields[(int)NID_FIELD.HOME_NO] + " " +
+                                        fields[(int)NID_FIELD.MOO] + " " +
+                                        fields[(int)NID_FIELD.TROK] + " " +
+                                        fields[(int)NID_FIELD.SOI] + " " +
+                                        fields[(int)NID_FIELD.ROAD] + " " +
+                                        fields[(int)NID_FIELD.TUMBON] + " " +
+                                        fields[(int)NID_FIELD.AMPHOE] + " " +
+                                        fields[(int)NID_FIELD.PROVINCE] + " "
                                         ;
                 //if (fields[(int)NID_FIELD.GENDER] == "1")
                 //{
@@ -302,7 +338,8 @@ namespace SVMember
                 // Clear the values step by step
                 
 
-               // ShowData();
+                ShowData();
+              
                 
                
             }
@@ -334,6 +371,8 @@ namespace SVMember
 
           //  Get_MBinfo(NIDNum);
 
+           
+
             return 0;
 
         }
@@ -353,8 +392,16 @@ namespace SVMember
             // Clear any other relevant fields
             lb_nameInBut.Text = "";
             lb_surnameInBut.Text = "";
-            label2.Text = "";
+            //label2.Text = "";
+            lb_mbno.Text = "";
+            lbMb_name.Text = "";
+            lbMb_Add.Text = "";
+            lbMb_Add2.Text = "";
+            label9.Text = "";
+            label5.Text = "";
 
+
+            CardStateChange = false;
             
         }
 
@@ -451,6 +498,46 @@ namespace SVMember
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //ShowData();
+            ReadCard();
+           // MessageBox.Show("555");
+        }
+
+        private void Btn_Clear_Click(object sender, EventArgs e)
+        {
+            ClearData();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lb_time.Text = DateTime.Now.ToLocalTime().ToString();
+        }
+
+      
+
+        //protected override void OnShown(EventArgs e)
+        //{
+
+        //    String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
+        //    IntPtr obj = selectReader(strTerminal);
+        //     Int32 nInsertCard = 0;
+        //    nInsertCard = RDNID.connectCardRD(obj);
+        //    if (nInsertCard == 0)
+        //    {
+        //        base.OnShown(e);
+        //        button1.PerformClick();
+        //    }
+        //    else {
+        //        MessageBox.Show("666");
+
+        //    }
+           
+        //}
+
+       
 
         // Function to convert the date to Thai format
         
