@@ -60,12 +60,14 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.timer_AutoRead = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lb_time = new System.Windows.Forms.Label();
+            this.lb_Errortext = new System.Windows.Forms.Label();
             this.Btn_Clear = new SVMember.controls.RJButton();
             this.button1 = new SVMember.controls.RJButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_picPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,6 +77,8 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::SVMember.Properties.Resources.โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lb_Errortext);
             this.panel1.Controls.Add(this.m_txtAddress);
             this.panel1.Controls.Add(this.m_txtBrithDate);
             this.panel1.Controls.Add(this.m_txtFullNameE);
@@ -414,12 +418,6 @@
             this.timer_AutoRead.Interval = 3000;
             this.timer_AutoRead.Tick += new System.EventHandler(this.timer_AutoRead_Tick);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // lb_time
             // 
             this.lb_time.AutoSize = true;
@@ -428,6 +426,15 @@
             this.lb_time.Size = new System.Drawing.Size(35, 13);
             this.lb_time.TabIndex = 17;
             this.lb_time.Text = "label2";
+            // 
+            // lb_Errortext
+            // 
+            this.lb_Errortext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Errortext.ForeColor = System.Drawing.Color.Red;
+            this.lb_Errortext.Location = new System.Drawing.Point(604, 176);
+            this.lb_Errortext.Name = "lb_Errortext";
+            this.lb_Errortext.Size = new System.Drawing.Size(94, 28);
+            this.lb_Errortext.TabIndex = 91;
             // 
             // Btn_Clear
             // 
@@ -477,6 +484,15 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SVMember.Properties.Resources.Print;
+            this.pictureBox1.Location = new System.Drawing.Point(452, 311);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 35);
+            this.pictureBox1.TabIndex = 92;
+            this.pictureBox1.TabStop = false;
+            // 
             // Frm_UpdateData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,9 +508,11 @@
             this.Text = "Frm_UpdateData";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_UpdateData_Load);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Frm_UpdateData_MouseDoubleClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_picPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,8 +553,9 @@
         private controls.RJButton button1;
         private controls.RJButton Btn_Clear;
         private System.Windows.Forms.Timer timer_AutoRead;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lb_time;
+        private System.Windows.Forms.Label lb_Errortext;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

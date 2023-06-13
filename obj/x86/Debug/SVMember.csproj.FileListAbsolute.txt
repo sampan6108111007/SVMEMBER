@@ -24,3 +24,4 @@ D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_Up
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_UpdateDataByOne.resources
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\Interop.AcroPDFLib.dll
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.csproj.ResolveComReference.cache
+D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.csprojResolveAssemblyReference.cache

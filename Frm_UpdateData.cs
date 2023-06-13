@@ -29,6 +29,8 @@ namespace SVMember
         string[] MBno;
         string str;
 
+       
+
         
         IntPtr obj;
         bool CardStateChange = false;
@@ -101,6 +103,8 @@ namespace SVMember
          {
             //string vWhere = "";
 
+          
+
             str = "select " +
                              " mb.MEMBER_NO,   " +
                              " mb.CARD_PERSON,    " +
@@ -116,7 +120,12 @@ namespace SVMember
                              " mb.MATE_NAME,   " +
                              " mb.addr_phone,     " +
                              " mb.addr_mobilephone,  " +
-                             " mb.addr_no ||' ม.' ||mb.addr_moo || ' ซ.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถ.' ||mb.addr_ROAD || ' ต.' || mbucftambol.tambol_desc || ' อ.' || mbucfdistrict.district_desc || ' จ. ' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
+                             " mb.addr_no, " +
+                             " mb.addr_moo,  "+
+                             " mb.addr_SOI, "+
+                             " mb.addr_village, "+
+                             " mb.addr_ROAD, " +
+                             //" mb.addr_no ||' หมู่ที่.' ||mb.addr_moo || ' ซอย.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถนน' ||mb.addr_ROAD || ' ตำบล' || mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
                              " mb.tambol_code,   " +
                              " mb.amphur_CODE,   " +
                              " mb.PROVINCE_CODE,   " +
@@ -124,7 +133,7 @@ namespace SVMember
                              " mbucftambol.tambol_desc, " +
                              " mbucfdistrict.district_desc, " +
                              " mbucfprovince.province_desc, " +
-                             " mb.Curraddr_no ||' ม.' || mb.Curraddr_moo || ' ซ.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถ.' || mb.Curraddr_ROAD || ' ต.' || mbucftambol_curr.tambol_desc || ' อ.' || mbucfdistrict_curr.district_desc || ' จ. ' ||mbucfprovince_curr.province_desc || ' ' ||mb.addr_postcode Cur_Add1, " +
+                             " mb.Curraddr_no ||' หมู่ที่.' || mb.Curraddr_moo || ' ซอย.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถนน' || mb.Curraddr_ROAD || ' ตำบล' || mbucftambol_curr.tambol_desc || ' อำเภอ' || mbucfdistrict_curr.district_desc || ' จังหวัด' ||mbucfprovince_curr.province_desc || ' ' ||mb.addr_postcode Cur_Add1, " +
                              " mb.Currtambol_code,     " +
                              " mb.Curramphur_CODE,     " +
                              " mb.CurrPROVINCE_CODE,     " +
@@ -141,11 +150,8 @@ namespace SVMember
                              " inner join mbucfprovince  mbucfprovince_curr on mb.currprovince_code = mbucfprovince_curr.province_code"+
                              " inner join mbucfdistrict  mbucfdistrict_curr on mb.curramphur_code = mbucfdistrict_curr.district_code" +
                              " inner join mbucftambol  mbucftambol_curr on mb.currtambol_code = mbucftambol_curr.tambol_code" +
-                             " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "'";
-            
-            
-            
-
+                             " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "' AND mb.resign_status ='0'";
+     
           
 
             //if (id_card != "")
@@ -155,12 +161,19 @@ namespace SVMember
 
             //str += vWhere;
 
+            if (lb_Errortext.Text!="")  // ตรวจไม่พบ ยังมี dialog ค้างอยู่
+            {
+                return;
+            }
+       
 
 
             DataTable dt = ClsMST.SelectQuery(str);
             if (dt.Rows.Count<=0)
             {
-                //string message = "ข้อมูลบัตรประชาชน ไม่มีอยู่ในข้อมูลสมาชิกสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
+                string message = "ข้อมูลบัตรประชาชน ไม่มีอยู่ในข้อมูลสมาชิกสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
+                lb_Errortext.Text = message;
+
                 //string title = "error";
                 //MessageBoxButtons buttons = MessageBoxButtons.OK;
                 //DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
@@ -169,13 +182,38 @@ namespace SVMember
                 //    this.Close();
                 //}  
 
-                return;
+                if (MessageBox.Show(message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation)==DialogResult.OK )
+                {
+                    return;
+                } ;
+
+
+
+                //return;
             }
+
+
+          
 
 
            // lbMb_name.Text = dt.Rows[0]["memb_name"].ToString();
             lbMb_name.Text = dt.Rows[0]["Mbname"].ToString();
-            lbMb_Add.Text = dt.Rows[0]["Add1"].ToString();
+           // lbMb_Add.Text = dt.Rows[0]["addr_no" + "addr_moo" + "tambol_desc" + "district_desc" + "province_desc" + "addr_postcode"].ToString();
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                string addr_no = row["addr_no"].ToString();
+                string addr_moo = row["addr_moo"].ToString();
+                string tambol_desc = row["tambol_desc"].ToString();
+                string district_desc = row["district_desc"].ToString();
+                string province_desc = row["province_desc"].ToString();
+                string addr_postcode = row["addr_postcode"].ToString();
+
+                string concatenatedString = "ที่อยู่ " + addr_no + "หมู่ที่ " + addr_moo + tambol_desc + district_desc + province_desc + addr_postcode;
+                
+
+                lbMb_Add.Text = concatenatedString;
+            }
             lbMb_Add2.Text = dt.Rows[0]["Cur_Add1"].ToString();
             label9.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString() , 15);
             lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
@@ -183,10 +221,30 @@ namespace SVMember
            // lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
            // lbMb_Add.Text = dt.Rows[0]["add1"].ToString();
             //lbMb_Add.Text = 
-                
 
+            string txt_add = "";
+            
+
+            
+            if (dt.Rows[0]["addr_no"].ToString()!=""){txt_add += "เลขที่ " + dt.Rows[0]["addr_no"].ToString();}
+            if (dt.Rows[0]["addr_moo"].ToString() != "") { txt_add += "หมู่ที่ " + dt.Rows[0]["addr_moo"].ToString(); }
+
+
+            txt_add+= " ตำบล"+ dt.Rows[0]["tambol_desc"].ToString();
+            txt_add += " อำเภอ" + dt.Rows[0]["district_desc"].ToString();
+            txt_add += " จังหวัด" + dt.Rows[0]["province_desc"].ToString();
+            txt_add += " " + dt.Rows[0]["addr_postcode"].ToString();
+
+            
+            //|| mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
+                //" mb.addr_no ||' หมู่ที่.' ||mb.addr_moo || ' ซอย.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถนน' ||mb.addr_ROAD || ' ตำบล' || mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
+
+            txt_add = txt_add.Replace(" ", "");
+          // MessageBox.Show(txt_add);
+            }
+           
+                      
         
-        }
 
         //private void button1_Click(object sender, EventArgs e)
         //{
@@ -210,19 +268,21 @@ namespace SVMember
             if (nInsertCard != 0)
             {
                 ReadCard();
+
             }
             else 
             {
                 ClearData();
             }
-
-            
+           
         }
 
   
         protected int ReadCard()
         {
       
+
+
             String strTerminal = m_ListReaderCard.GetItemText(m_ListReaderCard.SelectedItem);
             IntPtr obj = selectReader(strTerminal);
 
@@ -269,6 +329,9 @@ namespace SVMember
                 string[] fields = NIDData.Split('#');
 
                 m_txtID.Text = NIDNum;                             // or use m_txtID.Text = fields[(int)NID_FIELD.NID_Number];
+
+               
+               
                             
                 String fullname = fields[(int)NID_FIELD.TITLE_T] + " " +
                                     fields[(int)NID_FIELD.NAME_T] + " " +
@@ -336,10 +399,9 @@ namespace SVMember
                 //m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
 
                 // Clear the values step by step
-                
 
-                ShowData();
               
+                ShowData();
                 
                
             }
@@ -371,12 +433,55 @@ namespace SVMember
 
           //  Get_MBinfo(NIDNum);
 
-           
-
             return 0;
-
         }
 
+
+        private void CheckData()
+
+        {
+            bool match = true;
+            string address = m_txtAddress.Text.Replace(" ","");
+            string lbAddress = lbMb_Add.Text.Replace(" ","");
+
+            if (address.Length != lbAddress.Length)
+            {
+                // The strings have different lengths, so they can't be a match
+                match = false;
+            }
+            else
+            {
+                // Compare the characters of the two strings
+                for (int i = 0; i < address.Length; i++)
+                {
+                    if (address[i] != lbAddress[i])
+                    {
+                        // The characters don't match, so it's not a match
+                        match = false;
+                        break;
+                    }
+                }
+            }
+
+            if (match)
+            {
+                // The characters of the two strings match
+                // Your code here...
+                // For example, you can display a message box
+                MessageBox.Show("The characters match!");
+              
+
+            }
+            else
+            {
+                // The characters of the two strings don't match
+                // Your code here...
+                // For example, you can display a message box
+              MessageBox.Show("จากบัตร =" + address + "จากสหกรณ์ = " + lbAddress);
+              
+            }
+
+        }
         
 
         private void ClearData()
@@ -399,7 +504,7 @@ namespace SVMember
             lbMb_Add2.Text = "";
             label9.Text = "";
             label5.Text = "";
-
+            lb_Errortext.Text = "";
 
             CardStateChange = false;
             
@@ -514,6 +619,14 @@ namespace SVMember
         private void timer1_Tick(object sender, EventArgs e)
         {
             lb_time.Text = DateTime.Now.ToLocalTime().ToString();
+        }
+
+        private void Frm_UpdateData_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (MessageBox.Show("ท่านต้องการปิดโปรแกรมนี้ หรือไม่ ","ปิดโปรแกรม",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2)==DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
       
