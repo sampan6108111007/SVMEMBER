@@ -197,7 +197,7 @@ namespace SVMember
             txt_add += " ตำบล" + dt.Rows[0]["tambol_desc"].ToString();
             txt_add += " อำเภอ" + dt.Rows[0]["district_desc"].ToString();
             txt_add += " จังหวัด" + dt.Rows[0]["province_desc"].ToString();
-            txt_add += " " + dt.Rows[0]["addr_postcode"].ToString();
+           // txt_add += " " + dt.Rows[0]["addr_postcode"].ToString();
            // txt_add = txt_add.Replace(" ", "");
 
             string txt_Crradd = "";

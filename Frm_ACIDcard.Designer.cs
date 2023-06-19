@@ -442,7 +442,6 @@
             // 
             // pictureBox2
             // 
-           // this.pictureBox2.Image = global::SVMember.Properties.Resources.image_processing;
             this.pictureBox2.Location = new System.Drawing.Point(16, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(578, 358);
@@ -452,7 +451,6 @@
             // 
             // pictureBox3
             // 
-          //  this.pictureBox3.Image = global::SVMember.Properties.Resources.Untitled;
             this.pictureBox3.Location = new System.Drawing.Point(966, 21);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(388, 338);
@@ -501,13 +499,13 @@
             // 
             // pictureBox1
             // 
-           // this.pictureBox1.Image = global::SVMember.Properties.Resources.IDC;
             this.pictureBox1.Location = new System.Drawing.Point(0, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(994, 591);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 80;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button4
             // 

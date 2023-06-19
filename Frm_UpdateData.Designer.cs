@@ -319,7 +319,7 @@
             this.m_txtAddress.Name = "m_txtAddress";
             this.m_txtAddress.Size = new System.Drawing.Size(310, 100);
             this.m_txtAddress.TabIndex = 90;
-            this.m_txtAddress.Text = "153หมู่ที่5 ตำบลหัวเมืองอำเภอเมืองปานจังหวัดลำปาง52240";
+            this.m_txtAddress.Text = "153หมู่ที่5 ตำบลหัวเมืองอำเภอเมืองปานจังหวัดลำปาง";
             // 
             // m_txtBrithDate
             // 
@@ -350,7 +350,7 @@
             this.m_txtFullNameT.Name = "m_txtFullNameT";
             this.m_txtFullNameT.Size = new System.Drawing.Size(310, 30);
             this.m_txtFullNameT.TabIndex = 87;
-            this.m_txtFullNameT.Text = "นายวุฒิภัทร    หมั้นหา";
+            this.m_txtFullNameT.Text = "นายโจโจ้ ใจดี";
             // 
             // label3
             // 

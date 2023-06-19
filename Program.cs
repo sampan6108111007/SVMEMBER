@@ -17,8 +17,9 @@ namespace SVMember
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new Form1());
 
-           // Application.Run(new Frm_Main());
-            Application.Run(new Frm_UpdateData());
+            Application.Run(new Frm_Main());
+            //Application.Run(new Frm_ACIDcard());
+            //Application.Run(new Frm_UpdateData());
             //Application.Run(new Frm_Seminar());
         }
     }
