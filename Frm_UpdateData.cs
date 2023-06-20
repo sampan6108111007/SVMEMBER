@@ -442,6 +442,7 @@ namespace SVMember
             if (dt.Rows.Count >= 0) 
             {
                 string Tname = m_txtFullNameT.Text.Replace(" ", "");
+               // string Tname = lb_nameInBut.Text + lb_surnameInBut;
                 string lbName = lbMb_name.Text.Replace(" ", "");
                 string address = m_txtAddress.Text.Replace(" ", "");
                 string lbAddress = lbMb_Add.Text.Replace(" ", "");

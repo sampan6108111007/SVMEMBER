@@ -85,7 +85,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = global::SVMember.Properties.Resources.BG4;
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.button4);

@@ -76,6 +76,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.timer_AutoRead = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.Btn_Clear = new SVMember.controls.RJButton();
             this.button1 = new SVMember.controls.RJButton();
             this.panel1.SuspendLayout();
@@ -103,6 +104,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::SVMember.Properties.Resources.โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.mbno_check);
             this.panel1.Controls.Add(this.ID_check);
             this.panel1.Controls.Add(this.add_check);
@@ -319,7 +321,7 @@
             this.m_txtAddress.Name = "m_txtAddress";
             this.m_txtAddress.Size = new System.Drawing.Size(310, 100);
             this.m_txtAddress.TabIndex = 90;
-            this.m_txtAddress.Text = "153หมู่ที่5 ตำบลหัวเมืองอำเภอเมืองปานจังหวัดลำปาง";
+            this.m_txtAddress.Text = "153หมู่ที่5  ตำบลหัวเมืองอำเภอเมืองปานจังหวัดลำปาง";
             // 
             // m_txtBrithDate
             // 
@@ -330,6 +332,7 @@
             this.m_txtBrithDate.Name = "m_txtBrithDate";
             this.m_txtBrithDate.Size = new System.Drawing.Size(310, 30);
             this.m_txtBrithDate.TabIndex = 89;
+            this.m_txtBrithDate.Text = "6  ก.ค.  2537";
             // 
             // m_txtFullNameE
             // 
@@ -350,7 +353,7 @@
             this.m_txtFullNameT.Name = "m_txtFullNameT";
             this.m_txtFullNameT.Size = new System.Drawing.Size(310, 30);
             this.m_txtFullNameT.TabIndex = 87;
-            this.m_txtFullNameT.Text = "นายโจโจ้ ใจดี";
+            this.m_txtFullNameT.Text = "นายวุฒิภัทร    หมั่นหา";
             // 
             // label3
             // 
@@ -385,23 +388,20 @@
             // 
             // lb_surnameInBut
             // 
-            this.lb_surnameInBut.AutoSize = true;
-            this.lb_surnameInBut.Location = new System.Drawing.Point(69, 163);
+            this.lb_surnameInBut.BackColor = System.Drawing.Color.Transparent;
+            this.lb_surnameInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_surnameInBut.Location = new System.Drawing.Point(69, 195);
             this.lb_surnameInBut.Name = "lb_surnameInBut";
-            this.lb_surnameInBut.Size = new System.Drawing.Size(35, 13);
+            this.lb_surnameInBut.Size = new System.Drawing.Size(107, 28);
             this.lb_surnameInBut.TabIndex = 75;
-            this.lb_surnameInBut.Text = "label7";
-            this.lb_surnameInBut.Visible = false;
             // 
             // lb_nameInBut
             // 
-            this.lb_nameInBut.AutoSize = true;
-            this.lb_nameInBut.Location = new System.Drawing.Point(69, 191);
+            this.lb_nameInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_nameInBut.Location = new System.Drawing.Point(69, 160);
             this.lb_nameInBut.Name = "lb_nameInBut";
-            this.lb_nameInBut.Size = new System.Drawing.Size(35, 13);
+            this.lb_nameInBut.Size = new System.Drawing.Size(107, 27);
             this.lb_nameInBut.TabIndex = 74;
-            this.lb_nameInBut.Text = "label6";
-            this.lb_nameInBut.Visible = false;
             // 
             // m_txtID
             // 
@@ -618,6 +618,15 @@
             this.timer_AutoRead.Interval = 3000;
             this.timer_AutoRead.Tick += new System.EventHandler(this.timer_AutoRead_Tick);
             // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(69, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 27);
+            this.label4.TabIndex = 99;
+            this.label4.Visible = false;
+            // 
             // Btn_Clear
             // 
             this.Btn_Clear.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -645,8 +654,8 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.Color.Wheat;
+            this.button1.BackgroundColor = System.Drawing.Color.Wheat;
             this.button1.BackgroundImage = global::SVMember.Properties.Resources.credit_card__2_;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.BorderColor = System.Drawing.Color.Black;
@@ -753,6 +762,7 @@
         private System.Windows.Forms.PictureBox Tname_check2;
         private System.Windows.Forms.PictureBox mbno_check;
         private System.Windows.Forms.PictureBox ID_check;
+        private System.Windows.Forms.Label label4;
 
     }
 }
