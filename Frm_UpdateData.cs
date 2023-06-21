@@ -317,7 +317,7 @@ namespace SVMember
                 string[] fields = NIDData.Split('#');
 
                 m_txtID.Text = NIDNum;                             // or use m_txtID.Text = fields[(int)NID_FIELD.NID_Number];
-
+                lb_IDcardInBut.Text = NIDNum;
                
                
                             
@@ -329,8 +329,10 @@ namespace SVMember
 
                 // เอส   ----------------------------------------------------------------------------------------------------------------
 
+                lb_PrenameInbut.Text = fields[(int)NID_FIELD.TITLE_T];
                 lb_nameInBut.Text = fields[(int)NID_FIELD.NAME_T];
                 lb_surnameInBut.Text = fields[(int)NID_FIELD.SURNAME_T];
+                label4.Text = fullname;
 
                 //----------------------------------------------------------------------------------------------------------------
 
@@ -362,6 +364,8 @@ namespace SVMember
                     // Display an error message or provide a default value
                 }
 
+                lb_BirthdateInBut.Text = fields[(int)NID_FIELD.BIRTH_DATE];
+
 
                 m_txtAddress.Text = fields[(int)NID_FIELD.HOME_NO] + " " +
                                         fields[(int)NID_FIELD.MOO] + " " +
@@ -372,6 +376,17 @@ namespace SVMember
                                         fields[(int)NID_FIELD.AMPHOE] + " " +
                                         fields[(int)NID_FIELD.PROVINCE] + " "
                                         ;
+
+                lb_HomeNoInBut.Text = fields[(int)NID_FIELD.HOME_NO];
+                lb_MooInBut.Text = fields[(int)NID_FIELD.MOO];
+                lb_TrokInBut.Text = fields[(int)NID_FIELD.TROK];
+                lb_SoiInBut.Text = fields[(int)NID_FIELD.SOI];
+                lb_RoadInBut.Text = fields[(int)NID_FIELD.ROAD];
+                lb_TumbolInBut.Text = fields[(int)NID_FIELD.TUMBON];
+                lb_AmphoeInBut.Text = fields[(int)NID_FIELD.AMPHOE];
+                lb_ProvinceInBut.Text = fields[(int)NID_FIELD.PROVINCE];
+
+
                 //if (fields[(int)NID_FIELD.GENDER] == "1")
                 //{
                 //    m_txtGender.Text = "ชาย";
@@ -441,8 +456,8 @@ namespace SVMember
             DataTable dt = ClsMST.SelectQuery(str);
             if (dt.Rows.Count >= 0) 
             {
-                string Tname = m_txtFullNameT.Text.Replace(" ", "");
-               // string Tname = lb_nameInBut.Text + lb_surnameInBut;
+               // string Tname = m_txtFullNameT.Text.Replace(" ", "");
+                string Tname = lb_PrenameInbut.Text + lb_nameInBut.Text + lb_surnameInBut.Text;
                 string lbName = lbMb_name.Text.Replace(" ", "");
                 string address = m_txtAddress.Text.Replace(" ", "");
                 string lbAddress = lbMb_Add.Text.Replace(" ", "");
@@ -482,7 +497,9 @@ namespace SVMember
 
                 if (Tname != lbName && address == lbAddress)
                 {
+                    //MessageBox.Show(Tname);
                     string message2 = "ชื่อ-นามสกุลไม่ตรงกับข้อมูลสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
+                    //string message2 = Tname;
                     label2.Text = message2;
                     // add_cross.Visible = true;
                     Tname_cross2.Visible = true;
@@ -497,7 +514,7 @@ namespace SVMember
                     crrAdd_check.Visible = true;
                     add_check2.Visible = true;
 
-
+                  
 
                     MessageBox.Show(message2, "error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -510,6 +527,7 @@ namespace SVMember
 
                  if (Tname == lbName && address == lbAddress)
                  {
+                     //string message3 = Tname;
                      string message3 = "ข้อมูลของท่านถูกต้อง";
                      label2.Text = message3;                   
                      add_check.Visible = true;

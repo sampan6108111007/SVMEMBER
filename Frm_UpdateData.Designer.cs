@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.mbno_check = new System.Windows.Forms.PictureBox();
             this.ID_check = new System.Windows.Forms.PictureBox();
             this.add_check = new System.Windows.Forms.PictureBox();
@@ -76,7 +77,17 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.timer_AutoRead = new System.Windows.Forms.Timer(this.components);
-            this.label4 = new System.Windows.Forms.Label();
+            this.lb_PrenameInbut = new System.Windows.Forms.Label();
+            this.lb_IDcardInBut = new System.Windows.Forms.Label();
+            this.lb_BirthdateInBut = new System.Windows.Forms.Label();
+            this.lb_HomeNoInBut = new System.Windows.Forms.Label();
+            this.lb_MooInBut = new System.Windows.Forms.Label();
+            this.lb_TrokInBut = new System.Windows.Forms.Label();
+            this.lb_SoiInBut = new System.Windows.Forms.Label();
+            this.lb_RoadInBut = new System.Windows.Forms.Label();
+            this.lb_TumbolInBut = new System.Windows.Forms.Label();
+            this.lb_AmphoeInBut = new System.Windows.Forms.Label();
+            this.lb_ProvinceInBut = new System.Windows.Forms.Label();
             this.Btn_Clear = new SVMember.controls.RJButton();
             this.button1 = new SVMember.controls.RJButton();
             this.panel1.SuspendLayout();
@@ -128,8 +139,6 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lbCD_IDCard);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lb_surnameInBut);
-            this.panel1.Controls.Add(this.lb_nameInBut);
             this.panel1.Controls.Add(this.m_txtID);
             this.panel1.Controls.Add(this.m_ListReaderCard);
             this.panel1.Controls.Add(this.lbMb_Add2);
@@ -154,6 +163,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1024, 576);
             this.panel1.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Location = new System.Drawing.Point(69, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(134, 27);
+            this.label4.TabIndex = 99;
             // 
             // mbno_check
             // 
@@ -390,18 +407,20 @@
             // 
             this.lb_surnameInBut.BackColor = System.Drawing.Color.Transparent;
             this.lb_surnameInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_surnameInBut.Location = new System.Drawing.Point(69, 195);
+            this.lb_surnameInBut.Location = new System.Drawing.Point(78, 70);
             this.lb_surnameInBut.Name = "lb_surnameInBut";
-            this.lb_surnameInBut.Size = new System.Drawing.Size(107, 28);
+            this.lb_surnameInBut.Size = new System.Drawing.Size(49, 19);
             this.lb_surnameInBut.TabIndex = 75;
+            this.lb_surnameInBut.Text = "หมั่นหา";
             // 
             // lb_nameInBut
             // 
             this.lb_nameInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_nameInBut.Location = new System.Drawing.Point(69, 160);
+            this.lb_nameInBut.Location = new System.Drawing.Point(78, 38);
             this.lb_nameInBut.Name = "lb_nameInBut";
-            this.lb_nameInBut.Size = new System.Drawing.Size(107, 27);
+            this.lb_nameInBut.Size = new System.Drawing.Size(49, 21);
             this.lb_nameInBut.TabIndex = 74;
+            this.lb_nameInBut.Text = "วุฒิภัทร";
             // 
             // m_txtID
             // 
@@ -615,17 +634,108 @@
             // 
             // timer_AutoRead
             // 
+            this.timer_AutoRead.Enabled = true;
             this.timer_AutoRead.Interval = 3000;
             this.timer_AutoRead.Tick += new System.EventHandler(this.timer_AutoRead_Tick);
             // 
-            // label4
+            // lb_PrenameInbut
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(69, 233);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 27);
-            this.label4.TabIndex = 99;
-            this.label4.Visible = false;
+            this.lb_PrenameInbut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_PrenameInbut.Location = new System.Drawing.Point(77, 5);
+            this.lb_PrenameInbut.Name = "lb_PrenameInbut";
+            this.lb_PrenameInbut.Size = new System.Drawing.Size(34, 23);
+            this.lb_PrenameInbut.TabIndex = 76;
+            this.lb_PrenameInbut.Text = "นาย";
+            // 
+            // lb_IDcardInBut
+            // 
+            this.lb_IDcardInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_IDcardInBut.Location = new System.Drawing.Point(146, 5);
+            this.lb_IDcardInBut.Name = "lb_IDcardInBut";
+            this.lb_IDcardInBut.Size = new System.Drawing.Size(92, 17);
+            this.lb_IDcardInBut.TabIndex = 100;
+            this.lb_IDcardInBut.Text = "1520600069293";
+            // 
+            // lb_BirthdateInBut
+            // 
+            this.lb_BirthdateInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_BirthdateInBut.Location = new System.Drawing.Point(146, 38);
+            this.lb_BirthdateInBut.Name = "lb_BirthdateInBut";
+            this.lb_BirthdateInBut.Size = new System.Drawing.Size(92, 17);
+            this.lb_BirthdateInBut.TabIndex = 101;
+            this.lb_BirthdateInBut.Text = "6  ก.ค.  2537";
+            // 
+            // lb_HomeNoInBut
+            // 
+            this.lb_HomeNoInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_HomeNoInBut.Location = new System.Drawing.Point(136, 70);
+            this.lb_HomeNoInBut.Name = "lb_HomeNoInBut";
+            this.lb_HomeNoInBut.Size = new System.Drawing.Size(36, 17);
+            this.lb_HomeNoInBut.TabIndex = 102;
+            this.lb_HomeNoInBut.Text = "153";
+            // 
+            // lb_MooInBut
+            // 
+            this.lb_MooInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_MooInBut.Location = new System.Drawing.Point(179, 70);
+            this.lb_MooInBut.Name = "lb_MooInBut";
+            this.lb_MooInBut.Size = new System.Drawing.Size(59, 19);
+            this.lb_MooInBut.TabIndex = 103;
+            this.lb_MooInBut.Text = "หมู่";
+            // 
+            // lb_TrokInBut
+            // 
+            this.lb_TrokInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_TrokInBut.Location = new System.Drawing.Point(249, 70);
+            this.lb_TrokInBut.Name = "lb_TrokInBut";
+            this.lb_TrokInBut.Size = new System.Drawing.Size(39, 17);
+            this.lb_TrokInBut.TabIndex = 104;
+            this.lb_TrokInBut.Text = "ตรอก";
+            // 
+            // lb_SoiInBut
+            // 
+            this.lb_SoiInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_SoiInBut.Location = new System.Drawing.Point(294, 70);
+            this.lb_SoiInBut.Name = "lb_SoiInBut";
+            this.lb_SoiInBut.Size = new System.Drawing.Size(39, 17);
+            this.lb_SoiInBut.TabIndex = 105;
+            this.lb_SoiInBut.Text = "ซอย";
+            // 
+            // lb_RoadInBut
+            // 
+            this.lb_RoadInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_RoadInBut.Location = new System.Drawing.Point(337, 70);
+            this.lb_RoadInBut.Name = "lb_RoadInBut";
+            this.lb_RoadInBut.Size = new System.Drawing.Size(39, 17);
+            this.lb_RoadInBut.TabIndex = 106;
+            this.lb_RoadInBut.Text = "ถนน";
+            // 
+            // lb_TumbolInBut
+            // 
+            this.lb_TumbolInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_TumbolInBut.Location = new System.Drawing.Point(382, 70);
+            this.lb_TumbolInBut.Name = "lb_TumbolInBut";
+            this.lb_TumbolInBut.Size = new System.Drawing.Size(97, 17);
+            this.lb_TumbolInBut.TabIndex = 107;
+            this.lb_TumbolInBut.Text = "ตำบล";
+            // 
+            // lb_AmphoeInBut
+            // 
+            this.lb_AmphoeInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_AmphoeInBut.Location = new System.Drawing.Point(485, 70);
+            this.lb_AmphoeInBut.Name = "lb_AmphoeInBut";
+            this.lb_AmphoeInBut.Size = new System.Drawing.Size(121, 17);
+            this.lb_AmphoeInBut.TabIndex = 107;
+            this.lb_AmphoeInBut.Text = "อำเถอ";
+            // 
+            // lb_ProvinceInBut
+            // 
+            this.lb_ProvinceInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_ProvinceInBut.Location = new System.Drawing.Point(612, 70);
+            this.lb_ProvinceInBut.Name = "lb_ProvinceInBut";
+            this.lb_ProvinceInBut.Size = new System.Drawing.Size(105, 17);
+            this.lb_ProvinceInBut.TabIndex = 107;
+            this.lb_ProvinceInBut.Text = "จังหวัด";
             // 
             // Btn_Clear
             // 
@@ -682,9 +792,22 @@
             this.BackgroundImage = global::SVMember.Properties.Resources.bg_green2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 903);
+            this.Controls.Add(this.lb_ProvinceInBut);
+            this.Controls.Add(this.lb_AmphoeInBut);
+            this.Controls.Add(this.lb_TumbolInBut);
+            this.Controls.Add(this.lb_RoadInBut);
+            this.Controls.Add(this.lb_SoiInBut);
+            this.Controls.Add(this.lb_TrokInBut);
+            this.Controls.Add(this.lb_MooInBut);
+            this.Controls.Add(this.lb_HomeNoInBut);
+            this.Controls.Add(this.lb_BirthdateInBut);
+            this.Controls.Add(this.lb_IDcardInBut);
+            this.Controls.Add(this.lb_PrenameInbut);
             this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lb_surnameInBut);
+            this.Controls.Add(this.lb_nameInBut);
             this.Name = "Frm_UpdateData";
             this.Text = "Frm_UpdateData";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -745,7 +868,6 @@
         private System.Windows.Forms.Label m_txtFullNameT;
         private controls.RJButton button1;
         private controls.RJButton Btn_Clear;
-        private System.Windows.Forms.Timer timer_AutoRead;
         private System.Windows.Forms.Label lb_Errortext;
         private System.Windows.Forms.PictureBox Tname_check;
         private System.Windows.Forms.Label label2;
@@ -763,6 +885,18 @@
         private System.Windows.Forms.PictureBox mbno_check;
         private System.Windows.Forms.PictureBox ID_check;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lb_PrenameInbut;
+        private System.Windows.Forms.Label lb_IDcardInBut;
+        private System.Windows.Forms.Label lb_BirthdateInBut;
+        private System.Windows.Forms.Label lb_HomeNoInBut;
+        private System.Windows.Forms.Label lb_MooInBut;
+        private System.Windows.Forms.Label lb_TrokInBut;
+        private System.Windows.Forms.Label lb_SoiInBut;
+        private System.Windows.Forms.Label lb_RoadInBut;
+        private System.Windows.Forms.Label lb_TumbolInBut;
+        private System.Windows.Forms.Label lb_AmphoeInBut;
+        private System.Windows.Forms.Label lb_ProvinceInBut;
+        private System.Windows.Forms.Timer timer_AutoRead;
 
     }
 }
