@@ -106,6 +106,9 @@ namespace SVMember
             str = "select " +
                              " mb.MEMBER_NO,   " +
                              " mb.CARD_PERSON,    " +
+                             "mbucfprename.prename_desc," +
+                             "mb.MEMB_NAME," +
+                             "mb.MEMB_SURNAME," +
                              " mbucfprename.prename_desc || mb.MEMB_NAME || '    ' || mb.MEMB_SURNAME as Mbname,   " +
                              " mb.MEMBGROUP_CODE,   " +
                              " mbucfmembgroup.membgroup_desc,  " +
@@ -142,9 +145,9 @@ namespace SVMember
                              " mb.Curramphur_CODE,     " +
                              " mb.CurrPROVINCE_CODE,     " +
                              " mb.Curraddr_POSTCODE,  " +
-                             " mbucfprovince_curr.province_desc," +
-                             " mbucfdistrict_curr.district_desc, " +
-                             " mbucftambol_curr.tambol_desc, " +
+                             " mbucfprovince_curr.province_desc ||'' crr_province," +
+                             " mbucfdistrict_curr.district_desc ||'' crr_district, " +
+                             " mbucftambol_curr.tambol_desc ||'' crr_tambol, " +
                              " mb.Curraddr_POSTCODE " +
                              " From MBMEMBMASTER mb  " +
                              " inner join mbucfprename on mb.prename_code = mbucfprename.prename_code  " +
@@ -197,7 +200,8 @@ namespace SVMember
             txt_add += " ตำบล" + dt.Rows[0]["tambol_desc"].ToString();
             txt_add += " อำเภอ" + dt.Rows[0]["district_desc"].ToString();
             txt_add += " จังหวัด" + dt.Rows[0]["province_desc"].ToString();
-           // txt_add += " " + dt.Rows[0]["addr_postcode"].ToString();
+            lb_PostcodeInBut.Text = dt.Rows[0]["addr_postcode"].ToString();
+            //txt_add += " " + dt.Rows[0]["addr_postcode"].ToString();
            // txt_add = txt_add.Replace(" ", "");
 
             string txt_Crradd = "";
@@ -224,6 +228,20 @@ namespace SVMember
             label9.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString() , 15);
             lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
             label5.Text = dt.Rows[0]["addr_mobilephone"].ToString();
+            lb_PostcodeC.Text = dt.Rows[0]["curraddr_postcode"].ToString();
+            lb_PrenameC.Text = dt.Rows[0]["prename_desc"].ToString();
+            lb_nameC.Text = dt.Rows[0]["memb_name"].ToString();
+            lb_surnameC.Text = dt.Rows[0]["memb_surname"].ToString();
+            lb_HomeNoC.Text = dt.Rows[0]["curraddr_no"].ToString();
+            lb_MooC.Text = dt.Rows[0]["curraddr_moo"].ToString();
+            lb_TrokC.Text = dt.Rows[0]["curraddr_village"].ToString();
+            lb_SoiC.Text = dt.Rows[0]["curraddr_soi"].ToString();
+            lb_RoadC.Text = dt.Rows[0]["curraddr_road"].ToString();
+            lb_TumbolC.Text = dt.Rows[0]["crr_tambol"].ToString();
+            lb_AmphoeC.Text = dt.Rows[0]["crr_district"].ToString();
+            lb_ProvinceC.Text = dt.Rows[0]["crr_province"].ToString();
+            lb_PostcodeC.Text = dt.Rows[0]["Curraddr_POSTCODE"].ToString();
+            //lb_PrenameC.Text = dt.Rows[0]["curraddr_postcode"].ToString();
            // lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
            // lbMb_Add.Text = dt.Rows[0]["add1"].ToString();
             //lbMb_Add.Text = 
@@ -236,6 +254,9 @@ namespace SVMember
           
           // MessageBox.Show(txt_add);
             }
+
+
+
 
 
 
@@ -321,7 +342,7 @@ namespace SVMember
                
                
                             
-                String fullname = fields[(int)NID_FIELD.TITLE_T] + " " +
+                String fullname = fields[(int)NID_FIELD.TITLE_T].Replace("น.ส.","นางสาว")  +
                                     fields[(int)NID_FIELD.NAME_T] + " " +
                                     fields[(int)NID_FIELD.MIDNAME_T] + " " +
                                     fields[(int)NID_FIELD.SURNAME_T];
@@ -329,7 +350,7 @@ namespace SVMember
 
                 // เอส   ----------------------------------------------------------------------------------------------------------------
 
-                lb_PrenameInbut.Text = fields[(int)NID_FIELD.TITLE_T];
+                lb_PrenameInbut.Text = fields[(int)NID_FIELD.TITLE_T].Replace("น.ส.", "นางสาว");
                 lb_nameInBut.Text = fields[(int)NID_FIELD.NAME_T];
                 lb_surnameInBut.Text = fields[(int)NID_FIELD.SURNAME_T];
                 label4.Text = fullname;
@@ -363,6 +384,8 @@ namespace SVMember
                     // Handle the case where the input is not in the expected format
                     // Display an error message or provide a default value
                 }
+
+                m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
 
                 lb_BirthdateInBut.Text = fields[(int)NID_FIELD.BIRTH_DATE];
 
@@ -456,8 +479,8 @@ namespace SVMember
             DataTable dt = ClsMST.SelectQuery(str);
             if (dt.Rows.Count >= 0) 
             {
-               // string Tname = m_txtFullNameT.Text.Replace(" ", "");
-                string Tname = lb_PrenameInbut.Text + lb_nameInBut.Text + lb_surnameInBut.Text;
+                string Tname = m_txtFullNameT.Text.Replace(" ", "");
+                //string Tname = lb_PrenameInbut.Text + lb_nameInBut.Text + lb_surnameInBut.Text;
                 string lbName = lbMb_name.Text.Replace(" ", "");
                 string address = m_txtAddress.Text.Replace(" ", "");
                 string lbAddress = lbMb_Add.Text.Replace(" ", "");
@@ -556,6 +579,7 @@ namespace SVMember
                  if (Tname != lbName && address != lbAddress)
                  {
                      string message4 = "ชื่อ-นามสกุล และ ที่อยู่ของท่านไม่ตรงกับข้อมูลของสหกรณ์";
+                     //string message4 = Tname;
                      label2.Text = message4;
                      // add_cross.Visible = true;
                      Tname_cross2.Visible = true;
