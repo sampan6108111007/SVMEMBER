@@ -422,7 +422,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(236, 135);
+            this.panel1.Location = new System.Drawing.Point(245, 200);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(605, 392);
             this.panel1.TabIndex = 146;

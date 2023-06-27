@@ -102,6 +102,9 @@
             this.lb_PostcodeC = new System.Windows.Forms.Label();
             this.lb_PostcodeInBut = new System.Windows.Forms.Label();
             this.m_txtIssueNum = new System.Windows.Forms.Label();
+            this.lb_CoopId = new System.Windows.Forms.Label();
+            this.lb_Appl_Docno = new System.Windows.Forms.Label();
+            this.lb_TumbolCode = new System.Windows.Forms.Label();
             this.btn_save = new SVMember.controls.RJButton();
             this.Btn_Clear = new SVMember.controls.RJButton();
             this.button1 = new SVMember.controls.RJButton();
@@ -126,6 +129,7 @@
             // panel1
             // 
             this.panel1.AllowDrop = true;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::SVMember.Properties.Resources.โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -648,6 +652,7 @@
             // 
             // timer_AutoRead
             // 
+            this.timer_AutoRead.Enabled = true;
             this.timer_AutoRead.Interval = 3000;
             this.timer_AutoRead.Tick += new System.EventHandler(this.timer_AutoRead_Tick);
             // 
@@ -730,7 +735,7 @@
             this.lb_TumbolInBut.Name = "lb_TumbolInBut";
             this.lb_TumbolInBut.Size = new System.Drawing.Size(97, 17);
             this.lb_TumbolInBut.TabIndex = 107;
-            this.lb_TumbolInBut.Text = "ตำบล";
+            this.lb_TumbolInBut.Text = "ห้วยโก๋น";
             // 
             // lb_AmphoeInBut
             // 
@@ -739,7 +744,7 @@
             this.lb_AmphoeInBut.Name = "lb_AmphoeInBut";
             this.lb_AmphoeInBut.Size = new System.Drawing.Size(121, 17);
             this.lb_AmphoeInBut.TabIndex = 107;
-            this.lb_AmphoeInBut.Text = "อำเถอ";
+            this.lb_AmphoeInBut.Text = "เฉลิมพระเกียรติ";
             // 
             // lb_ProvinceInBut
             // 
@@ -877,6 +882,33 @@
             this.m_txtIssueNum.TabIndex = 93;
             this.m_txtIssueNum.Text = "เลขบัตร";
             // 
+            // lb_CoopId
+            // 
+            this.lb_CoopId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_CoopId.Location = new System.Drawing.Point(370, 9);
+            this.lb_CoopId.Name = "lb_CoopId";
+            this.lb_CoopId.Size = new System.Drawing.Size(56, 19);
+            this.lb_CoopId.TabIndex = 123;
+            this.lb_CoopId.Text = "027001";
+            // 
+            // lb_Appl_Docno
+            // 
+            this.lb_Appl_Docno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Appl_Docno.Location = new System.Drawing.Point(432, 9);
+            this.lb_Appl_Docno.Name = "lb_Appl_Docno";
+            this.lb_Appl_Docno.Size = new System.Drawing.Size(109, 26);
+            this.lb_Appl_Docno.TabIndex = 124;
+            this.lb_Appl_Docno.Text = "เลขที่คำขอ";
+            // 
+            // lb_TumbolCode
+            // 
+            this.lb_TumbolCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_TumbolCode.Location = new System.Drawing.Point(382, 46);
+            this.lb_TumbolCode.Name = "lb_TumbolCode";
+            this.lb_TumbolCode.Size = new System.Drawing.Size(97, 17);
+            this.lb_TumbolCode.TabIndex = 125;
+            this.lb_TumbolCode.Text = "ห้วยโก๋น";
+            // 
             // btn_save
             // 
             this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -955,6 +987,9 @@
             this.BackgroundImage = global::SVMember.Properties.Resources.bg_green2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 903);
+            this.Controls.Add(this.lb_TumbolCode);
+            this.Controls.Add(this.lb_Appl_Docno);
+            this.Controls.Add(this.lb_CoopId);
             this.Controls.Add(this.lb_PostcodeInBut);
             this.Controls.Add(this.lb_PostcodeC);
             this.Controls.Add(this.lb_PrenameC);
@@ -1090,6 +1125,9 @@
         private System.Windows.Forms.Label lb_PostcodeC;
         private System.Windows.Forms.Label lb_PostcodeInBut;
         private System.Windows.Forms.Label m_txtIssueNum;
+        private System.Windows.Forms.Label lb_CoopId;
+        private System.Windows.Forms.Label lb_Appl_Docno;
+        private System.Windows.Forms.Label lb_TumbolCode;
 
     }
 }

@@ -106,6 +106,7 @@ namespace SVMember
             str = "select " +
                              " mb.MEMBER_NO,   " +
                              " mb.CARD_PERSON,    " +
+                              "mbucfprename.prename_code || '' prename_code ," +
                              "mbucfprename.prename_desc," +
                              "mb.MEMB_NAME," +
                              "mb.MEMB_SURNAME," +
@@ -158,8 +159,12 @@ namespace SVMember
                              " inner join mbucfprovince  mbucfprovince_curr on mb.currprovince_code = mbucfprovince_curr.province_code" +
                              " inner join mbucfdistrict  mbucfdistrict_curr on mb.curramphur_code = mbucfdistrict_curr.district_code" +
                              " inner join mbucftambol  mbucftambol_curr on mb.currtambol_code = mbucftambol_curr.tambol_code" +
-                             " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "' AND mb.resign_status ='0'";
-     
+                             " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "' AND  mb.resign_status ='0'";
+
+
+
+           
+                                      //  " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "' AND mb.resign_status ='0'";
 
             //if (id_card != "")
             //{
@@ -173,7 +178,7 @@ namespace SVMember
                 return;
             }
 
-            
+
 
             DataTable dt = ClsMST.SelectQuery(str);
             if (dt.Rows.Count<=0)
@@ -188,6 +193,8 @@ namespace SVMember
                 } ;
                 
             }
+
+           
 
             string txt_add = "";
 
@@ -229,7 +236,7 @@ namespace SVMember
             lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
             label5.Text = dt.Rows[0]["addr_mobilephone"].ToString();
             lb_PostcodeC.Text = dt.Rows[0]["curraddr_postcode"].ToString();
-            lb_PrenameC.Text = dt.Rows[0]["prename_desc"].ToString();
+            lb_PrenameC.Text = dt.Rows[0]["prename_code"].ToString();
             lb_nameC.Text = dt.Rows[0]["memb_name"].ToString();
             lb_surnameC.Text = dt.Rows[0]["memb_surname"].ToString();
             lb_HomeNoC.Text = dt.Rows[0]["curraddr_no"].ToString();
@@ -246,6 +253,7 @@ namespace SVMember
            // lbMb_Add.Text = dt.Rows[0]["add1"].ToString();
             //lbMb_Add.Text = 
 
+            ConvertInbut();
             CheckData();
             
             //|| mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
@@ -256,9 +264,143 @@ namespace SVMember
             }
 
 
+        //void SaveData() 
+        //{ 
+        //           sql = "insert into mbreqchgaddress (" +   
+        //              "appl_docno," + //เลขที่คำขอ yyyymmdd HH:MM
+        //              "branch_id," + // 027001
+        //              "memb_addrc," + 
+        //              "addr_mooc," +
+        //              "addr_soic," +
+        //              "addr_villagec," +
+        //              "addr_roadc," +
+        //              "tambon_codec," +
+        //              "amphur_codec," +
+        //              "provice_codec," +
+        //              "memb_addrn," +
+        //              "addr_moon," +
+        //              "addr_soin," +
+        //              "addr_villagen," +
+        //              "addr_roadn," +
+        //              "tambon_coden," +
+        //              "amphur_coden," +
+        //              "province_coden," +
+        //              "app_status," +
+        //              "app_date," +
+        //              "entry_id," + // ชื่อผู้บันถึก
+        //              "entry_date," +
+        //              "entry_type," + // 0 เอกสาร 1 บัตร
+        //              "card_personc," + 
+        //              "card_personn," +
+        //              "birth_datec," +
+        //              "birth_daten," +
+        //                "addr_mobilephonec," +
+        //                "addr_mobilephonen," +
+        //                "bycard_number," +
+        //                "prename_codec," +
+        //                "prename_coden," +
+        //                "memb_namec," +
+        //                "memb_namen," +
+        //                "memb_surnamec," +
+        //                "memb_surnamen," +
+        //                ")values(" +
+        //                "'" + Fc.GetshotDate(DateTime.Now.ToString(), 11) + "'," +
+        //                "'" + txtID_Card + "'," +
+        //                "'" + txt_MbNo.Text + "'," +
+        //                "'" + lb_TFN.Text + "'," +
+        //                "'" + lb_Tname.Text + "'," +
+        //                "'" + lb_Tsurname.Text + "'," +
+        //                "'" + lb_EFN.Text + "'," +
+        //                "'" + lb_Ename.Text + "'," +
+        //                "'" + lb_Esurname.Text + "'," +
+        //                "'" + Fc.GetshotDate(lb_BD.Text, 1) + "'," +
+        //                "'" + cbo_Sex.Text + "'," +
+        //                "'" + lb_Add1.Text + "'," +
+        //                "'" + lb_AddMoo.Text + "'," +
+        //                "'" + lb_AddSoi.Text + "'," +
+        //                "'" + lb_AddVillage.Text + "'," +
+        //                "'" + lb_AddRoad.Text + "'," +
+        //                "'" + cbo_TUMBON.Text + "'," +
+        //                "'" + cbo_AMPHOE.Text + "'," +
+        //                "'" + cbo_PROVINCE.Text + "'" +
+        //                ")";
+        //}
 
 
+        void ConvertInbut()
+        {
+            str = "SELECT mbucfdistrict.district_code , mbucfdistrict.district_desc, mbucfdistrict.postcode, mbucfdistrict.province_code, tambol_code, tambol_desc  FROM mbucftambol " +
+                  "inner join mbucfdistrict on mbucftambol.district_code = mbucfdistrict.district_code WHERE tambol_desc = '" + lb_TumbolInBut.Text + "'"; 
 
+            //if (label2.Text != "")  // ตรวจไม่พบ ยังมี dialog ค้างอยู่
+            //{
+            //    //MessageBox.Show("555");
+            //    return;
+            //}
+
+            DataTable dt = ClsMST.SelectQuery(str);
+            if (dt.Rows.Count >= 0)
+            {
+                
+                
+                    lb_ProvinceInBut.Text = dt.Rows[0]["province_code"].ToString();
+                    lb_AmphoeInBut.Text = dt.Rows[0]["district_code"].ToString();
+                    lb_TumbolCode.Text = dt.Rows[0]["tambol_code"].ToString();
+                    lb_PostcodeInBut.Text = dt.Rows[0]["postcode"].ToString();
+                
+               
+                //string Tname = m_txtFullNameT.Text.Replace(" ", "");
+                ////string Tname = lb_PrenameInbut.Text + lb_nameInBut.Text + lb_surnameInBut.Text;
+                //string lbName = lbMb_name.Text.Replace(" ", "");
+                //string address = m_txtAddress.Text.Replace(" ", "");
+                //string lbAddress = lbMb_Add.Text.Replace(" ", "");
+
+                //if (lb_TumbolInBut != lbAddress && Tname == lbName)
+                //{
+                //    string message = "ที่อยู่ของสมาชิกไม่ตรงกับข้อมูลที่สหกรณ์มีอยู่ กรุณาติดต่อเจ้าหน้าที่";
+                //    label2.Text = message;
+                //    // add_cross.Visible = true;
+                //    add_check.Visible = true;
+                //    ID_check.Visible = true;
+                //    Tname_check.Visible = true;
+                //    Ename_check.Visible = true;
+                //    birth_check.Visible = true;
+                //    birth_check2.Visible = true;
+                //    tel_chexk.Visible = true;
+                //    add_cross2.Visible = true;
+                //    mbno_check.Visible = true;
+                //    crrAdd_cross.Visible = true;
+                //    Tname_check2.Visible = true;
+
+                //    MessageBox.Show(message, "error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //}
+
+                //if (Tname != lbName && address == lbAddress)
+                //{
+                //    //MessageBox.Show(Tname);
+                //    string message2 = "ชื่อ-นามสกุลไม่ตรงกับข้อมูลสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
+                //    //string message2 = Tname;
+                //    label2.Text = message2;
+                //    // add_cross.Visible = true;
+                //    Tname_cross2.Visible = true;
+                //    add_check.Visible = true;
+                //    ID_check.Visible = true;
+                //    Tname_check.Visible = true;
+                //    Ename_check.Visible = true;
+                //    birth_check.Visible = true;
+                //    birth_check2.Visible = true;
+                //    tel_chexk.Visible = true;
+                //    mbno_check.Visible = true;
+                //    crrAdd_check.Visible = true;
+                //    add_check2.Visible = true;
+
+                //    MessageBox.Show(message2, "error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //}
+
+            }
+        }
 
 
         
@@ -278,6 +420,7 @@ namespace SVMember
             if (nInsertCard != 0)
             {
                 ReadCard();
+                lb_Appl_Docno.Text = DateTime.Now.ToString("yyyyMMddHHmmss", CultureInfo.InvariantCulture);
             }
             else
             {
@@ -350,7 +493,7 @@ namespace SVMember
 
                 // เอส   ----------------------------------------------------------------------------------------------------------------
 
-                lb_PrenameInbut.Text = fields[(int)NID_FIELD.TITLE_T].Replace("น.ส.", "นางสาว");
+                lb_PrenameInbut.Text = fields[(int)NID_FIELD.TITLE_T];
                 lb_nameInBut.Text = fields[(int)NID_FIELD.NAME_T];
                 lb_surnameInBut.Text = fields[(int)NID_FIELD.SURNAME_T];
                 label4.Text = fullname;
@@ -401,13 +544,13 @@ namespace SVMember
                                         ;
 
                 lb_HomeNoInBut.Text = fields[(int)NID_FIELD.HOME_NO];
-                lb_MooInBut.Text = fields[(int)NID_FIELD.MOO];
+                lb_MooInBut.Text = fields[(int)NID_FIELD.MOO].Replace("หมู่ที่", "");
                 lb_TrokInBut.Text = fields[(int)NID_FIELD.TROK];
                 lb_SoiInBut.Text = fields[(int)NID_FIELD.SOI];
                 lb_RoadInBut.Text = fields[(int)NID_FIELD.ROAD];
-                lb_TumbolInBut.Text = fields[(int)NID_FIELD.TUMBON];
-                lb_AmphoeInBut.Text = fields[(int)NID_FIELD.AMPHOE];
-                lb_ProvinceInBut.Text = fields[(int)NID_FIELD.PROVINCE];
+                lb_TumbolInBut.Text = fields[(int)NID_FIELD.TUMBON].Replace("ตำบล", "");
+                lb_AmphoeInBut.Text = fields[(int)NID_FIELD.AMPHOE].Replace("อำเภอ", "");
+                lb_ProvinceInBut.Text = fields[(int)NID_FIELD.PROVINCE].Replace("จังหวัด", "");
 
 
                 //if (fields[(int)NID_FIELD.GENDER] == "1")
@@ -468,7 +611,8 @@ namespace SVMember
         {
 
            // bool match = true;
-            
+
+          
 
             if (label2.Text != "")  // ตรวจไม่พบ ยังมี dialog ค้างอยู่
             {
@@ -603,6 +747,8 @@ namespace SVMember
                      //    return;
                      //}
                  }
+
+                 
             }
            
 
