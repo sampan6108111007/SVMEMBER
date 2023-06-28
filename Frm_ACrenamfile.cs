@@ -69,5 +69,10 @@ namespace SVMember
             }
 
         }
+
+        private void Frm_ACrenamfile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

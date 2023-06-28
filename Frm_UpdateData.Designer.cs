@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_Tel = new System.Windows.Forms.TextBox();
+            this.lb_BirthdateC = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.mbno_check = new System.Windows.Forms.PictureBox();
             this.ID_check = new System.Windows.Forms.PictureBox();
@@ -39,6 +41,8 @@
             this.birth_check2 = new System.Windows.Forms.PictureBox();
             this.birth_check = new System.Windows.Forms.PictureBox();
             this.add_check2 = new System.Windows.Forms.PictureBox();
+            this.crrBirth_cross = new System.Windows.Forms.PictureBox();
+            this.crrTel_cross = new System.Windows.Forms.PictureBox();
             this.crrAdd_cross = new System.Windows.Forms.PictureBox();
             this.Tname_cross2 = new System.Windows.Forms.PictureBox();
             this.Ename_check = new System.Windows.Forms.PictureBox();
@@ -57,10 +61,8 @@
             this.m_txtID = new System.Windows.Forms.MaskedTextBox();
             this.m_ListReaderCard = new System.Windows.Forms.ComboBox();
             this.lbMb_Add2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.lbMb_Add = new System.Windows.Forms.Label();
             this.lbMb_name = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -105,6 +107,15 @@
             this.lb_CoopId = new System.Windows.Forms.Label();
             this.lb_Appl_Docno = new System.Windows.Forms.Label();
             this.lb_TumbolCode = new System.Windows.Forms.Label();
+            this.lb_IDcardC = new System.Windows.Forms.Label();
+            this.lb_BirthdateC2 = new System.Windows.Forms.Label();
+            this.lb_PrenameCode = new System.Windows.Forms.Label();
+            this.lb_telC = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.btn_save = new SVMember.controls.RJButton();
             this.Btn_Clear = new SVMember.controls.RJButton();
             this.button1 = new SVMember.controls.RJButton();
@@ -117,6 +128,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.birth_check2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birth_check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_check2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crrBirth_cross)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crrTel_cross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crrAdd_cross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tname_cross2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ename_check)).BeginInit();
@@ -133,6 +146,8 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::SVMember.Properties.Resources.โปรแกรมเปลี่ยนแปลงข้อมูลสมาชิก1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.lb_Tel);
+            this.panel1.Controls.Add(this.lb_BirthdateC);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.mbno_check);
             this.panel1.Controls.Add(this.ID_check);
@@ -142,6 +157,8 @@
             this.panel1.Controls.Add(this.birth_check2);
             this.panel1.Controls.Add(this.birth_check);
             this.panel1.Controls.Add(this.add_check2);
+            this.panel1.Controls.Add(this.crrBirth_cross);
+            this.panel1.Controls.Add(this.crrTel_cross);
             this.panel1.Controls.Add(this.crrAdd_cross);
             this.panel1.Controls.Add(this.Tname_cross2);
             this.panel1.Controls.Add(this.Ename_check);
@@ -160,10 +177,8 @@
             this.panel1.Controls.Add(this.m_txtID);
             this.panel1.Controls.Add(this.m_ListReaderCard);
             this.panel1.Controls.Add(this.lbMb_Add2);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lbMb_Add);
             this.panel1.Controls.Add(this.lbMb_name);
             this.panel1.Controls.Add(this.label8);
@@ -181,6 +196,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1024, 576);
             this.panel1.TabIndex = 13;
+            // 
+            // lb_Tel
+            // 
+            this.lb_Tel.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_Tel.Location = new System.Drawing.Point(686, 503);
+            this.lb_Tel.Multiline = true;
+            this.lb_Tel.Name = "lb_Tel";
+            this.lb_Tel.Size = new System.Drawing.Size(170, 32);
+            this.lb_Tel.TabIndex = 130;
+            this.lb_Tel.Click += new System.EventHandler(this.lb_Tel_Click);
+            // 
+            // lb_BirthdateC
+            // 
+            this.lb_BirthdateC.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_BirthdateC.Location = new System.Drawing.Point(686, 459);
+            this.lb_BirthdateC.Multiline = true;
+            this.lb_BirthdateC.Name = "lb_BirthdateC";
+            this.lb_BirthdateC.Size = new System.Drawing.Size(170, 32);
+            this.lb_BirthdateC.TabIndex = 129;
+            this.lb_BirthdateC.Click += new System.EventHandler(this.lb_BirthdateC_Click);
             // 
             // label4
             // 
@@ -223,7 +258,7 @@
             // tel_chexk
             // 
             this.tel_chexk.Image = global::SVMember.Properties.Resources.check__2_;
-            this.tel_chexk.Location = new System.Drawing.Point(865, 501);
+            this.tel_chexk.Location = new System.Drawing.Point(866, 505);
             this.tel_chexk.Name = "tel_chexk";
             this.tel_chexk.Size = new System.Drawing.Size(27, 28);
             this.tel_chexk.TabIndex = 95;
@@ -243,7 +278,7 @@
             // birth_check2
             // 
             this.birth_check2.Image = global::SVMember.Properties.Resources.check__2_;
-            this.birth_check2.Location = new System.Drawing.Point(865, 464);
+            this.birth_check2.Location = new System.Drawing.Point(865, 463);
             this.birth_check2.Name = "birth_check2";
             this.birth_check2.Size = new System.Drawing.Size(27, 28);
             this.birth_check2.TabIndex = 95;
@@ -269,6 +304,26 @@
             this.add_check2.TabIndex = 95;
             this.add_check2.TabStop = false;
             this.add_check2.Visible = false;
+            // 
+            // crrBirth_cross
+            // 
+            this.crrBirth_cross.Image = global::SVMember.Properties.Resources.cross;
+            this.crrBirth_cross.Location = new System.Drawing.Point(865, 463);
+            this.crrBirth_cross.Name = "crrBirth_cross";
+            this.crrBirth_cross.Size = new System.Drawing.Size(27, 28);
+            this.crrBirth_cross.TabIndex = 94;
+            this.crrBirth_cross.TabStop = false;
+            this.crrBirth_cross.Visible = false;
+            // 
+            // crrTel_cross
+            // 
+            this.crrTel_cross.Image = global::SVMember.Properties.Resources.cross;
+            this.crrTel_cross.Location = new System.Drawing.Point(866, 505);
+            this.crrTel_cross.Name = "crrTel_cross";
+            this.crrTel_cross.Size = new System.Drawing.Size(27, 28);
+            this.crrTel_cross.TabIndex = 94;
+            this.crrTel_cross.TabStop = false;
+            this.crrTel_cross.Visible = false;
             // 
             // crrAdd_cross
             // 
@@ -454,22 +509,12 @@
             this.lbMb_Add2.Size = new System.Drawing.Size(267, 103);
             this.lbMb_Add2.TabIndex = 46;
             // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(686, 463);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(173, 30);
-            this.label9.TabIndex = 45;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label14.Location = new System.Drawing.Point(607, 468);
+            this.label14.Location = new System.Drawing.Point(612, 462);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(77, 28);
             this.label14.TabIndex = 44;
@@ -484,16 +529,6 @@
             this.label6.Size = new System.Drawing.Size(77, 28);
             this.label6.TabIndex = 42;
             this.label6.Text = "เกิดวันที่:";
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(686, 501);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(173, 30);
-            this.label5.TabIndex = 41;
             // 
             // lbMb_Add
             // 
@@ -562,7 +597,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.Location = new System.Drawing.Point(560, 505);
+            this.label13.Location = new System.Drawing.Point(557, 502);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(134, 28);
             this.label13.TabIndex = 25;
@@ -704,7 +739,7 @@
             // lb_TrokInBut
             // 
             this.lb_TrokInBut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_TrokInBut.Location = new System.Drawing.Point(249, 70);
+            this.lb_TrokInBut.Location = new System.Drawing.Point(249, 71);
             this.lb_TrokInBut.Name = "lb_TrokInBut";
             this.lb_TrokInBut.Size = new System.Drawing.Size(39, 17);
             this.lb_TrokInBut.TabIndex = 104;
@@ -735,7 +770,7 @@
             this.lb_TumbolInBut.Name = "lb_TumbolInBut";
             this.lb_TumbolInBut.Size = new System.Drawing.Size(97, 17);
             this.lb_TumbolInBut.TabIndex = 107;
-            this.lb_TumbolInBut.Text = "ห้วยโก๋น";
+            this.lb_TumbolInBut.Text = "ตำบล";
             // 
             // lb_AmphoeInBut
             // 
@@ -757,6 +792,7 @@
             // 
             // lb_ProvinceC
             // 
+            this.lb_ProvinceC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_ProvinceC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_ProvinceC.Location = new System.Drawing.Point(897, 860);
             this.lb_ProvinceC.Name = "lb_ProvinceC";
@@ -766,6 +802,7 @@
             // 
             // lb_AmphoeC
             // 
+            this.lb_AmphoeC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_AmphoeC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_AmphoeC.Location = new System.Drawing.Point(770, 860);
             this.lb_AmphoeC.Name = "lb_AmphoeC";
@@ -775,6 +812,7 @@
             // 
             // lb_TumbolC
             // 
+            this.lb_TumbolC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_TumbolC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_TumbolC.Location = new System.Drawing.Point(667, 860);
             this.lb_TumbolC.Name = "lb_TumbolC";
@@ -784,6 +822,7 @@
             // 
             // lb_RoadC
             // 
+            this.lb_RoadC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_RoadC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_RoadC.Location = new System.Drawing.Point(622, 860);
             this.lb_RoadC.Name = "lb_RoadC";
@@ -793,6 +832,7 @@
             // 
             // lb_SoiC
             // 
+            this.lb_SoiC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_SoiC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_SoiC.Location = new System.Drawing.Point(580, 860);
             this.lb_SoiC.Name = "lb_SoiC";
@@ -802,6 +842,7 @@
             // 
             // lb_TrokC
             // 
+            this.lb_TrokC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_TrokC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_TrokC.Location = new System.Drawing.Point(534, 860);
             this.lb_TrokC.Name = "lb_TrokC";
@@ -811,6 +852,7 @@
             // 
             // lb_MooC
             // 
+            this.lb_MooC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_MooC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_MooC.Location = new System.Drawing.Point(464, 860);
             this.lb_MooC.Name = "lb_MooC";
@@ -820,6 +862,7 @@
             // 
             // lb_HomeNoC
             // 
+            this.lb_HomeNoC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_HomeNoC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_HomeNoC.Location = new System.Drawing.Point(402, 860);
             this.lb_HomeNoC.Name = "lb_HomeNoC";
@@ -829,8 +872,9 @@
             // 
             // lb_PrenameC
             // 
+            this.lb_PrenameC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_PrenameC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_PrenameC.Location = new System.Drawing.Point(420, 758);
+            this.lb_PrenameC.Location = new System.Drawing.Point(402, 768);
             this.lb_PrenameC.Name = "lb_PrenameC";
             this.lb_PrenameC.Size = new System.Drawing.Size(59, 23);
             this.lb_PrenameC.TabIndex = 120;
@@ -838,9 +882,10 @@
             // 
             // lb_surnameC
             // 
+            this.lb_surnameC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_surnameC.BackColor = System.Drawing.Color.Transparent;
             this.lb_surnameC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_surnameC.Location = new System.Drawing.Point(421, 823);
+            this.lb_surnameC.Location = new System.Drawing.Point(403, 833);
             this.lb_surnameC.Name = "lb_surnameC";
             this.lb_surnameC.Size = new System.Drawing.Size(49, 19);
             this.lb_surnameC.TabIndex = 119;
@@ -848,8 +893,9 @@
             // 
             // lb_nameC
             // 
+            this.lb_nameC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_nameC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_nameC.Location = new System.Drawing.Point(421, 791);
+            this.lb_nameC.Location = new System.Drawing.Point(403, 801);
             this.lb_nameC.Name = "lb_nameC";
             this.lb_nameC.Size = new System.Drawing.Size(49, 21);
             this.lb_nameC.TabIndex = 118;
@@ -857,6 +903,7 @@
             // 
             // lb_PostcodeC
             // 
+            this.lb_PostcodeC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_PostcodeC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_PostcodeC.Location = new System.Drawing.Point(897, 879);
             this.lb_PostcodeC.Name = "lb_PostcodeC";
@@ -907,7 +954,86 @@
             this.lb_TumbolCode.Name = "lb_TumbolCode";
             this.lb_TumbolCode.Size = new System.Drawing.Size(97, 17);
             this.lb_TumbolCode.TabIndex = 125;
-            this.lb_TumbolCode.Text = "ห้วยโก๋น";
+            this.lb_TumbolCode.Text = "ตำบล code";
+            // 
+            // lb_IDcardC
+            // 
+            this.lb_IDcardC.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lb_IDcardC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_IDcardC.Location = new System.Drawing.Point(475, 771);
+            this.lb_IDcardC.Name = "lb_IDcardC";
+            this.lb_IDcardC.Size = new System.Drawing.Size(92, 17);
+            this.lb_IDcardC.TabIndex = 126;
+            this.lb_IDcardC.Text = "เลข ปชช.";
+            // 
+            // lb_BirthdateC2
+            // 
+            this.lb_BirthdateC2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lb_BirthdateC2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_BirthdateC2.Location = new System.Drawing.Point(475, 805);
+            this.lb_BirthdateC2.Name = "lb_BirthdateC2";
+            this.lb_BirthdateC2.Size = new System.Drawing.Size(92, 17);
+            this.lb_BirthdateC2.TabIndex = 127;
+            this.lb_BirthdateC2.Text = "วันเกิด";
+            // 
+            // lb_PrenameCode
+            // 
+            this.lb_PrenameCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_PrenameCode.Location = new System.Drawing.Point(37, 5);
+            this.lb_PrenameCode.Name = "lb_PrenameCode";
+            this.lb_PrenameCode.Size = new System.Drawing.Size(34, 23);
+            this.lb_PrenameCode.TabIndex = 76;
+            this.lb_PrenameCode.Text = "คำนำหน้า";
+            // 
+            // lb_telC
+            // 
+            this.lb_telC.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lb_telC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_telC.Location = new System.Drawing.Point(595, 771);
+            this.lb_telC.Name = "lb_telC";
+            this.lb_telC.Size = new System.Drawing.Size(92, 17);
+            this.lb_telC.TabIndex = 128;
+            this.lb_telC.Text = "เบอร์โทร";
+            // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Location = new System.Drawing.Point(860, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 17);
+            this.label5.TabIndex = 129;
+            // 
+            // label7
+            // 
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Location = new System.Drawing.Point(860, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 17);
+            this.label7.TabIndex = 129;
+            // 
+            // label9
+            // 
+            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label9.Location = new System.Drawing.Point(860, 46);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 17);
+            this.label9.TabIndex = 129;
+            // 
+            // label17
+            // 
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Location = new System.Drawing.Point(860, 72);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(105, 17);
+            this.label17.TabIndex = 129;
+            // 
+            // label18
+            // 
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Location = new System.Drawing.Point(749, 11);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(105, 17);
+            this.label18.TabIndex = 129;
             // 
             // btn_save
             // 
@@ -923,7 +1049,7 @@
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_save.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.Black;
-            this.btn_save.Location = new System.Drawing.Point(857, 686);
+            this.btn_save.Location = new System.Drawing.Point(409, 716);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(176, 144);
             this.btn_save.TabIndex = 117;
@@ -931,6 +1057,7 @@
             this.btn_save.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_save.TextColor = System.Drawing.Color.Black;
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // Btn_Clear
             // 
@@ -987,6 +1114,14 @@
             this.BackgroundImage = global::SVMember.Properties.Resources.bg_green2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 903);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lb_telC);
+            this.Controls.Add(this.lb_BirthdateC2);
+            this.Controls.Add(this.lb_IDcardC);
             this.Controls.Add(this.lb_TumbolCode);
             this.Controls.Add(this.lb_Appl_Docno);
             this.Controls.Add(this.lb_CoopId);
@@ -1015,6 +1150,7 @@
             this.Controls.Add(this.lb_HomeNoInBut);
             this.Controls.Add(this.lb_BirthdateInBut);
             this.Controls.Add(this.lb_IDcardInBut);
+            this.Controls.Add(this.lb_PrenameCode);
             this.Controls.Add(this.lb_PrenameInbut);
             this.Controls.Add(this.Btn_Clear);
             this.Controls.Add(this.button1);
@@ -1036,6 +1172,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.birth_check2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.birth_check)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_check2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crrBirth_cross)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crrTel_cross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crrAdd_cross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tname_cross2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ename_check)).EndInit();
@@ -1060,10 +1198,8 @@
         private System.Windows.Forms.Label lb_mbno;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbMb_Add;
         private System.Windows.Forms.Label lbMb_name;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox m_ListReaderCard;
@@ -1128,6 +1264,19 @@
         private System.Windows.Forms.Label lb_CoopId;
         private System.Windows.Forms.Label lb_Appl_Docno;
         private System.Windows.Forms.Label lb_TumbolCode;
+        private System.Windows.Forms.Label lb_IDcardC;
+        private System.Windows.Forms.Label lb_BirthdateC2;
+        private System.Windows.Forms.TextBox lb_BirthdateC;
+        private System.Windows.Forms.TextBox lb_Tel;
+        private System.Windows.Forms.PictureBox crrBirth_cross;
+        private System.Windows.Forms.PictureBox crrTel_cross;
+        private System.Windows.Forms.Label lb_PrenameCode;
+        private System.Windows.Forms.Label lb_telC;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
 
     }
 }

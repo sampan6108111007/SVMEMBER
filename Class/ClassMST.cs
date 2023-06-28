@@ -915,8 +915,9 @@ namespace SVMember
             }
             return xReturn;
 
-
         }
+
+
         public string Save_ORACLE(string sql)
         {
             string xReturn = "";
@@ -925,17 +926,17 @@ namespace SVMember
 
                 Ora_Save = new OracleCommand(sql, Ora_Connection);
                 Ora_Save.ExecuteNonQuery();
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(sql + Environment.NewLine + ex.ToString());
-                
+
 
             }
             return xReturn;
         }
-        public string Save_ORACLE(string sql,string db)
+        public string Save_ORACLE(string sql, string db)
         {
             GetDB_Oracle();
             string xReturn = "";
@@ -954,6 +955,9 @@ namespace SVMember
             }
             return xReturn;
         }
+
+
+    
         public string Save_MsSqlDB(string sql,string Server)
         {
             GetDB_str_Registry(Server);

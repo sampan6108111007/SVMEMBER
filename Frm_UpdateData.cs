@@ -14,6 +14,8 @@ using System.IO;
 
 using System.Globalization;
 using Oracle.DataAccess.Client;
+using System.Text.RegularExpressions;
+
 
 
 
@@ -98,6 +100,21 @@ namespace SVMember
             bool CardStateChange = true;
            
         }
+
+        private bool ValidateThaiPhoneNumber(string phoneNumber)
+        {
+            // Define the regular expression pattern for Thai phone numbers
+            string pattern = @"^(0[689]{1}[0-9]{8})$";
+
+            // Create a Regex object with the pattern
+            Regex regex = new Regex(pattern);
+
+            // Perform the validation
+            bool isValid = regex.IsMatch(phoneNumber);
+
+            return isValid;
+        }
+
 
         void ShowData() //string id_card
          {
@@ -231,12 +248,17 @@ namespace SVMember
 
             lbMb_Add.Text = txt_add.ToString();
             lbMb_name.Text = dt.Rows[0]["Mbname"].ToString();
-            lbMb_Add2.Text = txt_Crradd.ToString();  
-            label9.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString() , 15);
+            lbMb_Add2.Text = txt_Crradd.ToString();
+            lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
+            //TextBox1.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
+            lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
+            //lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 12);
             lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
-            label5.Text = dt.Rows[0]["addr_mobilephone"].ToString();
+            lb_Tel.Text = dt.Rows[0]["addr_mobilephone"].ToString();
+            lb_telC.Text = dt.Rows[0]["addr_mobilephone"].ToString();
             lb_PostcodeC.Text = dt.Rows[0]["curraddr_postcode"].ToString();
             lb_PrenameC.Text = dt.Rows[0]["prename_code"].ToString();
+            lb_PrenameCode.Text = dt.Rows[0]["prename_code"].ToString();
             lb_nameC.Text = dt.Rows[0]["memb_name"].ToString();
             lb_surnameC.Text = dt.Rows[0]["memb_surname"].ToString();
             lb_HomeNoC.Text = dt.Rows[0]["curraddr_no"].ToString();
@@ -244,16 +266,24 @@ namespace SVMember
             lb_TrokC.Text = dt.Rows[0]["curraddr_village"].ToString();
             lb_SoiC.Text = dt.Rows[0]["curraddr_soi"].ToString();
             lb_RoadC.Text = dt.Rows[0]["curraddr_road"].ToString();
-            lb_TumbolC.Text = dt.Rows[0]["crr_tambol"].ToString();
-            lb_AmphoeC.Text = dt.Rows[0]["crr_district"].ToString();
-            lb_ProvinceC.Text = dt.Rows[0]["crr_province"].ToString();
+            lb_TumbolC.Text = dt.Rows[0]["Currtambol_code"].ToString();
+            lb_AmphoeC.Text = dt.Rows[0]["Curramphur_CODE"].ToString();
+            lb_ProvinceC.Text = dt.Rows[0]["CurrPROVINCE_CODE"].ToString();
             lb_PostcodeC.Text = dt.Rows[0]["Curraddr_POSTCODE"].ToString();
+            lb_IDcardC.Text = dt.Rows[0]["card_person"].ToString();
+            //lb_BirthdateC.Text = dt.Rows[0]["birth_date"].ToString();
+            lb_BirthdateC2.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 1).Replace("/","");
+
+           
+            //string value = lb_BirthdateC.Text;
+            //TextBox2.Text = Fc.GetshotDate(value, 1);
+           
             //lb_PrenameC.Text = dt.Rows[0]["curraddr_postcode"].ToString();
            // lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
            // lbMb_Add.Text = dt.Rows[0]["add1"].ToString();
             //lbMb_Add.Text = 
 
-            ConvertInbut();
+            
             CheckData();
             
             //|| mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
@@ -264,67 +294,102 @@ namespace SVMember
             }
 
 
-        //void SaveData() 
-        //{ 
-        //           sql = "insert into mbreqchgaddress (" +   
-        //              "appl_docno," + //เลขที่คำขอ yyyymmdd HH:MM
-        //              "branch_id," + // 027001
-        //              "memb_addrc," + 
-        //              "addr_mooc," +
-        //              "addr_soic," +
-        //              "addr_villagec," +
-        //              "addr_roadc," +
-        //              "tambon_codec," +
-        //              "amphur_codec," +
-        //              "provice_codec," +
-        //              "memb_addrn," +
-        //              "addr_moon," +
-        //              "addr_soin," +
-        //              "addr_villagen," +
-        //              "addr_roadn," +
-        //              "tambon_coden," +
-        //              "amphur_coden," +
-        //              "province_coden," +
-        //              "app_status," +
-        //              "app_date," +
-        //              "entry_id," + // ชื่อผู้บันถึก
-        //              "entry_date," +
-        //              "entry_type," + // 0 เอกสาร 1 บัตร
-        //              "card_personc," + 
-        //              "card_personn," +
-        //              "birth_datec," +
-        //              "birth_daten," +
-        //                "addr_mobilephonec," +
-        //                "addr_mobilephonen," +
-        //                "bycard_number," +
-        //                "prename_codec," +
-        //                "prename_coden," +
-        //                "memb_namec," +
-        //                "memb_namen," +
-        //                "memb_surnamec," +
-        //                "memb_surnamen," +
-        //                ")values(" +
-        //                "'" + Fc.GetshotDate(DateTime.Now.ToString(), 11) + "'," +
-        //                "'" + txtID_Card + "'," +
-        //                "'" + txt_MbNo.Text + "'," +
-        //                "'" + lb_TFN.Text + "'," +
-        //                "'" + lb_Tname.Text + "'," +
-        //                "'" + lb_Tsurname.Text + "'," +
-        //                "'" + lb_EFN.Text + "'," +
-        //                "'" + lb_Ename.Text + "'," +
-        //                "'" + lb_Esurname.Text + "'," +
-        //                "'" + Fc.GetshotDate(lb_BD.Text, 1) + "'," +
-        //                "'" + cbo_Sex.Text + "'," +
-        //                "'" + lb_Add1.Text + "'," +
-        //                "'" + lb_AddMoo.Text + "'," +
-        //                "'" + lb_AddSoi.Text + "'," +
-        //                "'" + lb_AddVillage.Text + "'," +
-        //                "'" + lb_AddRoad.Text + "'," +
-        //                "'" + cbo_TUMBON.Text + "'," +
-        //                "'" + cbo_AMPHOE.Text + "'," +
-        //                "'" + cbo_PROVINCE.Text + "'" +
-        //                ")";
-        //}
+        void SaveData()
+        {
+            string Rdialog = "";
+           
+            sql = "insert into mbreqchgaddress (" +
+               "appl_docno," + //เลขที่คำขอ yyyymmdd HH:MM
+               "branch_id," + // 027001
+               "member_no," +
+               "memb_addrc," +
+               "addr_mooc," +
+               "addr_soic," +
+               "addr_villagec," +
+               "addr_roadc," +
+               "tambon_codec," +
+               "amphur_codec," +
+               "provice_codec," +
+               "memb_addrn," +
+               "addr_moon," +
+               "addr_soin," +
+               "addr_villagen," +
+               "addr_roadn," +
+               "tambon_coden," +
+               "amphur_coden," +
+               "province_coden," +
+                "app_status," +
+                "app_date," +
+                "entry_id," + // ชื่อผู้บันถึก
+                "entry_date," +
+                "entry_type," + // 0 เอกสาร 1 บัตร
+               "card_personc," +
+               "card_personn," +
+               "birth_datec," +
+               "birth_daten," +
+                 "addr_mobilephonec," +
+                 "addr_mobilephonen," +
+                 "bycard_number," +
+                 "prename_codec," +
+                 "prename_coden," +
+                 "memb_namec," +
+                 "memb_namen," +
+                 "memb_surnamec," +
+                 "memb_surnamen" +
+                 ")values(" +
+                // "'" + Fc.GetshotDate(DateTime.Now.ToString(), 11) + "'," +
+                 "'" + lb_Appl_Docno.Text + "'" +
+                 ",'" + lb_CoopId.Text + "'" +
+                 ",'" + lb_mbno.Text + "'" +
+                 ",'" + lb_HomeNoC.Text + "'" +
+                 ",'" + lb_MooC.Text + "'" +
+                 ",'" + lb_SoiC.Text + "'" +
+                 ",'" + lb_TrokC.Text + "'" +
+                 ",'" + lb_RoadC.Text + "'" +
+                 ",'" + lb_TumbolC.Text + "'" +             
+                 ",'" + lb_AmphoeC.Text + "'" +
+                 ",'" + lb_ProvinceC.Text + "'" +
+                 ",'" + lb_HomeNoInBut.Text + "'" +
+                 ",'" + lb_MooInBut.Text + "'" +
+                 ",'" + lb_SoiInBut.Text + "'" +
+                 ",'" + lb_TrokInBut.Text + "'" +
+                 ",'" + lb_RoadInBut.Text + "'" +
+                 ",'" + lb_TumbolCode.Text + "'" +
+                 ",'" + lb_AmphoeInBut.Text + "'" +
+                 ",'" + lb_ProvinceInBut.Text + "'" +
+                 ",'" + label18.Text + "'" +
+                 ",'" + label5.Text + "'" +
+                 ",'" + label7.Text + "'" +
+                 ",'" + label9.Text + "'" +
+                 ",'" + label17.Text + "'" +
+                 ",'" + lb_IDcardC.Text + "'" +
+                 ",'" + lb_IDcardInBut.Text + "'" +
+                 ",'" + Fc.GetshotDate(lb_BirthdateC2.Text, 1) + "'" +
+                // ",'" + lb_BirthdateC2.Text + "'" +
+                // ",'" + lb_BirthdateInBut.Text + "'" +
+                 ",'" + Fc.GetshotDate(lb_BirthdateInBut.Text, 1) + "'" +
+                 ",'" + lb_telC.Text + "'" +
+                 ",'" + lb_Tel.Text + "'" +
+                 ",'" + m_txtIssueNum.Text + "'" +
+                 ",'" + lb_PrenameC.Text + "'" +
+                 ",'" + lb_PrenameCode.Text + "'" +
+                 ",'" + lb_nameC.Text + "'" +
+                 ",'" + lb_nameInBut.Text + "'" +
+                 ",'" + lb_surnameC.Text + "'" +
+                 ",'" + lb_surnameInBut.Text +"'"+
+                 ")";
+
+            ClsMST.Save_ORACLE(sql);
+            
+
+                Rdialog = " บันทึกข้อมูล  ";
+                MessageBox.Show("ระบบ ( " + Rdialog + " ) เรียบร้อยแล้ว", "บันทึกข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            
+           
+
+            
+        }
 
 
         void ConvertInbut()
@@ -347,60 +412,29 @@ namespace SVMember
                     lb_AmphoeInBut.Text = dt.Rows[0]["district_code"].ToString();
                     lb_TumbolCode.Text = dt.Rows[0]["tambol_code"].ToString();
                     lb_PostcodeInBut.Text = dt.Rows[0]["postcode"].ToString();
-                
-               
-                //string Tname = m_txtFullNameT.Text.Replace(" ", "");
-                ////string Tname = lb_PrenameInbut.Text + lb_nameInBut.Text + lb_surnameInBut.Text;
-                //string lbName = lbMb_name.Text.Replace(" ", "");
-                //string address = m_txtAddress.Text.Replace(" ", "");
-                //string lbAddress = lbMb_Add.Text.Replace(" ", "");
-
-                //if (lb_TumbolInBut != lbAddress && Tname == lbName)
-                //{
-                //    string message = "ที่อยู่ของสมาชิกไม่ตรงกับข้อมูลที่สหกรณ์มีอยู่ กรุณาติดต่อเจ้าหน้าที่";
-                //    label2.Text = message;
-                //    // add_cross.Visible = true;
-                //    add_check.Visible = true;
-                //    ID_check.Visible = true;
-                //    Tname_check.Visible = true;
-                //    Ename_check.Visible = true;
-                //    birth_check.Visible = true;
-                //    birth_check2.Visible = true;
-                //    tel_chexk.Visible = true;
-                //    add_cross2.Visible = true;
-                //    mbno_check.Visible = true;
-                //    crrAdd_cross.Visible = true;
-                //    Tname_check2.Visible = true;
-
-                //    MessageBox.Show(message, "error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                //}
-
-                //if (Tname != lbName && address == lbAddress)
-                //{
-                //    //MessageBox.Show(Tname);
-                //    string message2 = "ชื่อ-นามสกุลไม่ตรงกับข้อมูลสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
-                //    //string message2 = Tname;
-                //    label2.Text = message2;
-                //    // add_cross.Visible = true;
-                //    Tname_cross2.Visible = true;
-                //    add_check.Visible = true;
-                //    ID_check.Visible = true;
-                //    Tname_check.Visible = true;
-                //    Ename_check.Visible = true;
-                //    birth_check.Visible = true;
-                //    birth_check2.Visible = true;
-                //    tel_chexk.Visible = true;
-                //    mbno_check.Visible = true;
-                //    crrAdd_check.Visible = true;
-                //    add_check2.Visible = true;
-
-                //    MessageBox.Show(message2, "error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                //}
-
             }
         }
+
+
+        //void ConvertPrename()
+        //{
+        //    str = "SELECT * FROM mbucfprename WHERE prename_desc = '" + lb_PrenameInbut.Text.Replace("น.ส","นางสาว") + "'";
+
+        //    //if (label2.Text != "")  // ตรวจไม่พบ ยังมี dialog ค้างอยู่
+        //    //{
+        //    //    //MessageBox.Show("555");
+        //    //    return;
+        //    //}
+
+        //    DataTable dt = ClsMST.SelectQuery(str);
+        //    if (dt.Rows.Count >= 0)
+        //    {
+
+
+        //        lb_PrenameCode.Text = dt.Rows[0]["prename_code"].ToString();
+               
+        //    }
+        //}
 
 
         
@@ -420,7 +454,7 @@ namespace SVMember
             if (nInsertCard != 0)
             {
                 ReadCard();
-                lb_Appl_Docno.Text = DateTime.Now.ToString("yyyyMMddHHmmss", CultureInfo.InvariantCulture);
+                
             }
             else
             {
@@ -530,7 +564,22 @@ namespace SVMember
 
                 m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
 
-                lb_BirthdateInBut.Text = fields[(int)NID_FIELD.BIRTH_DATE];
+               // lb_BirthdateInBut.Text = fields[(int)NID_FIELD.BIRTH_DATE];
+
+                string birthdate = fields[(int)NID_FIELD.BIRTH_DATE]; // Assuming birthdate is in a string format, e.g., "25391011"
+
+                // Extract the individual components from the birthdate string
+                int year = int.Parse(birthdate.Substring(0, 4))-1086;
+                int month = int.Parse(birthdate.Substring(4, 2));
+                int day = int.Parse(birthdate.Substring(6, 2));
+
+                // Create a DateTime object with the extracted components
+                DateTime parsedDate = new DateTime(year, month, day);
+
+                string formattedBirthdate = parsedDate.ToString("ddMMyyyy");
+                lb_BirthdateInBut.Text = formattedBirthdate;
+
+
 
 
                 m_txtAddress.Text = fields[(int)NID_FIELD.HOME_NO] + " " +
@@ -571,7 +620,8 @@ namespace SVMember
 
               
                 ShowData();
-                
+                ConvertInbut();
+               // ConvertPrename();
                
             }
 
@@ -644,6 +694,7 @@ namespace SVMember
                     mbno_check.Visible = true;
                     crrAdd_cross.Visible = true;
                     Tname_check2.Visible = true;
+
 
                    
 
@@ -748,6 +799,8 @@ namespace SVMember
                      //}
                  }
 
+                
+
                  
             }
            
@@ -812,8 +865,8 @@ namespace SVMember
             lbMb_name.Text = "";
             lbMb_Add.Text = "";
             lbMb_Add2.Text = "";
-            label9.Text = "";
-            label5.Text = "";
+            lb_BirthdateC.Text = "";
+            lb_Tel.Text = "";
             lb_Errortext.Text = "";
             label2.Text = "";
             add_check.Visible = false;
@@ -830,6 +883,8 @@ namespace SVMember
             crrAdd_cross.Visible = false;
             Tname_check2.Visible = false;
             crrAdd_check.Visible = false;
+            crrBirth_cross.Visible = false;
+
 
             
                                    
@@ -935,6 +990,7 @@ namespace SVMember
         private void button1_Click_1(object sender, EventArgs e)
         {
             ShowData();
+            timer_AutoRead.Enabled = true;
             //ReadCard();
            // MessageBox.Show("555");
         }
@@ -958,6 +1014,66 @@ namespace SVMember
         {
 
         }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            lb_Appl_Docno.Text = DateTime.Now.ToString("yyMdHm", CultureInfo.InvariantCulture);
+
+            string phoneNumber = lb_Tel.Text; // Get the phone number from TextBox1
+
+            bool isValid = ValidateThaiPhoneNumber(phoneNumber);
+
+            if (isValid)
+            {
+                //MessageBox.Show("Valid Thai phone number");
+                tel_chexk.Visible = true;
+                crrTel_cross.Visible = false;
+            }
+            else
+            {
+                tel_chexk.Visible = false;
+                crrTel_cross.Visible = true;
+                MessageBox.Show("กรุณาระบุหมายเลขโทรศัพท์ให้ถูกต้อง");
+            }
+
+            string value = lb_BirthdateC.Text;
+            lb_BirthdateC2.Text = Fc.GetshotDate(value, 1).Replace("/","");
+
+            if (lb_BirthdateC2.Text == "")
+            {
+                birth_check2.Visible = false;
+                crrBirth_cross.Visible = true;
+                MessageBox.Show("กรุณาระบุ วัน/เดือน/ปี เกิดให้ถูกต้อง");
+            }
+            else if (lb_BirthdateC2.Text != "")
+            {
+                birth_check2.Visible = true;
+                crrBirth_cross.Visible = false;
+            }
+
+            SaveData();
+
+        }
+
+       
+
+        private void lb_BirthdateC_Click(object sender, EventArgs e)
+        {
+            timer_AutoRead.Enabled = false;
+        }
+
+        private void lb_Tel_Click(object sender, EventArgs e)
+        {
+            timer_AutoRead.Enabled = false;
+        }
+
+       
+
+       
+
+     
+
+       
 
       
 
