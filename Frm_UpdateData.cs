@@ -251,7 +251,6 @@ namespace SVMember
             lbMb_Add2.Text = txt_Crradd.ToString();
             lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
             //TextBox1.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
-            lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
             //lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 12);
             lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
             lb_Tel.Text = dt.Rows[0]["addr_mobilephone"].ToString();
@@ -271,8 +270,8 @@ namespace SVMember
             lb_ProvinceC.Text = dt.Rows[0]["CurrPROVINCE_CODE"].ToString();
             lb_PostcodeC.Text = dt.Rows[0]["Curraddr_POSTCODE"].ToString();
             lb_IDcardC.Text = dt.Rows[0]["card_person"].ToString();
-            //lb_BirthdateC.Text = dt.Rows[0]["birth_date"].ToString();
-            lb_BirthdateC2.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 1).Replace("/","");
+            lb_BirthdateC2.Text = dt.Rows[0]["birth_date"].ToString();
+            //lb_BirthdateC2.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 0);
 
            
             //string value = lb_BirthdateC.Text;
@@ -364,10 +363,11 @@ namespace SVMember
                  ",'" + label17.Text + "'" +
                  ",'" + lb_IDcardC.Text + "'" +
                  ",'" + lb_IDcardInBut.Text + "'" +
-                 ",'" + Fc.GetshotDate(lb_BirthdateC2.Text, 1) + "'" +
-                // ",'" + lb_BirthdateC2.Text + "'" +
-                // ",'" + lb_BirthdateInBut.Text + "'" +
-                 ",'" + Fc.GetshotDate(lb_BirthdateInBut.Text, 1) + "'" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateC2.Text, 1) + "'," + "'DD/MM/YYYY')"+
+                 //",'" + lb_BirthdateC2.Text + "'" +
+                 //",'" + lb_BirthdateInBut.Text + "'" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateInBut.Text, 1) + "'," + "'DD/MM/YYYY')" +
+                //  ",'" + Fc.GetshotDate(lb_BirthdateInBut.Text, 0) + "'" +
                  ",'" + lb_telC.Text + "'" +
                  ",'" + lb_Tel.Text + "'" +
                  ",'" + m_txtIssueNum.Text + "'" +
@@ -564,20 +564,23 @@ namespace SVMember
 
                 m_txtIssueNum.Text = fields[(int)NID_FIELD.ISSUE_NUM];
 
-               // lb_BirthdateInBut.Text = fields[(int)NID_FIELD.BIRTH_DATE];
+                //lb_BirthdateInBut.Text = fields[(int)NID_FIELD.BIRTH_DATE];
 
                 string birthdate = fields[(int)NID_FIELD.BIRTH_DATE]; // Assuming birthdate is in a string format, e.g., "25391011"
 
                 // Extract the individual components from the birthdate string
-                int year = int.Parse(birthdate.Substring(0, 4))-1086;
+                int year = int.Parse(birthdate.Substring(0, 4)) - 543;
                 int month = int.Parse(birthdate.Substring(4, 2));
                 int day = int.Parse(birthdate.Substring(6, 2));
 
                 // Create a DateTime object with the extracted components
                 DateTime parsedDate = new DateTime(year, month, day);
 
-                string formattedBirthdate = parsedDate.ToString("ddMMyyyy");
+                string formattedBirthdate = parsedDate.ToString("dd/MM/yyyy");
                 lb_BirthdateInBut.Text = formattedBirthdate;
+
+                
+
 
 
 
@@ -885,9 +888,7 @@ namespace SVMember
             crrAdd_check.Visible = false;
             crrBirth_cross.Visible = false;
 
-
-            
-                                   
+                        
 
             CardStateChange = false;
             
@@ -1037,7 +1038,7 @@ namespace SVMember
             }
 
             string value = lb_BirthdateC.Text;
-            lb_BirthdateC2.Text = Fc.GetshotDate(value, 1).Replace("/","");
+            //lb_BirthdateC2.Text = Fc.GetshotDate(value, 0);
 
             if (lb_BirthdateC2.Text == "")
             {

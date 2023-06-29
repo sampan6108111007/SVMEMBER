@@ -106,6 +106,12 @@
     <Compile Include="Frm_ACrenamfile.Designer.cs">
       <DependentUpon>Frm_ACrenamfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_ApproveData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ApproveData.Designer.cs">
+      <DependentUpon>Frm_ApproveData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_GARANTEE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ACrenamfile.resx">
       <DependentUpon>Frm_ACrenamfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ApproveData.resx">
+      <DependentUpon>Frm_ApproveData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GARANTEE.resx">
       <DependentUpon>Frm_GARANTEE.cs</DependentUpon>
@@ -338,6 +347,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ฟอร์มยืนยัน.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ฟอร์มยืนยัน2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
