@@ -37,151 +37,237 @@ namespace SVMember
         private void Frm_ApproveData_Load(object sender, EventArgs e)
         {
             ClsMST.GetDb();
+            ShowData();
+
         }
 
         void ShowData() //string id_card
         {
 
+            //str = "select " +
+            //                 " member_no,   " +
+            //                 " card_personc,   " +
+            //                 " card_personn,    " +
+            //                 " mbucfprename.prename_code || '' prename_code ," +
+            //                 " mbucfprename.prename_desc," +
+            //                 //" memb_namec," +
+            //                 " memb_surnamec," +
+            //                 " mbucfprename.prename_desc || mba.memb_namec || '    ' || mba.memb_surnamec as MbnameC,   " +
+            //                 " memb_namen,   " +
+            //                 " memb_surnamen,  " +
+            //                 " mbucfprename.prename_desc || mba.memb_namen || '    ' || mba.memb_surnamen as MbnameN,   " +
+            //                 " mba.memb_addrc,   " +
+            //                 " mba.addr_mooc,   " +
+            //                 " mba.addr_soic,   " +
+            //                 " mba.addr_villagec,   " +
+            //                 " mba.addr_roadc,   " +
+            //                 " mba.tambon_codec,   " +
+            //                 " mba.amphur_codec,     " +
+            //                 " mba.provice_codec,  " +
+            //                 " mbucftambol.tambol_desc, " +
+            //                 " mbucfdistrict.district_desc,  " +
+            //                 " mbucfprovince.province_desc, " +
+            //                 " mbucfdistrict.postcode, " +
+            //                // " memb_addrc ||' หมู่ที่.' ||addr_mooc || ' ซอย.' || addr_soic || ' หมู่บ้าน.' ||addr_villagec || ' ถนน' ||addr_roadc ||' ตำบล' || mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' ||mbucfprovince.province_desc || ' ' ||mbucfdistrict.postcode Cur_Add, " +
+            //                 " mba.memb_addrn,   " +
+            //                 " mba.addr_moon,   " +
+            //                 " mba.addr_soin,   " +
+            //                 " mba.addr_villagen,   " +
+            //                 " mba.addr_roadn, " +
+            //                 " mba.tambon_coden, " +
+            //                 " mba.amphur_coden, " +
+            //                 " mba.province_coden, " +
+            //                 " mbucftambol.tambol_desc, " +
+            //                 " mbucfdistrict.district_desc, " +
+            //                 " mbucfprovince.province_desc, " +
+            //                 " mbucfdistrict.postcode, " +
+            //                 //" memb_addrn ||' หมู่ที่.' ||addr_moon || ' ซอย.' || addr_soin || ' หมู่บ้าน.' ||addr_villagen || ' ถนน' ||addr_roadn ||' ตำบล' || mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' ||mbucfprovince.province_desc || ' ' ||mbucfdistrict.postcode New_Add, " +
+            //                 " memb_addrn ||' หมู่ที่.' ||addr_moon || ' ซอย.' || addr_soin || ' หมู่บ้าน.' ||addr_villagen || ' ถนน' ||addr_roadn ||' ตำบล' || mbucftambol_new.tambol_desc || ' อำเภอ' || mbucfdistrict_new.district_desc || ' จังหวัด' || mbucfprovince_new.province_desc || ' ' ||mbucfdistrict.postcode New_Add," +
+            //                 " birth_datec, " +
+            //                 " birth_daten, " +
+            //                 " mba.addr_mobilephonec, " +
+            //                 " mba.addr_mobilephonen " +
+            //                 " mbucfprovince_new.province_desc ||'' new_province," +
+            //                 " mbucfdistrict_new.district_desc ||'' new_district," +
+            //                 " mbucftambol_new.tambol_desc ||'' new_tambol" +
+            //                 " From mbreqchgaddress mba " +
+            //                 " inner join mbucfprename on mba.prename_codec = mbucfprename.prename_code  " +
+            //                 " inner join mbucfprename on mba.prename_coden = mbucfprename.prename_code " +
+            //                 " inner join mbucfprovince on mba.provice_codec = mbucfprovince.province_code " +
+            //                 " inner join mbucfdistrict on mba.amphur_codec = mbucfdistrict.district_code " +
+            //                 " inner join mbucftambol on mba.tambon_codec = mbucftambol.tambol_code " +
+            //                 " inner join mbucfprovince  mbucfprovince_new on mba.province_coden = mbucfprovince_new.province_code" +
+            //                 " inner join mbucfdistrict  mbucfdistrict_new on mba.amphur_coden = mbucfdistrict_new.district_code" +
+            //                 " inner join mbucftambol  mbucftambol_new on mba.tambon_coden = mbucftambol_new.tambol_code" +
+            //                 " where appl_docno ='" + this.Text + "'";
+
+
             str = "select " +
-                             " mb.MEMBER_NO,   " +
-                             " mb.CARD_PERSON,    " +
-                              "mbucfprename.prename_code || '' prename_code ," +
-                             "mbucfprename.prename_desc," +
-                             "mb.MEMB_NAME," +
-                             "mb.MEMB_SURNAME," +
-                             " mbucfprename.prename_desc || mb.MEMB_NAME || '    ' || mb.MEMB_SURNAME as Mbname,   " +
-                             " mb.MEMBGROUP_CODE,   " +
-                             " mbucfmembgroup.membgroup_desc,  " +
-                             " mb.resign_status,   " +
-                             " mb.MEMBER_DATE,   " +
-                             " mb.BIRTH_DATE,   " +
-                             " mb.MEMBER_STATUS,   " +
-                             " mb.RETRY_DATE,   " +
-                             " mb.RESIGN_DATE,   " +
-                             " mb.MATE_NAME,   " +
-                             " mb.addr_phone,     " +
-                             " mb.addr_mobilephone,  " +
-                             " mb.addr_no, " +
-                             " mb.addr_moo,  " +
-                             " mb.addr_SOI, " +
-                             " mb.addr_village, " +
-                             " mb.addr_ROAD, " +
-                //" mb.addr_no ||' หมู่ที่.' ||mb.addr_moo || ' ซอย.' || mb.addr_SOI || ' หมู่บ้าน.' ||mb.addr_village || ' ถนน' ||mb.addr_ROAD || ' ตำบล' || mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' || mbucfprovince.province_desc || ' ' ||mb.addr_postcode Add1," +
-                             " mb.tambol_code,   " +
-                             " mb.amphur_CODE,   " +
-                             " mb.PROVINCE_CODE,   " +
-                             " mb.addr_POSTCODE,   " +
-                             " mbucftambol.tambol_desc, " +
+                             " appl_docno,   " +
+                             " app_date,   " +
+                             " member_no,   " +
+                             " mbucfprename.prename_desc," +
+                             " memb_namen," +
+                             " memb_surnamen," +
+                             " card_personc,   " +
+                             " card_personn,    " +
+                             " memb_addrc,    " +
+                             " addr_mooc,    " +
+                             " addr_soic,    " +
+                             " addr_villagec,    " +
+                             " addr_roadc,    " +
+                             " mbucftambol.tambol_desc,  " +
                              " mbucfdistrict.district_desc, " +
                              " mbucfprovince.province_desc, " +
-                //" mb.Curraddr_no ||' หมู่ที่.' || mb.Curraddr_moo || ' ซอย.' || mb.Curraddr_SOI || ' หมู่บ้าน.' || mb.Curraddr_village || ' ถนน' || mb.Curraddr_ROAD || ' ตำบล' || mbucftambol_curr.tambol_desc || ' อำเภอ' || mbucfdistrict_curr.district_desc || ' จังหวัด' ||mbucfprovince_curr.province_desc || ' ' ||mb.Curraddr_POSTCODE Cur_Add1, " +
-                             " ' ตำบล' || mbucftambol_curr.tambol_desc || ' อำเภอ' || mbucfdistrict_curr.district_desc || ' จังหวัด' ||mbucfprovince_curr.province_desc || ' ' ||mb.Curraddr_POSTCODE Cur_Add1, " +
-                             " mb.Curraddr_no, " +
-                             " mb.Curraddr_moo, " +
-                             " mb.Curraddr_SOI, " +
-                             " mb.Curraddr_village, " +
-                             " mb.Curraddr_ROAD, " +
-                             " mb.Currtambol_code,     " +
-                             " mb.Curramphur_CODE,     " +
-                             " mb.CurrPROVINCE_CODE,     " +
-                             " mb.Curraddr_POSTCODE,  " +
-                             " mbucfprovince_curr.province_desc ||'' crr_province," +
-                             " mbucfdistrict_curr.district_desc ||'' crr_district, " +
-                             " mbucftambol_curr.tambol_desc ||'' crr_tambol, " +
-                             " mb.Curraddr_POSTCODE " +
-                             " From MBMEMBMASTER mb  " +
-                             " inner join mbucfprename on mb.prename_code = mbucfprename.prename_code  " +
-                             " inner join mbucfmembgroup on mb.MEMBGROUP_CODE = mbucfmembgroup.membgroup_code " +
-                             " inner join mbucfprovince on mb.province_code = mbucfprovince.province_code " +
-                             " inner join mbucfdistrict on mb.amphur_code = mbucfdistrict.district_code " +
-                             " inner join mbucftambol on mb.tambol_code = mbucftambol.tambol_code " +
-                             " inner join mbucfprovince  mbucfprovince_curr on mb.currprovince_code = mbucfprovince_curr.province_code" +
-                             " inner join mbucfdistrict  mbucfdistrict_curr on mb.curramphur_code = mbucfdistrict_curr.district_code" +
-                             " inner join mbucftambol  mbucftambol_curr on mb.currtambol_code = mbucftambol_curr.tambol_code" +
-                             " where mb.Card_person ='" + m_txtID.Text.Replace("-", "") + "' AND  mb.resign_status ='0'";
+                             " mbucfdistrict.postcode, " + 
+                             " memb_addrn,    " +
+                             " addr_moon,    " +
+                             " addr_soin,    " +
+                             " addr_villagen,    " +
+                             " addr_roadn, " +
+                              " mbucfprovince_new.province_desc ||'' new_province, " +
+                             " mbucfdistrict_new.district_desc ||'' new_district," +
+                             " mbucftambol_new.tambol_desc ||'' new_tambol," +
+                             " mbucfdistrict_new.postcode new_postcode," +
+                             " mbucfprename.prename_desc || mba.memb_namec || '    ' || mba.memb_surnamec as MbnameC,   " +
+                             " mbucfprename.prename_desc || mba.memb_namen || '    ' || mba.memb_surnamen as MbnameN,   " +
+                             " memb_addrc ||' หมู่ที่.' ||addr_mooc || ' ซอย.' || addr_soic || ' หมู่บ้าน.' ||addr_villagec || ' ถนน' ||addr_roadc ||' ตำบล' || mbucftambol.tambol_desc || ' อำเภอ' || mbucfdistrict.district_desc || ' จังหวัด' ||mbucfprovince.province_desc || ' ' ||mbucfdistrict.postcode Cur_Add," +
+                             " memb_addrn ||' หมู่ที่.' ||addr_moon || ' ซอย.' || addr_soin || ' หมู่บ้าน.' ||addr_villagen || ' ถนน' ||addr_roadn ||' ตำบล' || mbucftambol_new.tambol_desc || ' อำเภอ' || mbucfdistrict_new.district_desc || ' จังหวัด' || mbucfprovince_new.province_desc || ' ' ||mbucfdistrict.postcode New_Add, " +
+                             " birth_datec, " +
+                             " birth_daten, " +
+                             " mba.addr_mobilephonec, " +
+                             " mba.addr_mobilephonen " +
+                            
+                             " From mbreqchgaddress mba " +
+                             " inner join mbucfprename on mba.prename_codec = mbucfprename.prename_code  " +
+                             " inner join mbucfprename on mba.prename_coden = mbucfprename.prename_code " +
+                             " inner join mbucfprovince on mba.provice_codec = mbucfprovince.province_code " +
+                             " inner join mbucfdistrict on mba.amphur_codec = mbucfdistrict.district_code " +
+                             " inner join mbucftambol on mba.tambon_codec = mbucftambol.tambol_code " +
+                             " inner join mbucfprovince  mbucfprovince_new on mba.province_coden = mbucfprovince_new.province_code" +
+                             " inner join mbucfdistrict  mbucfdistrict_new on mba.amphur_coden = mbucfdistrict_new.district_code" +
+                             " inner join mbucftambol  mbucftambol_new on mba.tambon_coden = mbucftambol_new.tambol_code" +
+                             " where appl_docno ='" + this.Text + "'";
 
 
 
 
 
-
-            if (lb_Errortext.Text != "")  // ตรวจไม่พบ ยังมี dialog ค้างอยู่
-            {
-                return;
-            }
+            //if (lb_Errortext.Text != "")  // ตรวจไม่พบ ยังมี dialog ค้างอยู่
+            //{
+            //    return;
+            //}
 
 
 
             DataTable dt = ClsMST.SelectQuery(str);
-            if (dt.Rows.Count <= 0)
-            {
+            //if (dt.Rows.Count <= 0)
+            //{
 
-                string message = "ข้อมูลบัตรประชาชน ไม่มีอยู่ในข้อมูลสมาชิกสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
-                lb_Errortext.Text = message;
+            //    string message = "ข้อมูลบัตรประชาชน ไม่มีอยู่ในข้อมูลสมาชิกสหกรณ์ กรุณาติดต่อเจ้าหน้าที่";
+            //    //lb_Errortext.Text = message;
 
-                if (MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) == DialogResult.OK)
-                {
-                    return;
-                };
+            //    if (MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            //    {
+            //        return;
+            //    };
 
-            }
+            //}
 
-
-
-            string txt_add = "";
-
-            if (dt.Rows[0]["addr_no"].ToString() != "") { txt_add += dt.Rows[0]["addr_no"].ToString(); }
-            if (dt.Rows[0]["addr_moo"].ToString() != "") { txt_add += " หมู่ที่ " + dt.Rows[0]["addr_moo"].ToString(); }
-            if (dt.Rows[0]["addr_SOI"].ToString() != "") { txt_add += " ซอย " + dt.Rows[0]["addr_moo"].ToString(); }
-            if (dt.Rows[0]["addr_village"].ToString() != "") { txt_add += " หมู่บ้าน " + dt.Rows[0]["addr_village"].ToString(); }
-            if (dt.Rows[0]["addr_ROAD"].ToString() != "") { txt_add += " ถนน " + dt.Rows[0]["addr_ROAD"].ToString(); }
-
-            txt_add += " ตำบล" + dt.Rows[0]["tambol_desc"].ToString();
-            txt_add += " อำเภอ" + dt.Rows[0]["district_desc"].ToString();
-            txt_add += " จังหวัด" + dt.Rows[0]["province_desc"].ToString();
-            lb_PostcodeInBut.Text = dt.Rows[0]["addr_postcode"].ToString();
 
             string txt_Crradd = "";
 
-            if (dt.Rows[0]["Curraddr_no"].ToString() != "") { txt_Crradd += dt.Rows[0]["Curraddr_no"].ToString(); }
-            if (dt.Rows[0]["Curraddr_moo"].ToString() != "") { txt_Crradd += " หมู่ที่ " + dt.Rows[0]["Curraddr_moo"].ToString(); }
-            if (dt.Rows[0]["Curraddr_SOI"].ToString() != "") { txt_Crradd += " ซอย " + dt.Rows[0]["Curraddr_SOI"].ToString(); }
-            if (dt.Rows[0]["Curraddr_village"].ToString() != "") { txt_Crradd += "หมู่บ้าน " + dt.Rows[0]["Curraddr_village"].ToString(); }
-            if (dt.Rows[0]["Curraddr_ROAD"].ToString() != "") { txt_Crradd += " ถนน " + dt.Rows[0]["Curraddr_ROAD"].ToString(); }
+            if (dt.Rows[0]["memb_addrc"].ToString() != "") { txt_Crradd += dt.Rows[0]["memb_addrc"].ToString(); }
+            if (dt.Rows[0]["addr_mooc"].ToString() != "") { txt_Crradd += " หมู่ที่ " + dt.Rows[0]["addr_mooc"].ToString(); }
+            if (dt.Rows[0]["addr_soic"].ToString() != "") { txt_Crradd += " ซอย " + dt.Rows[0]["addr_soic"].ToString(); }
+            if (dt.Rows[0]["addr_villagec"].ToString() != "") { txt_Crradd += " หมู่บ้าน " + dt.Rows[0]["addr_villagec"].ToString(); }
+            if (dt.Rows[0]["addr_roadc"].ToString() != "") { txt_Crradd += " ถนน " + dt.Rows[0]["addr_roadc"].ToString(); }
+
+            txt_Crradd += " ตำบล" + dt.Rows[0]["tambol_desc"].ToString();
+            txt_Crradd += " อำเภอ" + dt.Rows[0]["district_desc"].ToString();
+            txt_Crradd += " จังหวัด" + dt.Rows[0]["province_desc"].ToString();
+            txt_Crradd += " จังหวัด" + dt.Rows[0]["postcode"].ToString();
+            
+            string txt_Newadd = "";
+
+            if (dt.Rows[0]["memb_addrn"].ToString() != "") { txt_Newadd += dt.Rows[0]["memb_addrn"].ToString(); }
+            if (dt.Rows[0]["addr_moon"].ToString() != "") { txt_Newadd += " หมู่ที่ " + dt.Rows[0]["addr_moon"].ToString(); }
+            if (dt.Rows[0]["addr_soin"].ToString() != "") { txt_Newadd += " ซอย " + dt.Rows[0]["addr_soin"].ToString(); }
+            if (dt.Rows[0]["addr_villagen"].ToString() != "") { txt_Newadd += "หมู่บ้าน " + dt.Rows[0]["addr_villagen"].ToString(); }
+            if (dt.Rows[0]["addr_roadn"].ToString() != "") { txt_Newadd += " ถนน " + dt.Rows[0]["addr_roadn"].ToString(); }
 
 
 
-            txt_Crradd += " " + dt.Rows[0]["Cur_Add1"].ToString();
+            txt_Newadd += " " + dt.Rows[0]["New_Add"].ToString();
 
 
 
-            lbMb_Add.Text = txt_add.ToString();
-            lbMb_name.Text = dt.Rows[0]["Mbname"].ToString();
-            lbMb_Add2.Text = txt_Crradd.ToString();
-            lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
-            lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
-            lb_Tel.Text = dt.Rows[0]["addr_mobilephone"].ToString();
-            lb_telC.Text = dt.Rows[0]["addr_mobilephone"].ToString();
-            lb_PostcodeC.Text = dt.Rows[0]["curraddr_postcode"].ToString();
-            lb_PrenameC.Text = dt.Rows[0]["prename_code"].ToString();
-            lb_PrenameCode.Text = dt.Rows[0]["prename_code"].ToString();
-            lb_nameC.Text = dt.Rows[0]["memb_name"].ToString();
-            lb_surnameC.Text = dt.Rows[0]["memb_surname"].ToString();
-            lb_HomeNoC.Text = dt.Rows[0]["curraddr_no"].ToString();
-            lb_MooC.Text = dt.Rows[0]["curraddr_moo"].ToString();
-            lb_TrokC.Text = dt.Rows[0]["curraddr_village"].ToString();
-            lb_SoiC.Text = dt.Rows[0]["curraddr_soi"].ToString();
-            lb_RoadC.Text = dt.Rows[0]["curraddr_road"].ToString();
-            lb_TumbolC.Text = dt.Rows[0]["Currtambol_code"].ToString();
-            lb_AmphoeC.Text = dt.Rows[0]["Curramphur_CODE"].ToString();
-            lb_ProvinceC.Text = dt.Rows[0]["CurrPROVINCE_CODE"].ToString();
-            lb_PostcodeC.Text = dt.Rows[0]["Curraddr_POSTCODE"].ToString();
-            lb_IDcardC.Text = dt.Rows[0]["card_person"].ToString();
-            lb_BirthdateC2.Text = dt.Rows[0]["birth_date"].ToString();
 
-            CheckData();
+            lb_Member_noC.Text = dt.Rows[0]["member_no"].ToString();
+            lb_Member_noN.Text = dt.Rows[0]["member_no"].ToString();
+            lb_Card_personC.Text = dt.Rows[0]["card_personc"].ToString();
+            lb_Card_personN.Text = dt.Rows[0]["card_personn"].ToString();
+            lb_NameC.Text = dt.Rows[0]["MbnameC"].ToString();
+            lb_PrenameN.Text = dt.Rows[0]["prename_desc"].ToString();
+            lb_NameN.Text = dt.Rows[0]["memb_namen"].ToString();
+            lb_SernameN.Text = dt.Rows[0]["memb_surnamen"].ToString();
+            lb_Birth_DateC.Text = dt.Rows[0]["birth_datec"].ToString();
+            lb_Birth_DateN.Text = dt.Rows[0]["birth_daten"].ToString();
+            lb_MobilephoneC.Text = dt.Rows[0]["addr_mobilephonec"].ToString();
+            lb_MobilephoneN.Text = dt.Rows[0]["addr_mobilephonen"].ToString();
+            lb_AddressC.Text = txt_Crradd.ToString();
+            lb_HomenoN.Text = txt_Newadd.ToString();
+            lb_MooN.Text = dt.Rows[0]["addr_moon"].ToString();
+            lb_SoiN.Text = dt.Rows[0]["addr_soin"].ToString();
+            lb_VillageN.Text = dt.Rows[0]["addr_villagen"].ToString();
+            lb_RoadN.Text = dt.Rows[0]["addr_roadn"].ToString();
+            lb_TambolN.Text = dt.Rows[0]["new_tambol"].ToString();
+            lb_AumphurN.Text = dt.Rows[0]["new_district"].ToString();
+            lb_ProvinceN.Text = dt.Rows[0]["new_province"].ToString();
+            lb_PostcodeN.Text = dt.Rows[0]["new_postcode"].ToString();
+
+            
 
 
+            //lbMb_Add.Text = txt_add.ToString();
+            //lbMb_name.Text = dt.Rows[0]["Mbname"].ToString();
+            //lbMb_Add2.Text = txt_Crradd.ToString();
+            //lb_BirthdateC.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 9);
+            //lb_mbno.Text = dt.Rows[0]["member_no"].ToString();
+            //lb_Tel.Text = dt.Rows[0]["addr_mobilephone"].ToString();
+            //lb_telC.Text = dt.Rows[0]["addr_mobilephone"].ToString();
+            //lb_PostcodeC.Text = dt.Rows[0]["curraddr_postcode"].ToString();
+            //lb_PrenameC.Text = dt.Rows[0]["prename_code"].ToString();
+            //lb_PrenameCode.Text = dt.Rows[0]["prename_code"].ToString();
+            //lb_nameC.Text = dt.Rows[0]["memb_name"].ToString();
+            //lb_surnameC.Text = dt.Rows[0]["memb_surname"].ToString();
+            //lb_HomeNoC.Text = dt.Rows[0]["curraddr_no"].ToString();
+            //lb_MooC.Text = dt.Rows[0]["curraddr_moo"].ToString();
+            //lb_TrokC.Text = dt.Rows[0]["curraddr_village"].ToString();
+            //lb_SoiC.Text = dt.Rows[0]["curraddr_soi"].ToString();
+            //lb_RoadC.Text = dt.Rows[0]["curraddr_road"].ToString();
+            //lb_TumbolC.Text = dt.Rows[0]["Currtambol_code"].ToString();
+            //lb_AmphoeC.Text = dt.Rows[0]["Curramphur_CODE"].ToString();
+            //lb_ProvinceC.Text = dt.Rows[0]["CurrPROVINCE_CODE"].ToString();
+            //lb_PostcodeC.Text = dt.Rows[0]["Curraddr_POSTCODE"].ToString();
+            //lb_IDcardC.Text = dt.Rows[0]["card_person"].ToString();
+            //lb_BirthdateC2.Text = dt.Rows[0]["birth_date"].ToString();
+
+           // CheckData();
+
+
+        }
+
+        private void btn_Show_Data_Click(object sender, EventArgs e)
+        {
+            //ShowData();
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            Frm_Approve2 Frm = new Frm_Approve2();
+            Frm.Show();
+            this.Close();  
         }
 
 

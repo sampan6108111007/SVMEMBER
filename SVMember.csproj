@@ -106,6 +106,12 @@
     <Compile Include="Frm_ACrenamfile.Designer.cs">
       <DependentUpon>Frm_ACrenamfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Approve2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Approve2.Designer.cs">
+      <DependentUpon>Frm_Approve2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_ApproveData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ACrenamfile.resx">
       <DependentUpon>Frm_ACrenamfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Approve2.resx">
+      <DependentUpon>Frm_Approve2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ApproveData.resx">
       <DependentUpon>Frm_ApproveData.cs</DependentUpon>

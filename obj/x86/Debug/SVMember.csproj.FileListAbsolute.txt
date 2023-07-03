@@ -27,3 +27,4 @@ D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.csproj
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.csprojResolveAssemblyReference.cache
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Form1.resources
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_ApproveData.resources
+D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.Frm_Approve2.resources

@@ -111,11 +111,11 @@
             this.lb_BirthdateC2 = new System.Windows.Forms.Label();
             this.lb_PrenameCode = new System.Windows.Forms.Label();
             this.lb_telC = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lb_App_Date = new System.Windows.Forms.Label();
+            this.lb_Entry_Id = new System.Windows.Forms.Label();
+            this.lb_Entry_Date = new System.Windows.Forms.Label();
+            this.lb_Entry_Type = new System.Windows.Forms.Label();
+            this.lb_App_Status = new System.Windows.Forms.Label();
             this.btn_save = new SVMember.controls.RJButton();
             this.Btn_Clear = new SVMember.controls.RJButton();
             this.button1 = new SVMember.controls.RJButton();
@@ -995,45 +995,48 @@
             this.lb_telC.TabIndex = 128;
             this.lb_telC.Text = "เบอร์โทร";
             // 
-            // label5
+            // lb_App_Date
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(860, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 17);
-            this.label5.TabIndex = 129;
+            this.lb_App_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_App_Date.Location = new System.Drawing.Point(860, 11);
+            this.lb_App_Date.Name = "lb_App_Date";
+            this.lb_App_Date.Size = new System.Drawing.Size(105, 17);
+            this.lb_App_Date.TabIndex = 129;
             // 
-            // label7
+            // lb_Entry_Id
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(860, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 17);
-            this.label7.TabIndex = 129;
+            this.lb_Entry_Id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Entry_Id.Location = new System.Drawing.Point(860, 28);
+            this.lb_Entry_Id.Name = "lb_Entry_Id";
+            this.lb_Entry_Id.Size = new System.Drawing.Size(105, 17);
+            this.lb_Entry_Id.TabIndex = 129;
+            this.lb_Entry_Id.Text = "black";
             // 
-            // label9
+            // lb_Entry_Date
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(860, 46);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 17);
-            this.label9.TabIndex = 129;
+            this.lb_Entry_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Entry_Date.Location = new System.Drawing.Point(860, 46);
+            this.lb_Entry_Date.Name = "lb_Entry_Date";
+            this.lb_Entry_Date.Size = new System.Drawing.Size(105, 17);
+            this.lb_Entry_Date.TabIndex = 129;
             // 
-            // label17
+            // lb_Entry_Type
             // 
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(860, 72);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(105, 17);
-            this.label17.TabIndex = 129;
+            this.lb_Entry_Type.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Entry_Type.Location = new System.Drawing.Point(860, 72);
+            this.lb_Entry_Type.Name = "lb_Entry_Type";
+            this.lb_Entry_Type.Size = new System.Drawing.Size(105, 17);
+            this.lb_Entry_Type.TabIndex = 129;
+            this.lb_Entry_Type.Text = "1";
             // 
-            // label18
+            // lb_App_Status
             // 
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(749, 11);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(105, 17);
-            this.label18.TabIndex = 129;
+            this.lb_App_Status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_App_Status.Location = new System.Drawing.Point(749, 11);
+            this.lb_App_Status.Name = "lb_App_Status";
+            this.lb_App_Status.Size = new System.Drawing.Size(105, 17);
+            this.lb_App_Status.TabIndex = 129;
+            this.lb_App_Status.Text = "0";
             // 
             // btn_save
             // 
@@ -1114,11 +1117,11 @@
             this.BackgroundImage = global::SVMember.Properties.Resources.bg_green2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 903);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lb_App_Status);
+            this.Controls.Add(this.lb_Entry_Type);
+            this.Controls.Add(this.lb_Entry_Date);
+            this.Controls.Add(this.lb_Entry_Id);
+            this.Controls.Add(this.lb_App_Date);
             this.Controls.Add(this.lb_telC);
             this.Controls.Add(this.lb_BirthdateC2);
             this.Controls.Add(this.lb_IDcardC);
@@ -1272,11 +1275,11 @@
         private System.Windows.Forms.PictureBox crrTel_cross;
         private System.Windows.Forms.Label lb_PrenameCode;
         private System.Windows.Forms.Label lb_telC;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lb_App_Date;
+        private System.Windows.Forms.Label lb_Entry_Id;
+        private System.Windows.Forms.Label lb_Entry_Date;
+        private System.Windows.Forms.Label lb_Entry_Type;
+        private System.Windows.Forms.Label lb_App_Status;
 
     }
 }

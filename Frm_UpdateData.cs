@@ -356,14 +356,16 @@ namespace SVMember
                  ",'" + lb_TumbolCode.Text + "'" +
                  ",'" + lb_AmphoeInBut.Text + "'" +
                  ",'" + lb_ProvinceInBut.Text + "'" +
-                 ",'" + label18.Text + "'" +
-                 ",'" + label5.Text + "'" +
-                 ",'" + label7.Text + "'" +
-                 ",'" + label9.Text + "'" +
-                 ",'" + label17.Text + "'" +
+                 ",'" + lb_App_Status.Text + "'" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_App_Date.Text, 11) + "'," + "'MM/DD/YYYY HH:MI:SS')" +
+                // ",'" + lb_App_Date.Text + "'" +
+                 ",'" + lb_Entry_Id.Text + "'" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_Entry_Date.Text, 11) + "'," + "'MM/DD/YYYY HH:MI:SS')" +
+                // ",'" + lb_Entry_Date.Text + "'" +
+                 ",'" + lb_Entry_Type.Text + "'" +
                  ",'" + lb_IDcardC.Text + "'" +
                  ",'" + lb_IDcardInBut.Text + "'" +
-                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateC2.Text, 1) + "'," + "'DD/MM/YYYY')"+
+                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateC2.Text, 1) + "'," + "'DD/MM/YYYY')" +
                  //",'" + lb_BirthdateC2.Text + "'" +
                  //",'" + lb_BirthdateInBut.Text + "'" +
                  ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateInBut.Text, 1) + "'," + "'DD/MM/YYYY')" +
@@ -445,11 +447,6 @@ namespace SVMember
             Int32 nInsertCard = 0;
             nInsertCard = RDNID.connectCardRD(obj);
 
-            //textBox1.Text  +=  nInsertCard.ToString() + " on  " ;
-
-            //nInsertCard = RDNID.disconnectCardRD(obj);
-
-            //textBox1.Text += nInsertCard.ToString() + " off | ";
 
             if (nInsertCard != 0)
             {
@@ -1018,6 +1015,8 @@ namespace SVMember
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            lb_App_Date.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
+            lb_Entry_Date.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
             lb_Appl_Docno.Text = DateTime.Now.ToString("yyMdHm", CultureInfo.InvariantCulture);
 
             string phoneNumber = lb_Tel.Text; // Get the phone number from TextBox1
