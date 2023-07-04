@@ -394,6 +394,17 @@ namespace SVMember
         }
 
 
+        void UpdateData()
+        {
+            sql = "UPDATE mbreqchgaddress" +
+                " SET birth_daten = TO_DATE('" + lb_BirthdateC2.Text + "'," + "'DD/MM/YYYY')" +
+                " , addr_mobilephonen = '" + lb_Tel.Text + "' WHERE card_personn = '" + m_txtID.Text.Replace("-","") + "'";
+             
+            ClsMST.Save_ORACLE(sql);
+
+        }
+
+
         void ConvertInbut()
         {
             str = "SELECT mbucfdistrict.district_code , mbucfdistrict.district_desc, mbucfdistrict.postcode, mbucfdistrict.province_code, tambol_code, tambol_desc  FROM mbucftambol " +
@@ -655,6 +666,18 @@ namespace SVMember
             return 0;
         }
 
+
+        private void CheckInsert() 
+        {
+            str = "select * from mbreqchgaddress " +
+                " where card_personn ='" + m_txtID.Text.Replace("-", "") + "' AND  app_status = '0'"; 
+           
+
+            DataTable dt = ClsMST.SelectQuery(str);
+
+            lb_Capp_Status.Text = dt.Rows[0]["app_status"].ToString();
+
+        }
 
         private void CheckData()
 
@@ -1015,6 +1038,24 @@ namespace SVMember
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            CheckInsert();
+
+            if (lb_Capp_Status.Text == "0") 
+            {
+                string message = "ท่านเปลี่ยนแปลงข้อมูลเรียบร้อยแล้ว ท่านต้องการอัปเดตข้อมูลหรือไม่";
+                lb_Errortext.Text = message;
+
+                if (MessageBox.Show(message, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    string value = lb_BirthdateC.Text;
+                    lb_BirthdateC2.Text = Fc.GetshotDate(value, 1);
+                    UpdateData();
+                    MessageBox.Show("อัปเดตข้อมูลของท่านเรียบร้อย");
+                    return;
+                };
+                return;
+            }
+            
             lb_App_Date.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
             lb_Entry_Date.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
             lb_Appl_Docno.Text = DateTime.Now.ToString("yyMdHm", CultureInfo.InvariantCulture);
@@ -1036,8 +1077,7 @@ namespace SVMember
                 MessageBox.Show("กรุณาระบุหมายเลขโทรศัพท์ให้ถูกต้อง");
             }
 
-            string value = lb_BirthdateC.Text;
-            //lb_BirthdateC2.Text = Fc.GetshotDate(value, 0);
+          
 
             if (lb_BirthdateC2.Text == "")
             {
@@ -1065,6 +1105,15 @@ namespace SVMember
         private void lb_Tel_Click(object sender, EventArgs e)
         {
             timer_AutoRead.Enabled = false;
+        }
+
+        private void btn_chk_Click(object sender, EventArgs e)
+        {
+           // CheckInsert();
+           // UpdateData();
+            string value = lb_BirthdateC.Text;
+            lb_BirthdateC2.Text = Fc.GetshotDate(value, 1);
+            UpdateData();
         }
 
        

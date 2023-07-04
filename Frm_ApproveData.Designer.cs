@@ -29,6 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_SernameN = new System.Windows.Forms.TextBox();
+            this.lb_NameN = new System.Windows.Forms.TextBox();
+            this.lb_PrenameN = new System.Windows.Forms.TextBox();
+            this.lb_PostcodeN = new System.Windows.Forms.TextBox();
+            this.lb_ProvinceN = new System.Windows.Forms.TextBox();
+            this.lb_AumphurN = new System.Windows.Forms.TextBox();
+            this.lb_TambolN = new System.Windows.Forms.TextBox();
+            this.lb_RoadN = new System.Windows.Forms.TextBox();
+            this.lb_VillageN = new System.Windows.Forms.TextBox();
+            this.lb_SoiN = new System.Windows.Forms.TextBox();
+            this.lb_MooN = new System.Windows.Forms.TextBox();
+            this.lb_HomenoN = new System.Windows.Forms.TextBox();
+            this.lb_Member_noN = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_Member_noC = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,10 +52,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.add_check = new System.Windows.Forms.PictureBox();
             this.birth_check = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.Tname_check = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.lb_AddressC = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.lb_Birth_DateC = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.lb_NameC = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbCD_IDCard = new System.Windows.Forms.Label();
@@ -54,35 +74,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lbCD_Add1 = new System.Windows.Forms.Label();
             this.lbCD_name = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.lb_Member_noN = new System.Windows.Forms.TextBox();
-            this.lb_HomenoN = new System.Windows.Forms.TextBox();
-            this.lb_PrenameN = new System.Windows.Forms.TextBox();
-            this.lb_MooN = new System.Windows.Forms.TextBox();
-            this.lb_SoiN = new System.Windows.Forms.TextBox();
-            this.lb_VillageN = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lb_RoadN = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lb_TambolN = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lb_AumphurN = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.lb_ProvinceN = new System.Windows.Forms.TextBox();
-            this.lb_PostcodeN = new System.Windows.Forms.TextBox();
-            this.lb_NameN = new System.Windows.Forms.TextBox();
-            this.lb_SernameN = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.btn_Back = new SVMember.controls.RJButton();
             this.btn_Show_Data = new SVMember.controls.RJButton();
+            this.lb_Province_Code = new System.Windows.Forms.Label();
+            this.lb_Aumphur_Code = new System.Windows.Forms.Label();
+            this.lb_Tambol_Code = new System.Windows.Forms.Label();
+            this.lb_Prename_Code = new System.Windows.Forms.Label();
+            this.lb_App_Status = new System.Windows.Forms.Label();
+            this.lb_Apv_Id = new System.Windows.Forms.Label();
+            this.lb_Apv_Date = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID_check)).BeginInit();
@@ -99,6 +106,13 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::SVMember.Properties.Resources.ฟอร์มยืนยัน2;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.lb_Apv_Date);
+            this.panel1.Controls.Add(this.lb_Apv_Id);
+            this.panel1.Controls.Add(this.lb_App_Status);
+            this.panel1.Controls.Add(this.lb_Prename_Code);
+            this.panel1.Controls.Add(this.lb_Tambol_Code);
+            this.panel1.Controls.Add(this.lb_Aumphur_Code);
+            this.panel1.Controls.Add(this.lb_Province_Code);
             this.panel1.Controls.Add(this.lb_SernameN);
             this.panel1.Controls.Add(this.lb_NameN);
             this.panel1.Controls.Add(this.lb_PrenameN);
@@ -156,6 +170,124 @@
             this.panel1.Size = new System.Drawing.Size(1024, 576);
             this.panel1.TabIndex = 14;
             // 
+            // lb_SernameN
+            // 
+            this.lb_SernameN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_SernameN.Location = new System.Drawing.Point(863, 299);
+            this.lb_SernameN.Multiline = true;
+            this.lb_SernameN.Name = "lb_SernameN";
+            this.lb_SernameN.Size = new System.Drawing.Size(114, 35);
+            this.lb_SernameN.TabIndex = 138;
+            // 
+            // lb_NameN
+            // 
+            this.lb_NameN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_NameN.Location = new System.Drawing.Point(675, 299);
+            this.lb_NameN.Multiline = true;
+            this.lb_NameN.Name = "lb_NameN";
+            this.lb_NameN.Size = new System.Drawing.Size(135, 35);
+            this.lb_NameN.TabIndex = 137;
+            // 
+            // lb_PrenameN
+            // 
+            this.lb_PrenameN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_PrenameN.Location = new System.Drawing.Point(675, 260);
+            this.lb_PrenameN.Multiline = true;
+            this.lb_PrenameN.Name = "lb_PrenameN";
+            this.lb_PrenameN.Size = new System.Drawing.Size(114, 32);
+            this.lb_PrenameN.TabIndex = 136;
+            // 
+            // lb_PostcodeN
+            // 
+            this.lb_PostcodeN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_PostcodeN.Location = new System.Drawing.Point(906, 519);
+            this.lb_PostcodeN.Multiline = true;
+            this.lb_PostcodeN.Name = "lb_PostcodeN";
+            this.lb_PostcodeN.Size = new System.Drawing.Size(66, 32);
+            this.lb_PostcodeN.TabIndex = 135;
+            // 
+            // lb_ProvinceN
+            // 
+            this.lb_ProvinceN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_ProvinceN.Location = new System.Drawing.Point(799, 519);
+            this.lb_ProvinceN.Multiline = true;
+            this.lb_ProvinceN.Name = "lb_ProvinceN";
+            this.lb_ProvinceN.Size = new System.Drawing.Size(92, 32);
+            this.lb_ProvinceN.TabIndex = 135;
+            // 
+            // lb_AumphurN
+            // 
+            this.lb_AumphurN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_AumphurN.Location = new System.Drawing.Point(622, 520);
+            this.lb_AumphurN.Multiline = true;
+            this.lb_AumphurN.Name = "lb_AumphurN";
+            this.lb_AumphurN.Size = new System.Drawing.Size(111, 32);
+            this.lb_AumphurN.TabIndex = 135;
+            // 
+            // lb_TambolN
+            // 
+            this.lb_TambolN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_TambolN.Location = new System.Drawing.Point(874, 475);
+            this.lb_TambolN.Multiline = true;
+            this.lb_TambolN.Name = "lb_TambolN";
+            this.lb_TambolN.Size = new System.Drawing.Size(103, 32);
+            this.lb_TambolN.TabIndex = 135;
+            // 
+            // lb_RoadN
+            // 
+            this.lb_RoadN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_RoadN.Location = new System.Drawing.Point(732, 478);
+            this.lb_RoadN.Multiline = true;
+            this.lb_RoadN.Name = "lb_RoadN";
+            this.lb_RoadN.Size = new System.Drawing.Size(81, 32);
+            this.lb_RoadN.TabIndex = 135;
+            // 
+            // lb_VillageN
+            // 
+            this.lb_VillageN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_VillageN.Location = new System.Drawing.Point(622, 478);
+            this.lb_VillageN.Multiline = true;
+            this.lb_VillageN.Name = "lb_VillageN";
+            this.lb_VillageN.Size = new System.Drawing.Size(58, 32);
+            this.lb_VillageN.TabIndex = 135;
+            // 
+            // lb_SoiN
+            // 
+            this.lb_SoiN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_SoiN.Location = new System.Drawing.Point(911, 434);
+            this.lb_SoiN.Multiline = true;
+            this.lb_SoiN.Name = "lb_SoiN";
+            this.lb_SoiN.Size = new System.Drawing.Size(66, 32);
+            this.lb_SoiN.TabIndex = 135;
+            // 
+            // lb_MooN
+            // 
+            this.lb_MooN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_MooN.Location = new System.Drawing.Point(797, 434);
+            this.lb_MooN.Multiline = true;
+            this.lb_MooN.Name = "lb_MooN";
+            this.lb_MooN.Size = new System.Drawing.Size(71, 32);
+            this.lb_MooN.TabIndex = 135;
+            // 
+            // lb_HomenoN
+            // 
+            this.lb_HomenoN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_HomenoN.Location = new System.Drawing.Point(675, 431);
+            this.lb_HomenoN.Multiline = true;
+            this.lb_HomenoN.Name = "lb_HomenoN";
+            this.lb_HomenoN.Size = new System.Drawing.Size(69, 32);
+            this.lb_HomenoN.TabIndex = 135;
+            // 
+            // lb_Member_noN
+            // 
+            this.lb_Member_noN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lb_Member_noN.Location = new System.Drawing.Point(782, 169);
+            this.lb_Member_noN.MaxLength = 8;
+            this.lb_Member_noN.Multiline = true;
+            this.lb_Member_noN.Name = "lb_Member_noN";
+            this.lb_Member_noN.Size = new System.Drawing.Size(195, 32);
+            this.lb_Member_noN.TabIndex = 134;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SVMember.Properties.Resources.check__2_;
@@ -189,10 +321,12 @@
             // 
             // lb_MobilephoneC
             // 
+            this.lb_MobilephoneC.BackColor = System.Drawing.Color.White;
             this.lb_MobilephoneC.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_MobilephoneC.Location = new System.Drawing.Point(191, 394);
             this.lb_MobilephoneC.Multiline = true;
             this.lb_MobilephoneC.Name = "lb_MobilephoneC";
+            this.lb_MobilephoneC.ReadOnly = true;
             this.lb_MobilephoneC.Size = new System.Drawing.Size(267, 32);
             this.lb_MobilephoneC.TabIndex = 130;
             // 
@@ -254,6 +388,17 @@
             this.birth_check.TabStop = false;
             this.birth_check.Visible = false;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label19.Location = new System.Drawing.Point(734, 520);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 28);
+            this.label19.TabIndex = 86;
+            this.label19.Text = "จังหวัด:";
+            // 
             // Tname_check
             // 
             this.Tname_check.Image = global::SVMember.Properties.Resources.check__2_;
@@ -263,6 +408,17 @@
             this.Tname_check.TabIndex = 92;
             this.Tname_check.TabStop = false;
             this.Tname_check.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label18.Location = new System.Drawing.Point(558, 520);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 28);
+            this.label18.TabIndex = 86;
+            this.label18.Text = "อำเภอ:";
             // 
             // lb_AddressC
             // 
@@ -274,6 +430,17 @@
             this.lb_AddressC.Size = new System.Drawing.Size(267, 103);
             this.lb_AddressC.TabIndex = 90;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label17.Location = new System.Drawing.Point(819, 478);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(60, 28);
+            this.label17.TabIndex = 86;
+            this.label17.Text = "ตำบล:";
+            // 
             // lb_Birth_DateC
             // 
             this.lb_Birth_DateC.BackColor = System.Drawing.Color.White;
@@ -284,6 +451,17 @@
             this.lb_Birth_DateC.Size = new System.Drawing.Size(267, 32);
             this.lb_Birth_DateC.TabIndex = 89;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label10.Location = new System.Drawing.Point(683, 478);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 28);
+            this.label10.TabIndex = 86;
+            this.label10.Text = "ถนน:";
+            // 
             // lb_NameC
             // 
             this.lb_NameC.BackColor = System.Drawing.Color.White;
@@ -291,8 +469,41 @@
             this.lb_NameC.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_NameC.Location = new System.Drawing.Point(191, 280);
             this.lb_NameC.Name = "lb_NameC";
-            this.lb_NameC.Size = new System.Drawing.Size(267, 30);
+            this.lb_NameC.Size = new System.Drawing.Size(267, 35);
             this.lb_NameC.TabIndex = 87;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label9.Location = new System.Drawing.Point(550, 478);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 28);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "หมู่บ้าน:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label7.Location = new System.Drawing.Point(869, 434);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 28);
+            this.label7.TabIndex = 86;
+            this.label7.Text = "ซอย:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Location = new System.Drawing.Point(750, 434);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 28);
+            this.label2.TabIndex = 86;
+            this.label2.Text = "หมู่ที่:";
             // 
             // label3
             // 
@@ -331,13 +542,13 @@
             this.lb_Card_personN.Location = new System.Drawing.Point(746, 213);
             this.lb_Card_personN.Mask = "#-####-#####-##-#";
             this.lb_Card_personN.Name = "lb_Card_personN";
-            this.lb_Card_personN.ReadOnly = true;
             this.lb_Card_personN.Size = new System.Drawing.Size(196, 36);
             this.lb_Card_personN.TabIndex = 72;
             this.lb_Card_personN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lb_Card_personC
             // 
+            this.lb_Card_personC.BackColor = System.Drawing.Color.White;
             this.lb_Card_personC.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_Card_personC.Location = new System.Drawing.Point(262, 227);
             this.lb_Card_personC.Mask = "#-####-#####-##-#";
@@ -411,6 +622,28 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "เบอร์โทร/มือถือ:";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label21.Location = new System.Drawing.Point(816, 302);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(49, 28);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "สกุล:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label20.Location = new System.Drawing.Point(639, 302);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(37, 28);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "ชื่อ:";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -463,222 +696,6 @@
             this.label16.TabIndex = 12;
             this.label16.Text = "ข้อมูลปัจจุบัน";
             // 
-            // lb_Member_noN
-            // 
-            this.lb_Member_noN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_Member_noN.Location = new System.Drawing.Point(782, 169);
-            this.lb_Member_noN.Multiline = true;
-            this.lb_Member_noN.Name = "lb_Member_noN";
-            this.lb_Member_noN.Size = new System.Drawing.Size(195, 32);
-            this.lb_Member_noN.TabIndex = 134;
-            // 
-            // lb_HomenoN
-            // 
-            this.lb_HomenoN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_HomenoN.Location = new System.Drawing.Point(675, 431);
-            this.lb_HomenoN.Multiline = true;
-            this.lb_HomenoN.Name = "lb_HomenoN";
-            this.lb_HomenoN.Size = new System.Drawing.Size(69, 31);
-            this.lb_HomenoN.TabIndex = 135;
-            // 
-            // lb_PrenameN
-            // 
-            this.lb_PrenameN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_PrenameN.Location = new System.Drawing.Point(675, 260);
-            this.lb_PrenameN.Multiline = true;
-            this.lb_PrenameN.Name = "lb_PrenameN";
-            this.lb_PrenameN.Size = new System.Drawing.Size(114, 32);
-            this.lb_PrenameN.TabIndex = 136;
-            // 
-            // lb_MooN
-            // 
-            this.lb_MooN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_MooN.Location = new System.Drawing.Point(797, 434);
-            this.lb_MooN.Multiline = true;
-            this.lb_MooN.Name = "lb_MooN";
-            this.lb_MooN.Size = new System.Drawing.Size(71, 31);
-            this.lb_MooN.TabIndex = 135;
-            // 
-            // lb_SoiN
-            // 
-            this.lb_SoiN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_SoiN.Location = new System.Drawing.Point(911, 434);
-            this.lb_SoiN.Multiline = true;
-            this.lb_SoiN.Name = "lb_SoiN";
-            this.lb_SoiN.Size = new System.Drawing.Size(66, 31);
-            this.lb_SoiN.TabIndex = 135;
-            // 
-            // lb_VillageN
-            // 
-            this.lb_VillageN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_VillageN.Location = new System.Drawing.Point(622, 478);
-            this.lb_VillageN.Multiline = true;
-            this.lb_VillageN.Name = "lb_VillageN";
-            this.lb_VillageN.Size = new System.Drawing.Size(58, 31);
-            this.lb_VillageN.TabIndex = 135;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(750, 434);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 28);
-            this.label2.TabIndex = 86;
-            this.label2.Text = "หมู่ที่:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.Location = new System.Drawing.Point(869, 434);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 28);
-            this.label7.TabIndex = 86;
-            this.label7.Text = "ซอย:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label9.Location = new System.Drawing.Point(550, 478);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 28);
-            this.label9.TabIndex = 86;
-            this.label9.Text = "หมู่บ้าน:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label10.Location = new System.Drawing.Point(683, 478);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 28);
-            this.label10.TabIndex = 86;
-            this.label10.Text = "ถนน:";
-            // 
-            // lb_RoadN
-            // 
-            this.lb_RoadN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_RoadN.Location = new System.Drawing.Point(732, 478);
-            this.lb_RoadN.Multiline = true;
-            this.lb_RoadN.Name = "lb_RoadN";
-            this.lb_RoadN.Size = new System.Drawing.Size(81, 31);
-            this.lb_RoadN.TabIndex = 135;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label17.Location = new System.Drawing.Point(819, 478);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(60, 28);
-            this.label17.TabIndex = 86;
-            this.label17.Text = "ตำบล:";
-            // 
-            // lb_TambolN
-            // 
-            this.lb_TambolN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_TambolN.Location = new System.Drawing.Point(874, 475);
-            this.lb_TambolN.Multiline = true;
-            this.lb_TambolN.Name = "lb_TambolN";
-            this.lb_TambolN.Size = new System.Drawing.Size(103, 31);
-            this.lb_TambolN.TabIndex = 135;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label18.Location = new System.Drawing.Point(558, 520);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 28);
-            this.label18.TabIndex = 86;
-            this.label18.Text = "อำเภอ:";
-            // 
-            // lb_AumphurN
-            // 
-            this.lb_AumphurN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_AumphurN.Location = new System.Drawing.Point(622, 520);
-            this.lb_AumphurN.Multiline = true;
-            this.lb_AumphurN.Name = "lb_AumphurN";
-            this.lb_AumphurN.Size = new System.Drawing.Size(111, 31);
-            this.lb_AumphurN.TabIndex = 135;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label19.Location = new System.Drawing.Point(734, 520);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(69, 28);
-            this.label19.TabIndex = 86;
-            this.label19.Text = "จังหวัด:";
-            // 
-            // lb_ProvinceN
-            // 
-            this.lb_ProvinceN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_ProvinceN.Location = new System.Drawing.Point(799, 519);
-            this.lb_ProvinceN.Multiline = true;
-            this.lb_ProvinceN.Name = "lb_ProvinceN";
-            this.lb_ProvinceN.Size = new System.Drawing.Size(92, 31);
-            this.lb_ProvinceN.TabIndex = 135;
-            // 
-            // lb_PostcodeN
-            // 
-            this.lb_PostcodeN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_PostcodeN.Location = new System.Drawing.Point(906, 519);
-            this.lb_PostcodeN.Multiline = true;
-            this.lb_PostcodeN.Name = "lb_PostcodeN";
-            this.lb_PostcodeN.Size = new System.Drawing.Size(66, 31);
-            this.lb_PostcodeN.TabIndex = 135;
-            // 
-            // lb_NameN
-            // 
-            this.lb_NameN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_NameN.Location = new System.Drawing.Point(675, 299);
-            this.lb_NameN.Multiline = true;
-            this.lb_NameN.Name = "lb_NameN";
-            this.lb_NameN.Size = new System.Drawing.Size(135, 32);
-            this.lb_NameN.TabIndex = 137;
-            // 
-            // lb_SernameN
-            // 
-            this.lb_SernameN.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lb_SernameN.Location = new System.Drawing.Point(863, 299);
-            this.lb_SernameN.Multiline = true;
-            this.lb_SernameN.Name = "lb_SernameN";
-            this.lb_SernameN.Size = new System.Drawing.Size(114, 32);
-            this.lb_SernameN.TabIndex = 138;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label20.Location = new System.Drawing.Point(639, 302);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(37, 28);
-            this.label20.TabIndex = 19;
-            this.label20.Text = "ชื่อ:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label21.Location = new System.Drawing.Point(816, 302);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(49, 28);
-            this.label21.TabIndex = 19;
-            this.label21.Text = "สกุล:";
-            // 
             // btn_Back
             // 
             this.btn_Back.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -721,11 +738,68 @@
             this.btn_Show_Data.Name = "btn_Show_Data";
             this.btn_Show_Data.Size = new System.Drawing.Size(176, 144);
             this.btn_Show_Data.TabIndex = 134;
-            this.btn_Show_Data.Text = "อ่านข้อมูล";
+            this.btn_Show_Data.Text = "อัปเดต";
             this.btn_Show_Data.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Show_Data.TextColor = System.Drawing.Color.Black;
             this.btn_Show_Data.UseVisualStyleBackColor = false;
             this.btn_Show_Data.Click += new System.EventHandler(this.btn_Show_Data_Click);
+            // 
+            // lb_Province_Code
+            // 
+            this.lb_Province_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Province_Code.Location = new System.Drawing.Point(688, 66);
+            this.lb_Province_Code.Name = "lb_Province_Code";
+            this.lb_Province_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Province_Code.TabIndex = 139;
+            // 
+            // lb_Aumphur_Code
+            // 
+            this.lb_Aumphur_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Aumphur_Code.Location = new System.Drawing.Point(761, 66);
+            this.lb_Aumphur_Code.Name = "lb_Aumphur_Code";
+            this.lb_Aumphur_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Aumphur_Code.TabIndex = 140;
+            // 
+            // lb_Tambol_Code
+            // 
+            this.lb_Tambol_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Tambol_Code.Location = new System.Drawing.Point(834, 66);
+            this.lb_Tambol_Code.Name = "lb_Tambol_Code";
+            this.lb_Tambol_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Tambol_Code.TabIndex = 141;
+            // 
+            // lb_Prename_Code
+            // 
+            this.lb_Prename_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Prename_Code.Location = new System.Drawing.Point(609, 66);
+            this.lb_Prename_Code.Name = "lb_Prename_Code";
+            this.lb_Prename_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Prename_Code.TabIndex = 142;
+            // 
+            // lb_App_Status
+            // 
+            this.lb_App_Status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_App_Status.Location = new System.Drawing.Point(622, 25);
+            this.lb_App_Status.Name = "lb_App_Status";
+            this.lb_App_Status.Size = new System.Drawing.Size(67, 26);
+            this.lb_App_Status.TabIndex = 143;
+            // 
+            // lb_Apv_Id
+            // 
+            this.lb_Apv_Id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Apv_Id.Location = new System.Drawing.Point(705, 25);
+            this.lb_Apv_Id.Name = "lb_Apv_Id";
+            this.lb_Apv_Id.Size = new System.Drawing.Size(42, 26);
+            this.lb_Apv_Id.TabIndex = 144;
+            this.lb_Apv_Id.Text = "black";
+            // 
+            // lb_Apv_Date
+            // 
+            this.lb_Apv_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Apv_Date.Location = new System.Drawing.Point(281, 25);
+            this.lb_Apv_Date.Name = "lb_Apv_Date";
+            this.lb_Apv_Date.Size = new System.Drawing.Size(62, 26);
+            this.lb_Apv_Date.TabIndex = 145;
             // 
             // Frm_ApproveData
             // 
@@ -810,6 +884,13 @@
         private System.Windows.Forms.TextBox lb_NameN;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lb_Tambol_Code;
+        private System.Windows.Forms.Label lb_Aumphur_Code;
+        private System.Windows.Forms.Label lb_Province_Code;
+        private System.Windows.Forms.Label lb_Prename_Code;
+        private System.Windows.Forms.Label lb_App_Status;
+        private System.Windows.Forms.Label lb_Apv_Id;
+        private System.Windows.Forms.Label lb_Apv_Date;
 
     }
 }

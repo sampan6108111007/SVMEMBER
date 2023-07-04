@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle121 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle122 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle123 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle124 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle125 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle126 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle127 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle128 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle129 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle130 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle131 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle132 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle133 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle134 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle135 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,8 +103,8 @@
             // Column4
             // 
             this.Column4.DataPropertyName = "appl_docno";
-            dataGridViewCellStyle121.Font = new System.Drawing.Font("TH Chakra Petch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle121;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("TH Chakra Petch", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column4.HeaderText = "คำขอ";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -112,27 +112,27 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "app_date";
-            dataGridViewCellStyle122.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            dataGridViewCellStyle122.Format = "D";
-            dataGridViewCellStyle122.NullValue = null;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle122;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            dataGridViewCellStyle2.Format = "D";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column3.HeaderText = "วันที่ขอ";
             this.Column3.Name = "Column3";
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "member_no";
-            dataGridViewCellStyle123.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle123.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle123;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "เลขทะเบียน";
             this.Column1.Name = "Column1";
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "card_personc";
-            dataGridViewCellStyle124.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle124;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column6.HeaderText = "เลขที่บัตรประชาชน ปัจจุบัน";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -141,16 +141,16 @@
             // card_personn
             // 
             this.card_personn.DataPropertyName = "card_personn";
-            dataGridViewCellStyle125.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.card_personn.DefaultCellStyle = dataGridViewCellStyle125;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.card_personn.DefaultCellStyle = dataGridViewCellStyle5;
             this.card_personn.HeaderText = "เลขที่บัตรประชาชน ใหม่";
             this.card_personn.Name = "card_personn";
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "MbnameC";
-            dataGridViewCellStyle126.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle126;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column2.HeaderText = "ชื่อ-สกุล ปัจจุบัน";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -159,36 +159,36 @@
             // Column10
             // 
             this.Column10.DataPropertyName = "MbnameN";
-            dataGridViewCellStyle127.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle127;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column10.HeaderText = "ชื่อ-สกุล ใหม่";
             this.Column10.Name = "Column10";
             // 
             // Appv_date
             // 
             this.Appv_date.DataPropertyName = "Cur_Add";
-            dataGridViewCellStyle128.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle128.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            dataGridViewCellStyle128.Format = "d";
-            dataGridViewCellStyle128.NullValue = null;
-            this.Appv_date.DefaultCellStyle = dataGridViewCellStyle128;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Appv_date.DefaultCellStyle = dataGridViewCellStyle8;
             this.Appv_date.HeaderText = "ที่อยู่ปัจจุบัน";
             this.Appv_date.Name = "Appv_date";
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "New_Add";
-            dataGridViewCellStyle129.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle129.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle129;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column5.HeaderText = "ที่อยู่ ใหม่";
             this.Column5.Name = "Column5";
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "birth_datec";
-            dataGridViewCellStyle130.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle130;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column7.HeaderText = "วันเกิด ปัจจุบัน";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -196,8 +196,8 @@
             // Column8
             // 
             this.Column8.DataPropertyName = "birth_daten";
-            dataGridViewCellStyle131.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle131;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column8.HeaderText = "วันเกิด ใหม่";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -205,27 +205,27 @@
             // addr_mobilephonec
             // 
             this.addr_mobilephonec.DataPropertyName = "addr_mobilephonec";
-            dataGridViewCellStyle132.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.addr_mobilephonec.DefaultCellStyle = dataGridViewCellStyle132;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.addr_mobilephonec.DefaultCellStyle = dataGridViewCellStyle12;
             this.addr_mobilephonec.HeaderText = "เบอร์โทรศัพท์ ปัจจุบัน";
             this.addr_mobilephonec.Name = "addr_mobilephonec";
             // 
             // addr_mobilephonen
             // 
             this.addr_mobilephonen.DataPropertyName = "addr_mobilephonen";
-            dataGridViewCellStyle133.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            this.addr_mobilephonen.DefaultCellStyle = dataGridViewCellStyle133;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            this.addr_mobilephonen.DefaultCellStyle = dataGridViewCellStyle13;
             this.addr_mobilephonen.HeaderText = "เบอร์โทรศัพท์ ใหม่";
             this.addr_mobilephonen.Name = "addr_mobilephonen";
             // 
             // sYES
             // 
             this.sYES.DataPropertyName = "sYES";
-            dataGridViewCellStyle134.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle134.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            dataGridViewCellStyle134.NullValue = false;
-            dataGridViewCellStyle134.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.sYES.DefaultCellStyle = dataGridViewCellStyle134;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            dataGridViewCellStyle14.NullValue = false;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.sYES.DefaultCellStyle = dataGridViewCellStyle14;
             this.sYES.HeaderText = "อนุมัติ";
             this.sYES.Name = "sYES";
             this.sYES.Width = 50;
@@ -233,11 +233,11 @@
             // sNO
             // 
             this.sNO.DataPropertyName = "sNO";
-            dataGridViewCellStyle135.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle135.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
-            dataGridViewCellStyle135.NullValue = false;
-            dataGridViewCellStyle135.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.sNO.DefaultCellStyle = dataGridViewCellStyle135;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("TH Chakra Petch", 18F);
+            dataGridViewCellStyle15.NullValue = false;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.sNO.DefaultCellStyle = dataGridViewCellStyle15;
             this.sNO.HeaderText = "ไม่อนุมัติ";
             this.sNO.Name = "sNO";
             this.sNO.Width = 60;
@@ -245,7 +245,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(14, 36);
+            this.button1.Location = new System.Drawing.Point(13, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 43);
             this.button1.TabIndex = 18;

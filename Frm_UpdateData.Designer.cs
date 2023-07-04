@@ -116,6 +116,8 @@
             this.lb_Entry_Date = new System.Windows.Forms.Label();
             this.lb_Entry_Type = new System.Windows.Forms.Label();
             this.lb_App_Status = new System.Windows.Forms.Label();
+            this.lb_Capp_Status = new System.Windows.Forms.Label();
+            this.btn_chk = new SVMember.controls.RJButton();
             this.btn_save = new SVMember.controls.RJButton();
             this.Btn_Clear = new SVMember.controls.RJButton();
             this.button1 = new SVMember.controls.RJButton();
@@ -201,10 +203,12 @@
             // 
             this.lb_Tel.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.lb_Tel.Location = new System.Drawing.Point(686, 503);
+            this.lb_Tel.MaxLength = 10;
             this.lb_Tel.Multiline = true;
             this.lb_Tel.Name = "lb_Tel";
             this.lb_Tel.Size = new System.Drawing.Size(170, 32);
             this.lb_Tel.TabIndex = 130;
+            this.lb_Tel.Text = "0642321796";
             this.lb_Tel.Click += new System.EventHandler(this.lb_Tel_Click);
             // 
             // lb_BirthdateC
@@ -215,6 +219,7 @@
             this.lb_BirthdateC.Name = "lb_BirthdateC";
             this.lb_BirthdateC.Size = new System.Drawing.Size(170, 32);
             this.lb_BirthdateC.TabIndex = 129;
+            this.lb_BirthdateC.Text = "11 ต.ค. 2539";
             this.lb_BirthdateC.Click += new System.EventHandler(this.lb_BirthdateC_Click);
             // 
             // label4
@@ -485,7 +490,7 @@
             this.m_txtID.ReadOnly = true;
             this.m_txtID.Size = new System.Drawing.Size(196, 36);
             this.m_txtID.TabIndex = 72;
-            this.m_txtID.Text = "1520600069293";
+            this.m_txtID.Text = "3520200300288";
             this.m_txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // m_ListReaderCard
@@ -508,6 +513,7 @@
             this.lbMb_Add2.Name = "lbMb_Add2";
             this.lbMb_Add2.Size = new System.Drawing.Size(267, 103);
             this.lbMb_Add2.TabIndex = 46;
+            this.lbMb_Add2.Text = "241 หมู่ที 1 ตำบลห้วยโก๋น อำเภอเฉลิมพระเกียรติ จังหวัดน่าน 55130";
             // 
             // label14
             // 
@@ -539,6 +545,7 @@
             this.lbMb_Add.Name = "lbMb_Add";
             this.lbMb_Add.Size = new System.Drawing.Size(267, 86);
             this.lbMb_Add.TabIndex = 40;
+            this.lbMb_Add.Text = "241 หมู่ที 1 ตำบลห้วยโก๋น อำเภอเฉลิมพระเกียรติ จังหวัดน่าน 55130";
             this.lbMb_Add.Click += new System.EventHandler(this.lbMb_Add_Click);
             // 
             // lbMb_name
@@ -550,6 +557,7 @@
             this.lbMb_name.Name = "lbMb_name";
             this.lbMb_name.Size = new System.Drawing.Size(267, 30);
             this.lbMb_name.TabIndex = 39;
+            this.lbMb_name.Text = "โจโจ้ ใจดี";
             // 
             // label8
             // 
@@ -570,6 +578,7 @@
             this.lb_mbno.Name = "lb_mbno";
             this.lb_mbno.Size = new System.Drawing.Size(157, 30);
             this.lb_mbno.TabIndex = 30;
+            this.lb_mbno.Text = "00012345";
             // 
             // label11
             // 
@@ -1038,6 +1047,38 @@
             this.lb_App_Status.TabIndex = 129;
             this.lb_App_Status.Text = "0";
             // 
+            // lb_Capp_Status
+            // 
+            this.lb_Capp_Status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Capp_Status.Location = new System.Drawing.Point(629, 9);
+            this.lb_Capp_Status.Name = "lb_Capp_Status";
+            this.lb_Capp_Status.Size = new System.Drawing.Size(105, 17);
+            this.lb_Capp_Status.TabIndex = 130;
+            // 
+            // btn_chk
+            // 
+            this.btn_chk.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_chk.BackColor = System.Drawing.Color.Transparent;
+            this.btn_chk.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btn_chk.BackgroundImage = global::SVMember.Properties.Resources.diskette;
+            this.btn_chk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_chk.BorderColor = System.Drawing.Color.Black;
+            this.btn_chk.BorderRadius = 30;
+            this.btn_chk.BorderSize = 1;
+            this.btn_chk.FlatAppearance.BorderSize = 0;
+            this.btn_chk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_chk.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_chk.ForeColor = System.Drawing.Color.Black;
+            this.btn_chk.Location = new System.Drawing.Point(789, 683);
+            this.btn_chk.Name = "btn_chk";
+            this.btn_chk.Size = new System.Drawing.Size(176, 144);
+            this.btn_chk.TabIndex = 131;
+            this.btn_chk.Text = "ทดลอง";
+            this.btn_chk.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_chk.TextColor = System.Drawing.Color.Black;
+            this.btn_chk.UseVisualStyleBackColor = false;
+            this.btn_chk.Click += new System.EventHandler(this.btn_chk_Click);
+            // 
             // btn_save
             // 
             this.btn_save.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1117,6 +1158,8 @@
             this.BackgroundImage = global::SVMember.Properties.Resources.bg_green2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 903);
+            this.Controls.Add(this.btn_chk);
+            this.Controls.Add(this.lb_Capp_Status);
             this.Controls.Add(this.lb_App_Status);
             this.Controls.Add(this.lb_Entry_Type);
             this.Controls.Add(this.lb_Entry_Date);
@@ -1280,6 +1323,8 @@
         private System.Windows.Forms.Label lb_Entry_Date;
         private System.Windows.Forms.Label lb_Entry_Type;
         private System.Windows.Forms.Label lb_App_Status;
+        private System.Windows.Forms.Label lb_Capp_Status;
+        private controls.RJButton btn_chk;
 
     }
 }
