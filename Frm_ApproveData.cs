@@ -38,7 +38,7 @@ namespace SVMember
         {
             ClsMST.GetDb();
             ShowData();
-
+            
         }
 
         void ShowData() //string id_card
@@ -192,7 +192,7 @@ namespace SVMember
 
         private void btn_Show_Data_Click(object sender, EventArgs e)
         {
-            lb_Apv_Date.Text = DateTime.Now.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
+            lb_Apv_Date.Text = DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
 
             UpdateData();
         }

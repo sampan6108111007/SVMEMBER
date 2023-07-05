@@ -229,6 +229,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 27);
             this.label4.TabIndex = 99;
+            this.label4.Visible = false;
             // 
             // mbno_check
             // 
@@ -387,6 +388,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 26);
             this.label2.TabIndex = 93;
+            this.label2.Visible = false;
             // 
             // Tname_check
             // 
@@ -406,6 +408,7 @@
             this.lb_Errortext.Name = "lb_Errortext";
             this.lb_Errortext.Size = new System.Drawing.Size(94, 28);
             this.lb_Errortext.TabIndex = 91;
+            this.lb_Errortext.Visible = false;
             // 
             // m_txtAddress
             // 
@@ -594,9 +597,10 @@
             // m_picPhoto
             // 
             this.m_picPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_picPhoto.Location = new System.Drawing.Point(314, 115);
+            this.m_picPhoto.Image = global::SVMember.Properties.Resources.user1;
+            this.m_picPhoto.Location = new System.Drawing.Point(311, 115);
             this.m_picPhoto.Name = "m_picPhoto";
-            this.m_picPhoto.Size = new System.Drawing.Size(132, 142);
+            this.m_picPhoto.Size = new System.Drawing.Size(135, 142);
             this.m_picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.m_picPhoto.TabIndex = 27;
             this.m_picPhoto.TabStop = false;
@@ -684,6 +688,7 @@
             this.lb_surnameInBut.Size = new System.Drawing.Size(49, 19);
             this.lb_surnameInBut.TabIndex = 75;
             this.lb_surnameInBut.Text = "นามสกุล";
+            this.lb_surnameInBut.Visible = false;
             // 
             // lb_nameInBut
             // 
@@ -693,6 +698,7 @@
             this.lb_nameInBut.Size = new System.Drawing.Size(49, 21);
             this.lb_nameInBut.TabIndex = 74;
             this.lb_nameInBut.Text = "ชื่อ";
+            this.lb_nameInBut.Visible = false;
             // 
             // timer_AutoRead
             // 
@@ -708,6 +714,7 @@
             this.lb_PrenameInbut.Size = new System.Drawing.Size(34, 23);
             this.lb_PrenameInbut.TabIndex = 76;
             this.lb_PrenameInbut.Text = "คำนำหน้า";
+            this.lb_PrenameInbut.Visible = false;
             // 
             // lb_IDcardInBut
             // 
@@ -717,6 +724,7 @@
             this.lb_IDcardInBut.Size = new System.Drawing.Size(92, 17);
             this.lb_IDcardInBut.TabIndex = 100;
             this.lb_IDcardInBut.Text = "เลข ปชช.";
+            this.lb_IDcardInBut.Visible = false;
             // 
             // lb_BirthdateInBut
             // 
@@ -726,6 +734,7 @@
             this.lb_BirthdateInBut.Size = new System.Drawing.Size(92, 17);
             this.lb_BirthdateInBut.TabIndex = 101;
             this.lb_BirthdateInBut.Text = "วันเกิด";
+            this.lb_BirthdateInBut.Visible = false;
             // 
             // lb_HomeNoInBut
             // 
@@ -735,6 +744,7 @@
             this.lb_HomeNoInBut.Size = new System.Drawing.Size(36, 17);
             this.lb_HomeNoInBut.TabIndex = 102;
             this.lb_HomeNoInBut.Text = "เลขที่";
+            this.lb_HomeNoInBut.Visible = false;
             // 
             // lb_MooInBut
             // 
@@ -744,6 +754,7 @@
             this.lb_MooInBut.Size = new System.Drawing.Size(59, 19);
             this.lb_MooInBut.TabIndex = 103;
             this.lb_MooInBut.Text = "หมู่";
+            this.lb_MooInBut.Visible = false;
             // 
             // lb_TrokInBut
             // 
@@ -753,6 +764,7 @@
             this.lb_TrokInBut.Size = new System.Drawing.Size(39, 17);
             this.lb_TrokInBut.TabIndex = 104;
             this.lb_TrokInBut.Text = "ตรอก";
+            this.lb_TrokInBut.Visible = false;
             // 
             // lb_SoiInBut
             // 
@@ -762,6 +774,7 @@
             this.lb_SoiInBut.Size = new System.Drawing.Size(39, 17);
             this.lb_SoiInBut.TabIndex = 105;
             this.lb_SoiInBut.Text = "ซอย";
+            this.lb_SoiInBut.Visible = false;
             // 
             // lb_RoadInBut
             // 
@@ -771,6 +784,7 @@
             this.lb_RoadInBut.Size = new System.Drawing.Size(39, 17);
             this.lb_RoadInBut.TabIndex = 106;
             this.lb_RoadInBut.Text = "ถนน";
+            this.lb_RoadInBut.Visible = false;
             // 
             // lb_TumbolInBut
             // 
@@ -780,6 +794,7 @@
             this.lb_TumbolInBut.Size = new System.Drawing.Size(97, 17);
             this.lb_TumbolInBut.TabIndex = 107;
             this.lb_TumbolInBut.Text = "ตำบล";
+            this.lb_TumbolInBut.Visible = false;
             // 
             // lb_AmphoeInBut
             // 
@@ -789,6 +804,7 @@
             this.lb_AmphoeInBut.Size = new System.Drawing.Size(121, 17);
             this.lb_AmphoeInBut.TabIndex = 107;
             this.lb_AmphoeInBut.Text = "เฉลิมพระเกียรติ";
+            this.lb_AmphoeInBut.Visible = false;
             // 
             // lb_ProvinceInBut
             // 
@@ -798,127 +814,140 @@
             this.lb_ProvinceInBut.Size = new System.Drawing.Size(105, 17);
             this.lb_ProvinceInBut.TabIndex = 107;
             this.lb_ProvinceInBut.Text = "จังหวัด";
+            this.lb_ProvinceInBut.Visible = false;
             // 
             // lb_ProvinceC
             // 
             this.lb_ProvinceC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_ProvinceC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_ProvinceC.Location = new System.Drawing.Point(897, 860);
+            this.lb_ProvinceC.Location = new System.Drawing.Point(116, 848);
             this.lb_ProvinceC.Name = "lb_ProvinceC";
-            this.lb_ProvinceC.Size = new System.Drawing.Size(105, 17);
+            this.lb_ProvinceC.Size = new System.Drawing.Size(56, 17);
             this.lb_ProvinceC.TabIndex = 113;
             this.lb_ProvinceC.Text = "จังหวัด";
+            this.lb_ProvinceC.Visible = false;
             // 
             // lb_AmphoeC
             // 
             this.lb_AmphoeC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_AmphoeC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_AmphoeC.Location = new System.Drawing.Point(770, 860);
+            this.lb_AmphoeC.Location = new System.Drawing.Point(59, 848);
             this.lb_AmphoeC.Name = "lb_AmphoeC";
-            this.lb_AmphoeC.Size = new System.Drawing.Size(121, 17);
+            this.lb_AmphoeC.Size = new System.Drawing.Size(45, 17);
             this.lb_AmphoeC.TabIndex = 114;
             this.lb_AmphoeC.Text = "อำเถอ";
+            this.lb_AmphoeC.Visible = false;
             // 
             // lb_TumbolC
             // 
             this.lb_TumbolC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_TumbolC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_TumbolC.Location = new System.Drawing.Point(667, 860);
+            this.lb_TumbolC.Location = new System.Drawing.Point(12, 848);
             this.lb_TumbolC.Name = "lb_TumbolC";
-            this.lb_TumbolC.Size = new System.Drawing.Size(97, 17);
+            this.lb_TumbolC.Size = new System.Drawing.Size(44, 17);
             this.lb_TumbolC.TabIndex = 115;
             this.lb_TumbolC.Text = "ตำบล";
+            this.lb_TumbolC.Visible = false;
             // 
             // lb_RoadC
             // 
             this.lb_RoadC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_RoadC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_RoadC.Location = new System.Drawing.Point(622, 860);
+            this.lb_RoadC.Location = new System.Drawing.Point(99, 819);
             this.lb_RoadC.Name = "lb_RoadC";
             this.lb_RoadC.Size = new System.Drawing.Size(39, 17);
             this.lb_RoadC.TabIndex = 112;
             this.lb_RoadC.Text = "ถนน";
+            this.lb_RoadC.Visible = false;
             // 
             // lb_SoiC
             // 
             this.lb_SoiC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_SoiC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_SoiC.Location = new System.Drawing.Point(580, 860);
+            this.lb_SoiC.Location = new System.Drawing.Point(56, 819);
             this.lb_SoiC.Name = "lb_SoiC";
             this.lb_SoiC.Size = new System.Drawing.Size(39, 17);
             this.lb_SoiC.TabIndex = 111;
             this.lb_SoiC.Text = "ซอย";
+            this.lb_SoiC.Visible = false;
             // 
             // lb_TrokC
             // 
             this.lb_TrokC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_TrokC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_TrokC.Location = new System.Drawing.Point(534, 860);
+            this.lb_TrokC.Location = new System.Drawing.Point(13, 819);
             this.lb_TrokC.Name = "lb_TrokC";
             this.lb_TrokC.Size = new System.Drawing.Size(39, 17);
             this.lb_TrokC.TabIndex = 110;
             this.lb_TrokC.Text = "ตรอก";
+            this.lb_TrokC.Visible = false;
             // 
             // lb_MooC
             // 
             this.lb_MooC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_MooC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_MooC.Location = new System.Drawing.Point(464, 860);
+            this.lb_MooC.Location = new System.Drawing.Point(70, 785);
             this.lb_MooC.Name = "lb_MooC";
-            this.lb_MooC.Size = new System.Drawing.Size(59, 19);
+            this.lb_MooC.Size = new System.Drawing.Size(59, 22);
             this.lb_MooC.TabIndex = 109;
             this.lb_MooC.Text = "หมู่";
+            this.lb_MooC.Visible = false;
             // 
             // lb_HomeNoC
             // 
             this.lb_HomeNoC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_HomeNoC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_HomeNoC.Location = new System.Drawing.Point(402, 860);
+            this.lb_HomeNoC.Location = new System.Drawing.Point(12, 789);
             this.lb_HomeNoC.Name = "lb_HomeNoC";
             this.lb_HomeNoC.Size = new System.Drawing.Size(55, 19);
             this.lb_HomeNoC.TabIndex = 108;
             this.lb_HomeNoC.Text = "เลขที่";
+            this.lb_HomeNoC.Visible = false;
             // 
             // lb_PrenameC
             // 
             this.lb_PrenameC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_PrenameC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_PrenameC.Location = new System.Drawing.Point(402, 768);
+            this.lb_PrenameC.Location = new System.Drawing.Point(12, 697);
             this.lb_PrenameC.Name = "lb_PrenameC";
             this.lb_PrenameC.Size = new System.Drawing.Size(59, 23);
             this.lb_PrenameC.TabIndex = 120;
             this.lb_PrenameC.Text = "คำนำหน้า";
+            this.lb_PrenameC.Visible = false;
             // 
             // lb_surnameC
             // 
             this.lb_surnameC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_surnameC.BackColor = System.Drawing.Color.Transparent;
             this.lb_surnameC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_surnameC.Location = new System.Drawing.Point(403, 833);
+            this.lb_surnameC.Location = new System.Drawing.Point(13, 762);
             this.lb_surnameC.Name = "lb_surnameC";
             this.lb_surnameC.Size = new System.Drawing.Size(49, 19);
             this.lb_surnameC.TabIndex = 119;
             this.lb_surnameC.Text = "นามสกุล";
+            this.lb_surnameC.Visible = false;
             // 
             // lb_nameC
             // 
             this.lb_nameC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_nameC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_nameC.Location = new System.Drawing.Point(403, 801);
+            this.lb_nameC.Location = new System.Drawing.Point(13, 730);
             this.lb_nameC.Name = "lb_nameC";
             this.lb_nameC.Size = new System.Drawing.Size(49, 21);
             this.lb_nameC.TabIndex = 118;
             this.lb_nameC.Text = "ชื่อ";
+            this.lb_nameC.Visible = false;
             // 
             // lb_PostcodeC
             // 
             this.lb_PostcodeC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_PostcodeC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_PostcodeC.Location = new System.Drawing.Point(897, 879);
+            this.lb_PostcodeC.Location = new System.Drawing.Point(13, 877);
             this.lb_PostcodeC.Name = "lb_PostcodeC";
             this.lb_PostcodeC.Size = new System.Drawing.Size(105, 17);
             this.lb_PostcodeC.TabIndex = 121;
             this.lb_PostcodeC.Text = "รหัสไปรษณี";
+            this.lb_PostcodeC.Visible = false;
             // 
             // lb_PostcodeInBut
             // 
@@ -928,6 +957,7 @@
             this.lb_PostcodeInBut.Size = new System.Drawing.Size(105, 17);
             this.lb_PostcodeInBut.TabIndex = 122;
             this.lb_PostcodeInBut.Text = "รหัสไปรษณี";
+            this.lb_PostcodeInBut.Visible = false;
             // 
             // m_txtIssueNum
             // 
@@ -937,6 +967,7 @@
             this.m_txtIssueNum.Size = new System.Drawing.Size(109, 26);
             this.m_txtIssueNum.TabIndex = 93;
             this.m_txtIssueNum.Text = "เลขบัตร";
+            this.m_txtIssueNum.Visible = false;
             // 
             // lb_CoopId
             // 
@@ -946,6 +977,7 @@
             this.lb_CoopId.Size = new System.Drawing.Size(56, 19);
             this.lb_CoopId.TabIndex = 123;
             this.lb_CoopId.Text = "027001";
+            this.lb_CoopId.Visible = false;
             // 
             // lb_Appl_Docno
             // 
@@ -955,6 +987,7 @@
             this.lb_Appl_Docno.Size = new System.Drawing.Size(109, 26);
             this.lb_Appl_Docno.TabIndex = 124;
             this.lb_Appl_Docno.Text = "เลขที่คำขอ";
+            this.lb_Appl_Docno.Visible = false;
             // 
             // lb_TumbolCode
             // 
@@ -964,26 +997,29 @@
             this.lb_TumbolCode.Size = new System.Drawing.Size(97, 17);
             this.lb_TumbolCode.TabIndex = 125;
             this.lb_TumbolCode.Text = "ตำบล code";
+            this.lb_TumbolCode.Visible = false;
             // 
             // lb_IDcardC
             // 
             this.lb_IDcardC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_IDcardC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_IDcardC.Location = new System.Drawing.Point(475, 771);
+            this.lb_IDcardC.Location = new System.Drawing.Point(81, 696);
             this.lb_IDcardC.Name = "lb_IDcardC";
-            this.lb_IDcardC.Size = new System.Drawing.Size(92, 17);
+            this.lb_IDcardC.Size = new System.Drawing.Size(92, 20);
             this.lb_IDcardC.TabIndex = 126;
             this.lb_IDcardC.Text = "เลข ปชช.";
+            this.lb_IDcardC.Visible = false;
             // 
             // lb_BirthdateC2
             // 
             this.lb_BirthdateC2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_BirthdateC2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_BirthdateC2.Location = new System.Drawing.Point(475, 805);
+            this.lb_BirthdateC2.Location = new System.Drawing.Point(81, 730);
             this.lb_BirthdateC2.Name = "lb_BirthdateC2";
-            this.lb_BirthdateC2.Size = new System.Drawing.Size(92, 17);
+            this.lb_BirthdateC2.Size = new System.Drawing.Size(92, 20);
             this.lb_BirthdateC2.TabIndex = 127;
             this.lb_BirthdateC2.Text = "วันเกิด";
+            this.lb_BirthdateC2.Visible = false;
             // 
             // lb_PrenameCode
             // 
@@ -993,16 +1029,18 @@
             this.lb_PrenameCode.Size = new System.Drawing.Size(34, 23);
             this.lb_PrenameCode.TabIndex = 76;
             this.lb_PrenameCode.Text = "คำนำหน้า";
+            this.lb_PrenameCode.Visible = false;
             // 
             // lb_telC
             // 
             this.lb_telC.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lb_telC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_telC.Location = new System.Drawing.Point(595, 771);
+            this.lb_telC.Location = new System.Drawing.Point(70, 762);
             this.lb_telC.Name = "lb_telC";
             this.lb_telC.Size = new System.Drawing.Size(92, 17);
             this.lb_telC.TabIndex = 128;
             this.lb_telC.Text = "เบอร์โทร";
+            this.lb_telC.Visible = false;
             // 
             // lb_App_Date
             // 
@@ -1011,23 +1049,26 @@
             this.lb_App_Date.Name = "lb_App_Date";
             this.lb_App_Date.Size = new System.Drawing.Size(105, 17);
             this.lb_App_Date.TabIndex = 129;
+            this.lb_App_Date.Visible = false;
             // 
             // lb_Entry_Id
             // 
             this.lb_Entry_Id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Entry_Id.Location = new System.Drawing.Point(860, 28);
+            this.lb_Entry_Id.Location = new System.Drawing.Point(860, 31);
             this.lb_Entry_Id.Name = "lb_Entry_Id";
             this.lb_Entry_Id.Size = new System.Drawing.Size(105, 17);
             this.lb_Entry_Id.TabIndex = 129;
             this.lb_Entry_Id.Text = "black";
+            this.lb_Entry_Id.Visible = false;
             // 
             // lb_Entry_Date
             // 
             this.lb_Entry_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Entry_Date.Location = new System.Drawing.Point(860, 46);
+            this.lb_Entry_Date.Location = new System.Drawing.Point(860, 51);
             this.lb_Entry_Date.Name = "lb_Entry_Date";
             this.lb_Entry_Date.Size = new System.Drawing.Size(105, 17);
             this.lb_Entry_Date.TabIndex = 129;
+            this.lb_Entry_Date.Visible = false;
             // 
             // lb_Entry_Type
             // 
@@ -1037,6 +1078,7 @@
             this.lb_Entry_Type.Size = new System.Drawing.Size(105, 17);
             this.lb_Entry_Type.TabIndex = 129;
             this.lb_Entry_Type.Text = "1";
+            this.lb_Entry_Type.Visible = false;
             // 
             // lb_App_Status
             // 
@@ -1046,6 +1088,7 @@
             this.lb_App_Status.Size = new System.Drawing.Size(105, 17);
             this.lb_App_Status.TabIndex = 129;
             this.lb_App_Status.Text = "0";
+            this.lb_App_Status.Visible = false;
             // 
             // lb_Capp_Status
             // 
@@ -1054,22 +1097,24 @@
             this.lb_Capp_Status.Name = "lb_Capp_Status";
             this.lb_Capp_Status.Size = new System.Drawing.Size(105, 17);
             this.lb_Capp_Status.TabIndex = 130;
+            this.lb_Capp_Status.Visible = false;
             // 
             // btn_chk
             // 
             this.btn_chk.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_chk.BackColor = System.Drawing.Color.Transparent;
             this.btn_chk.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btn_chk.BackgroundImage = global::SVMember.Properties.Resources.diskette;
+            this.btn_chk.BackgroundImage = global::SVMember.Properties.Resources.testing;
             this.btn_chk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_chk.BorderColor = System.Drawing.Color.Black;
             this.btn_chk.BorderRadius = 30;
             this.btn_chk.BorderSize = 1;
+            this.btn_chk.Enabled = false;
             this.btn_chk.FlatAppearance.BorderSize = 0;
             this.btn_chk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_chk.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_chk.ForeColor = System.Drawing.Color.Black;
-            this.btn_chk.Location = new System.Drawing.Point(789, 683);
+            this.btn_chk.Location = new System.Drawing.Point(857, 738);
             this.btn_chk.Name = "btn_chk";
             this.btn_chk.Size = new System.Drawing.Size(176, 144);
             this.btn_chk.TabIndex = 131;
@@ -1077,6 +1122,7 @@
             this.btn_chk.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_chk.TextColor = System.Drawing.Color.Black;
             this.btn_chk.UseVisualStyleBackColor = false;
+            this.btn_chk.Visible = false;
             this.btn_chk.Click += new System.EventHandler(this.btn_chk_Click);
             // 
             // btn_save
@@ -1093,7 +1139,7 @@
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_save.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.Black;
-            this.btn_save.Location = new System.Drawing.Point(409, 716);
+            this.btn_save.Location = new System.Drawing.Point(627, 738);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(176, 144);
             this.btn_save.TabIndex = 117;
@@ -1117,7 +1163,7 @@
             this.Btn_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Clear.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Clear.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Clear.Location = new System.Drawing.Point(220, 716);
+            this.Btn_Clear.Location = new System.Drawing.Point(416, 738);
             this.Btn_Clear.Name = "Btn_Clear";
             this.Btn_Clear.Size = new System.Drawing.Size(176, 144);
             this.Btn_Clear.TabIndex = 16;
@@ -1130,8 +1176,8 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.Wheat;
-            this.button1.BackgroundColor = System.Drawing.Color.Wheat;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::SVMember.Properties.Resources.credit_card__2_;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.BorderColor = System.Drawing.Color.Black;
@@ -1141,7 +1187,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(12, 716);
+            this.button1.Location = new System.Drawing.Point(215, 738);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 144);
             this.button1.TabIndex = 15;

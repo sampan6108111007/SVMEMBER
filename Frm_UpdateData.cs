@@ -357,18 +357,18 @@ namespace SVMember
                  ",'" + lb_AmphoeInBut.Text + "'" +
                  ",'" + lb_ProvinceInBut.Text + "'" +
                  ",'" + lb_App_Status.Text + "'" +
-                 ",TO_DATE('" + Fc.GetshotDate(lb_App_Date.Text, 11) + "'," + "'MM/DD/YYYY HH:MI:SS')" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_App_Date.Text, 0) +"'," + "'MM/DD/YYYY')" +
                 // ",'" + lb_App_Date.Text + "'" +
                  ",'" + lb_Entry_Id.Text + "'" +
-                 ",TO_DATE('" + Fc.GetshotDate(lb_Entry_Date.Text, 11) + "'," + "'MM/DD/YYYY HH:MI:SS')" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_Entry_Date.Text, 0)  + "'," + "'MM/DD/YYYY')" +
                 // ",'" + lb_Entry_Date.Text + "'" +
                  ",'" + lb_Entry_Type.Text + "'" +
                  ",'" + lb_IDcardC.Text + "'" +
                  ",'" + lb_IDcardInBut.Text + "'" +
-                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateC2.Text, 1) + "'," + "'DD/MM/YYYY')" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateC2.Text, 0) + "'," + "'MM/DD/YYYY')" +
                  //",'" + lb_BirthdateC2.Text + "'" +
                  //",'" + lb_BirthdateInBut.Text + "'" +
-                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateInBut.Text, 1) + "'," + "'DD/MM/YYYY')" +
+                 ",TO_DATE('" + Fc.GetshotDate(lb_BirthdateInBut.Text, 0) + "'," + "'MM/DD/YYYY')" +
                 //  ",'" + Fc.GetshotDate(lb_BirthdateInBut.Text, 0) + "'" +
                  ",'" + lb_telC.Text + "'" +
                  ",'" + lb_Tel.Text + "'" +
@@ -397,7 +397,7 @@ namespace SVMember
         void UpdateData()
         {
             sql = "UPDATE mbreqchgaddress" +
-                " SET birth_daten = TO_DATE('" + lb_BirthdateC2.Text + "'," + "'DD/MM/YYYY')" +
+                " SET birth_daten = TO_DATE('" + lb_BirthdateC2.Text + "'," + "'MM/DD/YYYY')" +
                 " , addr_mobilephonen = '" + lb_Tel.Text + "' WHERE card_personn = '" + m_txtID.Text.Replace("-","") + "'";
              
             ClsMST.Save_ORACLE(sql);
@@ -675,6 +675,11 @@ namespace SVMember
 
             DataTable dt = ClsMST.SelectQuery(str);
 
+            if (dt.Rows.Count >= 0)
+            {
+                return;
+            }
+
             lb_Capp_Status.Text = dt.Rows[0]["app_status"].ToString();
 
         }
@@ -768,7 +773,7 @@ namespace SVMember
 
                  if (Tname == lbName && address == lbAddress)
                  {
-                     //string message3 = Tname;
+                   
                      string message3 = "ข้อมูลของท่านถูกต้อง";
                      label2.Text = message3;                   
                      add_check.Visible = true;
@@ -785,13 +790,8 @@ namespace SVMember
 
                    
 
-                     MessageBox.Show(message3, "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     MessageBox.Show(message3, "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-                     //if (MessageBox.Show(message2, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) == DialogResult.OK)
-                     //{
-                     //    return;
-                     //}
                  }
 
                  if (Tname != lbName && address != lbAddress)
@@ -815,57 +815,12 @@ namespace SVMember
 
                      MessageBox.Show(message4, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-                     //if (MessageBox.Show(message2, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) == DialogResult.OK)
-                     //{
-                     //    return;
-                     //}
                  }
 
                 
 
                  
             }
-           
-
-           
-
-            //if (address.Length != lbAddress.Length)
-            //{
-            //    // The strings have different lengths, so they can't be a match
-            //    match = false;
-            //}
-            //else
-            //{
-            //    // Compare the characters of the two strings
-            //    for (int i = 0; i < address.Length; i++)
-            //    {
-            //        if (address[i] != lbAddress[i])
-            //        {
-            //            // The characters don't match, so it's not a match
-            //            match = false;
-            //            break;
-            //        }
-            //    }
-            //}
-
-            //if (match)
-            //{
-            //    // The characters of the two strings match
-            //    // Your code here...
-            //    // For example, you can display a message box
-            //    MessageBox.Show("The characters match!");
-              
-
-            //}
-            //else
-            //{
-            //    // The characters of the two strings don't match
-            //    // Your code here...
-            //    // For example, you can display a message box
-            //  MessageBox.Show("จากบัตร =" + address + "จากสหกรณ์ = " + lbAddress);
-              
-            //}
 
         }
         
@@ -1055,10 +1010,10 @@ namespace SVMember
                 };
                 return;
             }
-            
-            lb_App_Date.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
-            lb_Entry_Date.Text = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
-            lb_Appl_Docno.Text = DateTime.Now.ToString("yyMdHm", CultureInfo.InvariantCulture);
+
+            lb_App_Date.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            lb_Entry_Date.Text = DateTime.Now.ToString("MM/dd/yyyy ");
+            lb_Appl_Docno.Text = DateTime.Now.ToString("MdyyHm", CultureInfo.InvariantCulture);
 
             string phoneNumber = lb_Tel.Text; // Get the phone number from TextBox1
 
@@ -1115,6 +1070,8 @@ namespace SVMember
             lb_BirthdateC2.Text = Fc.GetshotDate(value, 1);
             UpdateData();
         }
+
+       
 
        
 
