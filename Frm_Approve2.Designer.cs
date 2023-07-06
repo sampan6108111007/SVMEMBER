@@ -44,9 +44,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +59,9 @@
             this.addr_mobilephonen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sYES = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.sNO = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.lb_Apv_Date = new System.Windows.Forms.Label();
             this.lb_Apv_Id = new System.Windows.Forms.Label();
             this.lb_App_Status = new System.Windows.Forms.Label();
@@ -82,6 +82,7 @@
             this.lb_HomenoN = new System.Windows.Forms.Label();
             this.lb_Card_personN = new System.Windows.Forms.Label();
             this.lb_Member_noN = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,39 +120,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick_1);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button1.Location = new System.Drawing.Point(13, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 43);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "บันทึก";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(14, 85);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(87, 17);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "อนุมัติทั้งหมด";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(114, 85);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(100, 17);
-            this.checkBox2.TabIndex = 20;
-            this.checkBox2.Text = "ไม่อนุมัติทั้งหมด";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Column4
             // 
@@ -298,6 +266,39 @@
             this.sNO.Name = "sNO";
             this.sNO.Width = 60;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button1.Location = new System.Drawing.Point(13, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 43);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "บันทึก";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(14, 85);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(87, 17);
+            this.checkBox1.TabIndex = 19;
+            this.checkBox1.Text = "อนุมัติทั้งหมด";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(114, 85);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(100, 17);
+            this.checkBox2.TabIndex = 20;
+            this.checkBox2.Text = "ไม่อนุมัติทั้งหมด";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // lb_Apv_Date
             // 
             this.lb_Apv_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -313,7 +314,6 @@
             this.lb_Apv_Id.Name = "lb_Apv_Id";
             this.lb_Apv_Id.Size = new System.Drawing.Size(42, 26);
             this.lb_Apv_Id.TabIndex = 151;
-            this.lb_Apv_Id.Text = "black";
             // 
             // lb_App_Status
             // 
@@ -459,11 +459,20 @@
             this.lb_Member_noN.Size = new System.Drawing.Size(67, 26);
             this.lb_Member_noN.TabIndex = 161;
             // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(717, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 26);
+            this.label1.TabIndex = 162;
+            // 
             // Frm_Approve2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1192, 568);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_Member_noN);
             this.Controls.Add(this.lb_NameN);
             this.Controls.Add(this.lb_MobilephoneN);
@@ -539,5 +548,6 @@
         private System.Windows.Forms.Label lb_HomenoN;
         private System.Windows.Forms.Label lb_Card_personN;
         private System.Windows.Forms.Label lb_Member_noN;
+        private System.Windows.Forms.Label label1;
     }
 }

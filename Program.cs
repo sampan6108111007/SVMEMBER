@@ -19,8 +19,9 @@ namespace SVMember
 
            // Application.Run(new Frm_Main());
             //Application.Run(new Frm_ACIDcard());
-            Application.Run(new Frm_UpdateData());
-          // Application.Run(new Frm_Approve2());
+          // Application.Run(new Frm_UpdateData());
+            //Application.Run(new Frm_Approve2());
+            Application.Run(new Frm_Login());
             //Application.Run(new Frm_Seminar());
             //Application.Run(new Frm_ApproveData());
         }

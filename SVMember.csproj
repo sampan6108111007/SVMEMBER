@@ -65,8 +65,10 @@
     <Compile Include="Class\allFunction.cs" />
     <Compile Include="Class\ClassCalAge.cs" />
     <Compile Include="Class\ClassMST.cs" />
+    <Compile Include="Class\EncrytionBase64.cs" />
     <Compile Include="Class\GlobalValiable.cs" />
     <Compile Include="Class\INIFile.cs" />
+    <Compile Include="Class\Utility.cs" />
     <Compile Include="controls\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -374,6 +376,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -166,18 +166,18 @@ namespace SVMember
 
             //txt_Newadd += " " + dt.Rows[0]["New_Add"].ToString();
 
-            if (lb_Member_noN.Text == "") 
+            if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("ไม่มีข้อมูลที่อนุมัติ  ", "แจ้งเดือน");
+                MessageBox.Show("ไม่มีข้อมูลที่อนุมัติ  ", "แจ้งเดือน", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           
-            lb_Member_noN.Text = dt.Rows[0]["member_no"].ToString();         
-            lb_Card_personN.Text = dt.Rows[0]["card_personn"].ToString(); 
+
+            lb_Member_noN.Text = dt.Rows[0]["member_no"].ToString();
+            lb_Card_personN.Text = dt.Rows[0]["card_personn"].ToString();
             lb_NameN.Text = dt.Rows[0]["memb_namen"].ToString();
-            lb_SernameN.Text = dt.Rows[0]["memb_surnamen"].ToString();  
-            lb_Birth_DateN.Text = dt.Rows[0]["birth_daten"].ToString();      
-            lb_MobilephoneN.Text = dt.Rows[0]["addr_mobilephonen"].ToString();          
+            lb_SernameN.Text = dt.Rows[0]["memb_surnamen"].ToString();
+            lb_Birth_DateN.Text = dt.Rows[0]["birth_daten"].ToString();
+            lb_MobilephoneN.Text = dt.Rows[0]["addr_mobilephonen"].ToString();
             lb_HomenoN.Text = dt.Rows[0]["memb_addrn"].ToString();
             lb_MooN.Text = dt.Rows[0]["addr_moon"].ToString();
             lb_SoiN.Text = dt.Rows[0]["addr_soin"].ToString();
@@ -189,10 +189,8 @@ namespace SVMember
             lb_Aumphur_Code.Text = dt.Rows[0]["Newdistrict_code"].ToString();
             lb_Tambol_Code.Text = dt.Rows[0]["Newtambol_code"].ToString();
             lb_Prename_Code.Text = dt.Rows[0]["prename_code"].ToString();
-            lb_App_Status.Text = dt.Rows[0]["app_status"].ToString();
 
-
-           
+            this.Text = label1.Text;
         }
 
         void UpdateData()
@@ -382,12 +380,12 @@ namespace SVMember
 
             if (GetChkTik() == 0)
             {
-                MessageBox.Show("ยังไม่มีรายการ ที่ถูกเลือกเลย  ", "แจ้งเดือน");
+                MessageBox.Show("ท่านไม่ได้เลือกรายการอนุมัติ กรุณาเลือกรายการอนุมัติ  ", "แจ้งเดือน", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             UpdateData();
-            MessageBox.Show("อนุมัตเรียบร้อย  ", "แจ้งเดือน");
+            MessageBox.Show("อนุมัตเรียบร้อย  ", "แจ้งเดือน",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
         }
 
 

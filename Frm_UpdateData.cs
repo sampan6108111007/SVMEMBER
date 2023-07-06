@@ -272,7 +272,7 @@ namespace SVMember
             lb_IDcardC.Text = dt.Rows[0]["card_person"].ToString();
             lb_BirthdateC2.Text = dt.Rows[0]["birth_date"].ToString();
             //lb_BirthdateC2.Text = Fc.GetshotDate(dt.Rows[0]["birth_date"].ToString(), 0);
-
+            lb_Entry_Id.Text = lb_nameInBut.Text;
            
             //string value = lb_BirthdateC.Text;
             //TextBox2.Text = Fc.GetshotDate(value, 1);
@@ -675,13 +675,33 @@ namespace SVMember
 
             DataTable dt = ClsMST.SelectQuery(str);
 
-            if (dt.Rows.Count >= 0)
+            if (dt.Rows.Count <= 0)
             {
                 return;
             }
 
             lb_Capp_Status.Text = dt.Rows[0]["app_status"].ToString();
 
+          
+
+            //if (lb_Capp_Status.Text == "")
+            //{
+            //}
+
+            //lb_Id_Chk.Text = dt.Rows[0]["card_personn"].ToString();
+
+
+
+            //if (lb_Capp_Status.Text != "0")
+            //{
+            //    if (dt.Rows.Count >= 0)
+            //    {
+            //        return;
+            //    }
+            //}
+
+
+            
         }
 
         private void CheckData()
@@ -995,7 +1015,7 @@ namespace SVMember
         {
             CheckInsert();
 
-            if (lb_Capp_Status.Text == "0") 
+            if (lb_Capp_Status.Text != "")
             {
                 string message = "ท่านเปลี่ยนแปลงข้อมูลเรียบร้อยแล้ว ท่านต้องการอัปเดตข้อมูลหรือไม่";
                 lb_Errortext.Text = message;
@@ -1003,7 +1023,7 @@ namespace SVMember
                 if (MessageBox.Show(message, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     string value = lb_BirthdateC.Text;
-                    lb_BirthdateC2.Text = Fc.GetshotDate(value, 1);
+                    lb_BirthdateC2.Text = Fc.GetshotDate(value, 0);
                     UpdateData();
                     MessageBox.Show("อัปเดตข้อมูลของท่านเรียบร้อย");
                     return;
@@ -1064,11 +1084,11 @@ namespace SVMember
 
         private void btn_chk_Click(object sender, EventArgs e)
         {
-           // CheckInsert();
+            CheckInsert();
            // UpdateData();
-            string value = lb_BirthdateC.Text;
-            lb_BirthdateC2.Text = Fc.GetshotDate(value, 1);
-            UpdateData();
+            //string value = lb_BirthdateC.Text;
+            //lb_BirthdateC2.Text = Fc.GetshotDate(value, 1);
+            //UpdateData();
         }
 
        

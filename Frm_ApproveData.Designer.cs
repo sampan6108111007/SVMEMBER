@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_Apv_Date = new System.Windows.Forms.Label();
+            this.lb_Apv_Id = new System.Windows.Forms.Label();
+            this.lb_App_Status = new System.Windows.Forms.Label();
+            this.lb_Prename_Code = new System.Windows.Forms.Label();
+            this.lb_Tambol_Code = new System.Windows.Forms.Label();
+            this.lb_Aumphur_Code = new System.Windows.Forms.Label();
+            this.lb_Province_Code = new System.Windows.Forms.Label();
             this.lb_SernameN = new System.Windows.Forms.TextBox();
             this.lb_NameN = new System.Windows.Forms.TextBox();
             this.lb_PrenameN = new System.Windows.Forms.TextBox();
@@ -83,13 +90,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btn_Back = new SVMember.controls.RJButton();
             this.btn_Show_Data = new SVMember.controls.RJButton();
-            this.lb_Province_Code = new System.Windows.Forms.Label();
-            this.lb_Aumphur_Code = new System.Windows.Forms.Label();
-            this.lb_Tambol_Code = new System.Windows.Forms.Label();
-            this.lb_Prename_Code = new System.Windows.Forms.Label();
-            this.lb_App_Status = new System.Windows.Forms.Label();
-            this.lb_Apv_Id = new System.Windows.Forms.Label();
-            this.lb_Apv_Date = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID_check)).BeginInit();
@@ -169,6 +169,63 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1024, 576);
             this.panel1.TabIndex = 14;
+            // 
+            // lb_Apv_Date
+            // 
+            this.lb_Apv_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Apv_Date.Location = new System.Drawing.Point(281, 25);
+            this.lb_Apv_Date.Name = "lb_Apv_Date";
+            this.lb_Apv_Date.Size = new System.Drawing.Size(62, 26);
+            this.lb_Apv_Date.TabIndex = 145;
+            // 
+            // lb_Apv_Id
+            // 
+            this.lb_Apv_Id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Apv_Id.Location = new System.Drawing.Point(705, 25);
+            this.lb_Apv_Id.Name = "lb_Apv_Id";
+            this.lb_Apv_Id.Size = new System.Drawing.Size(42, 26);
+            this.lb_Apv_Id.TabIndex = 144;
+            this.lb_Apv_Id.Text = "black";
+            // 
+            // lb_App_Status
+            // 
+            this.lb_App_Status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_App_Status.Location = new System.Drawing.Point(622, 25);
+            this.lb_App_Status.Name = "lb_App_Status";
+            this.lb_App_Status.Size = new System.Drawing.Size(67, 26);
+            this.lb_App_Status.TabIndex = 143;
+            // 
+            // lb_Prename_Code
+            // 
+            this.lb_Prename_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Prename_Code.Location = new System.Drawing.Point(609, 66);
+            this.lb_Prename_Code.Name = "lb_Prename_Code";
+            this.lb_Prename_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Prename_Code.TabIndex = 142;
+            // 
+            // lb_Tambol_Code
+            // 
+            this.lb_Tambol_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Tambol_Code.Location = new System.Drawing.Point(834, 66);
+            this.lb_Tambol_Code.Name = "lb_Tambol_Code";
+            this.lb_Tambol_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Tambol_Code.TabIndex = 141;
+            // 
+            // lb_Aumphur_Code
+            // 
+            this.lb_Aumphur_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Aumphur_Code.Location = new System.Drawing.Point(761, 66);
+            this.lb_Aumphur_Code.Name = "lb_Aumphur_Code";
+            this.lb_Aumphur_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Aumphur_Code.TabIndex = 140;
+            // 
+            // lb_Province_Code
+            // 
+            this.lb_Province_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_Province_Code.Location = new System.Drawing.Point(688, 66);
+            this.lb_Province_Code.Name = "lb_Province_Code";
+            this.lb_Province_Code.Size = new System.Drawing.Size(67, 26);
+            this.lb_Province_Code.TabIndex = 139;
             // 
             // lb_SernameN
             // 
@@ -699,9 +756,9 @@
             // btn_Back
             // 
             this.btn_Back.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Back.BackColor = System.Drawing.Color.Wheat;
-            this.btn_Back.BackgroundColor = System.Drawing.Color.Wheat;
-            this.btn_Back.BackgroundImage = global::SVMember.Properties.Resources.credit_card__2_;
+            this.btn_Back.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Back.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btn_Back.BackgroundImage = global::SVMember.Properties.Resources.previous;
             this.btn_Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Back.BorderColor = System.Drawing.Color.Black;
             this.btn_Back.BorderRadius = 30;
@@ -710,9 +767,9 @@
             this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Back.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Back.ForeColor = System.Drawing.Color.Black;
-            this.btn_Back.Location = new System.Drawing.Point(311, 747);
+            this.btn_Back.Location = new System.Drawing.Point(544, 755);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(176, 144);
+            this.btn_Back.Size = new System.Drawing.Size(136, 119);
             this.btn_Back.TabIndex = 135;
             this.btn_Back.Text = "กลับ";
             this.btn_Back.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -723,9 +780,9 @@
             // btn_Show_Data
             // 
             this.btn_Show_Data.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Show_Data.BackColor = System.Drawing.Color.Wheat;
-            this.btn_Show_Data.BackgroundColor = System.Drawing.Color.Wheat;
-            this.btn_Show_Data.BackgroundImage = global::SVMember.Properties.Resources.credit_card__2_;
+            this.btn_Show_Data.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Show_Data.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btn_Show_Data.BackgroundImage = global::SVMember.Properties.Resources.update;
             this.btn_Show_Data.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Show_Data.BorderColor = System.Drawing.Color.Black;
             this.btn_Show_Data.BorderRadius = 30;
@@ -734,72 +791,15 @@
             this.btn_Show_Data.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Show_Data.Font = new System.Drawing.Font("TH Chakra Petch", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Show_Data.ForeColor = System.Drawing.Color.Black;
-            this.btn_Show_Data.Location = new System.Drawing.Point(80, 747);
+            this.btn_Show_Data.Location = new System.Drawing.Point(398, 755);
             this.btn_Show_Data.Name = "btn_Show_Data";
-            this.btn_Show_Data.Size = new System.Drawing.Size(176, 144);
+            this.btn_Show_Data.Size = new System.Drawing.Size(126, 119);
             this.btn_Show_Data.TabIndex = 134;
             this.btn_Show_Data.Text = "อัปเดต";
             this.btn_Show_Data.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Show_Data.TextColor = System.Drawing.Color.Black;
             this.btn_Show_Data.UseVisualStyleBackColor = false;
             this.btn_Show_Data.Click += new System.EventHandler(this.btn_Show_Data_Click);
-            // 
-            // lb_Province_Code
-            // 
-            this.lb_Province_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Province_Code.Location = new System.Drawing.Point(688, 66);
-            this.lb_Province_Code.Name = "lb_Province_Code";
-            this.lb_Province_Code.Size = new System.Drawing.Size(67, 26);
-            this.lb_Province_Code.TabIndex = 139;
-            // 
-            // lb_Aumphur_Code
-            // 
-            this.lb_Aumphur_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Aumphur_Code.Location = new System.Drawing.Point(761, 66);
-            this.lb_Aumphur_Code.Name = "lb_Aumphur_Code";
-            this.lb_Aumphur_Code.Size = new System.Drawing.Size(67, 26);
-            this.lb_Aumphur_Code.TabIndex = 140;
-            // 
-            // lb_Tambol_Code
-            // 
-            this.lb_Tambol_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Tambol_Code.Location = new System.Drawing.Point(834, 66);
-            this.lb_Tambol_Code.Name = "lb_Tambol_Code";
-            this.lb_Tambol_Code.Size = new System.Drawing.Size(67, 26);
-            this.lb_Tambol_Code.TabIndex = 141;
-            // 
-            // lb_Prename_Code
-            // 
-            this.lb_Prename_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Prename_Code.Location = new System.Drawing.Point(609, 66);
-            this.lb_Prename_Code.Name = "lb_Prename_Code";
-            this.lb_Prename_Code.Size = new System.Drawing.Size(67, 26);
-            this.lb_Prename_Code.TabIndex = 142;
-            // 
-            // lb_App_Status
-            // 
-            this.lb_App_Status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_App_Status.Location = new System.Drawing.Point(622, 25);
-            this.lb_App_Status.Name = "lb_App_Status";
-            this.lb_App_Status.Size = new System.Drawing.Size(67, 26);
-            this.lb_App_Status.TabIndex = 143;
-            // 
-            // lb_Apv_Id
-            // 
-            this.lb_Apv_Id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Apv_Id.Location = new System.Drawing.Point(705, 25);
-            this.lb_Apv_Id.Name = "lb_Apv_Id";
-            this.lb_Apv_Id.Size = new System.Drawing.Size(42, 26);
-            this.lb_Apv_Id.TabIndex = 144;
-            this.lb_Apv_Id.Text = "black";
-            // 
-            // lb_Apv_Date
-            // 
-            this.lb_Apv_Date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_Apv_Date.Location = new System.Drawing.Point(281, 25);
-            this.lb_Apv_Date.Name = "lb_Apv_Date";
-            this.lb_Apv_Date.Size = new System.Drawing.Size(62, 26);
-            this.lb_Apv_Date.TabIndex = 145;
             // 
             // Frm_ApproveData
             // 
