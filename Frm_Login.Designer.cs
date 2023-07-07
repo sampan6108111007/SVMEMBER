@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_error = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -38,7 +39,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Login = new SVMember.controls.RJButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.lb_error = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,10 +62,20 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btn_Login);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(-3, 2);
+            this.panel1.Location = new System.Drawing.Point(-10, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(731, 592);
             this.panel1.TabIndex = 15;
+            // 
+            // lb_error
+            // 
+            this.lb_error.AutoSize = true;
+            this.lb_error.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lb_error.ForeColor = System.Drawing.Color.Red;
+            this.lb_error.Location = new System.Drawing.Point(226, 380);
+            this.lb_error.Name = "lb_error";
+            this.lb_error.Size = new System.Drawing.Size(0, 13);
+            this.lb_error.TabIndex = 16;
             // 
             // textBox2
             // 
@@ -174,23 +184,15 @@
             this.label8.Size = new System.Drawing.Size(0, 20);
             this.label8.TabIndex = 38;
             // 
-            // lb_error
-            // 
-            this.lb_error.AutoSize = true;
-            this.lb_error.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lb_error.ForeColor = System.Drawing.Color.Red;
-            this.lb_error.Location = new System.Drawing.Point(226, 380);
-            this.lb_error.Name = "lb_error";
-            this.lb_error.Size = new System.Drawing.Size(0, 13);
-            this.lb_error.TabIndex = 16;
-            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 566);
+            this.ClientSize = new System.Drawing.Size(714, 572);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Login";
             this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.panel1.ResumeLayout(false);
@@ -213,8 +215,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lb_error;
+        public System.Windows.Forms.TextBox textBox1;
 
     }
 }

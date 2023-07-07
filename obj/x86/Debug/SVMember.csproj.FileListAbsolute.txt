@@ -28,3 +28,4 @@ D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\bin\Debug\SVMember.exe
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\bin\Debug\SVMember.pdb
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.exe
 D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.pdb
+D:\icoop_webapp\winApps\SVMember\SVMember\SVMember\obj\x86\Debug\SVMember.MDI.resources

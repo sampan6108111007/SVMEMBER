@@ -152,6 +152,9 @@ namespace SVMember
             lb_Prename_Code.Text = dt.Rows[0]["prename_code"].ToString();
             lb_App_Status.Text = dt.Rows[0]["app_status"].ToString();
 
+            this.Text = lb_Apv_Id.Text;
+            
+
 
            // CheckData();
         }
@@ -201,7 +204,8 @@ namespace SVMember
         {
             Frm_Approve2 Frm = new Frm_Approve2();
             Frm.Show();
-            this.Close();  
+            this.Close();
+  
         }
 
       

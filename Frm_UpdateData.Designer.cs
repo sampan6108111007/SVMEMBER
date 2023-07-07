@@ -1246,6 +1246,7 @@
             this.Controls.Add(this.lb_surnameInBut);
             this.Controls.Add(this.lb_nameInBut);
             this.Name = "Frm_UpdateData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_UpdateData";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_UpdateData_Load);

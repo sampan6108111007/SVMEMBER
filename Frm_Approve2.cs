@@ -40,7 +40,8 @@ namespace SVMember
              ClsMST.GetDb();
              Get_Request();
              ShowData();
-
+            
+            
         }
 
         void Get_Request()
@@ -190,7 +191,8 @@ namespace SVMember
             lb_Tambol_Code.Text = dt.Rows[0]["Newtambol_code"].ToString();
             lb_Prename_Code.Text = dt.Rows[0]["prename_code"].ToString();
 
-            this.Text = label1.Text;
+            lb_Apv_Id.Text = this.Text;
+            
         }
 
         void UpdateData()
@@ -235,12 +237,19 @@ namespace SVMember
             if (_Req_no == "") { return; }
 
             Frm_ApproveData Frm = new Frm_ApproveData();
+           
 
             
             Frm.Text = _Req_no;
-            Frm.Show();
-            this.Hide();
-           // Frm.ShowDialog();
+            this.Text = Frm.Text;
+
+            
+
+            Frm.lb_Apv_Id.Text = lb_Apv_Id.Text;
+
+
+            Frm.ShowDialog();
+        
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -376,7 +385,7 @@ namespace SVMember
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lb_Apv_Date.Text = DateTime.Now.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+            lb_Apv_Date.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
             if (GetChkTik() == 0)
             {

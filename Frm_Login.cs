@@ -48,6 +48,7 @@ namespace SVMember
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            MDI Frm = new MDI();
             string User = textBox1.Text;
              string Pwd = Encry.EncryptAscii(textBox2.Text);
              str = "select * from amsecusers where user_name='" + User + "' and password='" + Pwd + "'";
@@ -55,18 +56,18 @@ namespace SVMember
 
             if (dt.Rows.Count <= 0)
             {
-               lb_error.Text = "* กรุณาตรวจสอบ [USER] และ [PASSWORD]";
+               lb_error.Text = "* กรุณาตรวจสอบ amsc[USER] และ [PASSWORD]";
                 textBox1.Focus();
                 return;
             }
 
-            Frm_Approve2 Frm = new Frm_Approve2(); 
-            Frm.Show();
-            this.Hide();
-            //this.Text = textBox1.Text + "|" + dt.Rows[0]["Fullname"].ToString();
+           // Frm_Approve2 Frm = new Frm_Approve2(); 
+           // Frm.Show();
+           // this.Hide();
+           // this.Text = textBox1.Text + "|" + dt.Rows[0]["full_name"].ToString();
 
-
-            //this.Close();
+            this.Text = textBox1.Text;
+            this.Close();
         }
 
        

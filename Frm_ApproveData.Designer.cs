@@ -185,7 +185,6 @@
             this.lb_Apv_Id.Name = "lb_Apv_Id";
             this.lb_Apv_Id.Size = new System.Drawing.Size(42, 26);
             this.lb_Apv_Id.TabIndex = 144;
-            this.lb_Apv_Id.Text = "black";
             // 
             // lb_App_Status
             // 
@@ -812,6 +811,7 @@
             this.Controls.Add(this.btn_Show_Data);
             this.Controls.Add(this.panel1);
             this.Name = "Frm_ApproveData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_ApproveData";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_ApproveData_Load);
@@ -889,8 +889,8 @@
         private System.Windows.Forms.Label lb_Province_Code;
         private System.Windows.Forms.Label lb_Prename_Code;
         private System.Windows.Forms.Label lb_App_Status;
-        private System.Windows.Forms.Label lb_Apv_Id;
         private System.Windows.Forms.Label lb_Apv_Date;
+        public System.Windows.Forms.Label lb_Apv_Id;
 
     }
 }
