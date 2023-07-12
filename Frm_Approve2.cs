@@ -37,7 +37,7 @@ namespace SVMember
 
         private void Frm_Approve2_Load(object sender, EventArgs e)
         {
-             ClsMST.GetDb();
+                ClsMST.GetDb();
              Get_Request();
              ShowData();
             
@@ -193,6 +193,8 @@ namespace SVMember
 
             lb_Apv_Id.Text = this.Text;
             
+            
+            
         }
 
         void UpdateData()
@@ -244,7 +246,7 @@ namespace SVMember
             this.Text = Frm.Text;
 
             
-
+            
             Frm.lb_Apv_Id.Text = lb_Apv_Id.Text;
 
 

@@ -120,6 +120,12 @@
     <Compile Include="Frm_ApproveData.Designer.cs">
       <DependentUpon>Frm_ApproveData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_EmAprove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_EmAprove.Designer.cs">
+      <DependentUpon>Frm_EmAprove.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_GARANTEE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ApproveData.resx">
       <DependentUpon>Frm_ApproveData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_EmAprove.resx">
+      <DependentUpon>Frm_EmAprove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GARANTEE.resx">
       <DependentUpon>Frm_GARANTEE.cs</DependentUpon>
